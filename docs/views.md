@@ -46,13 +46,13 @@
 
 
 
-[root]: ./wireframes/root.jpg =800x
-[new_user]: ./wireframes/new_user.jpg =800x
-[current_user_detail]: ./wireframes/current_user_user_dashboard_with_user_detail.jpg =800x
-[current_user_landing]: ./wireframes/current_user_user_dashboard_with_user_landing.jpg =800x
-[edit_profile]: ./wireframes/edit_profile.jpg =800x
-[add_photo]: ./wireframes/add_photo.jpg =800x
-[user_landing]: ./wireframes/user_dashboard_with_user_landing.jpg =800x
-[user_detail]: ./wireframes/user_dashboard_with_user_detail.jpg =800x
-[hotties_index]: ./wireframes/top_hotties_index.jpg =800x
-[fans_index]: ./wireframes/fans_index.jpg =800x
+[root]: ./wireframes/root.jpg
+[new_user]: ./wireframes/new_user.jpg
+[current_user_detail]: ./wireframes/current_user_user_dashboard_with_user_detail.jpg
+[current_user_landing]: ./wireframes/current_user_user_dashboard_with_user_landing.jpg
+[edit_profile]: ./wireframes/edit_profile.jpg
+[add_photo]: ./wireframes/add_photo.jpg
+[user_landing]: ./wireframes/user_dashboard_with_user_landing.jpg
+[user_detail]: ./wireframes/user_dashboard_with_user_detail.jpg
+[hotties_index]: ./wireframes/top_hotties_index.jpg
+[fans_index]: ./wireframes/fans_index.jpg
