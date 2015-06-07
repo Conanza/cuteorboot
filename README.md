@@ -2,23 +2,22 @@
 
 [Heroku link][heroku]
 
-[heroku]: http://hot-or-not-pets.herokuapp.com/
+[heroku]: https://hotornotpets.herokuapp.com/
 
 ## Minimum Viable Product
-Flux-capacitr is a clone of Tumblr built on Rails and Backbone. Users can:
+(APP NAME TBD) is built on Rails and Backbone, and it's a spinoff of hotornot.com for pets. Users (pets) can:
 
-<!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [x] Create accounts
-- [x] Create sessions (log in)
-- [x] Create blogs
-- [x] Create blog posts
-- [ ] View blogs and posts
-- [ ] Subscribe to blogs
-- [ ] View a feed of subscribed blogs
-- [ ] Tag blog posts
-- [ ] Search for blogs by title
-- [ ] Search for posts by tag
+- [ ] Create accounts
+- [ ] Create sessions (log in/log out)
+- [ ] Create user profiles
+- [ ] Upload and delete profile pictures
+- [ ] View a feed of users and their pictures
+- [ ] Like/Dislike users
+- [ ] Users get a rating (hot votes/total votes)
+- [ ] View a user's profile
+- [ ] View a list of app's hottest users
+- [ ] View a list of your likers
 
 ## Design Docs
 * [View Wireframes][views]
@@ -73,7 +72,7 @@ collections, but they will fetch from the new `search` routes.
 [Details][phase-five]
 
 ### Bonus Features (TBD)
-- [ ] "Like" button and counter for posts
+- [ ] 
 - [ ] Custom blog urls
 - [ ] Pagination/infinite scroll
 - [ ] Activity history (e.g. likes, reblogs, taggings)
