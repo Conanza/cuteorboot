@@ -86,6 +86,7 @@ collections, but they will fetch from the new `search` routes.
 - [ ] Other misc. awards: most hobbies("interesting"), hot streaks (consecutive weeks liked), popularity thresholds
 - [ ] Counters: # of photos, fans, notifications, shared hobbies, hot streak
 - [ ] Carousel pictures
+- [ ] Pagination or 'load more on scroll' for hotties and fans index
 - [ ] Stylish buttons
 - [ ] Bind shortcut keys for liking/disliking (e.g. 1 and 2)
 
