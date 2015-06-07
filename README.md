@@ -17,7 +17,7 @@
 - [ ] Users get a rating (hot votes/total votes)
 - [ ] View a user's profile
 - [ ] View a list of app's hottest users
-- [ ] View a list of your likers
+- [ ] View a list of your likers (fans)
 
 ## Design Docs
 * [View Wireframes][views]
@@ -72,15 +72,23 @@ collections, but they will fetch from the new `search` routes.
 [Details][phase-five]
 
 ### Bonus Features (TBD)
-- [ ] 
-- [ ] Custom blog urls
-- [ ] Pagination/infinite scroll
-- [ ] Activity history (e.g. likes, reblogs, taggings)
-- [ ] Post types (image posts, quote posts, etc)
-- [ ] Reblogging
-- [ ] Multiple sessions/session management
-- [ ] User avatars
-- [ ] Typeahead search bar
+- [ ] Sort users shown in feed by distance from
+- [ ] Game filter: edit settings to search by animal type, age
+- [ ] Heat map for fans: Sort list of fans by city
+- [ ] Interactive search (by username)
+- [ ] Thumbnail view for search results
+- [ ] "Up next" thumbnails: interactive preview of users coming up next in feed
+- [ ] Notifications for new likes and messages
+- [ ] Chatting, enabled by mutual likes
+- [ ] Ability to block someone mutually liked
+- [ ] Show common hobbies between yourself and other user
+- [ ] Badges/Awards for users with top ratings
+- [ ] Other misc. awards: most hobbies("interesting"), hot streaks (consecutive weeks liked), popularity thresholds
+- [ ] Counters: # of photos, fans, notifications, shared hobbies, hot streak
+- [ ] Carousel pictures
+- [ ] Stylish buttons
+- [ ] Bind shortcut keys for liking/disliking (e.g. 1 and 2)
+
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
