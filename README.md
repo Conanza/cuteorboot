@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: 
+[heroku]: http://hot-or-not-pets.herokuapp.com/
 
 ## Minimum Viable Product
 Flux-capacitr is a clone of Tumblr built on Rails and Backbone. Users can:
