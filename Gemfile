@@ -19,7 +19,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'annotate'
-  gem 'debugger'
 end
 
 group :development, :test do
