@@ -1,29 +1,44 @@
-# Phase 2: Viewing Blogs and Posts
+# Phase 2: Uploading/Adding Pictures, Viewing/Editing Own Profile
 
 ## Rails
-### Models
+#### Routes
+* Pictures
 
-### Controllers
-Api::BlogsController (create, destroy, index, show)
-Api::PostsController (create, destroy, show, update)
+#### Models
+* Picture
 
-### Views
-* blogs/show.json.jbuilder
+#### Controllers
+* PicturesController (new, create, destroy)
+* UsersController +(edit, show)
+
+#### Views
+* users/show.json.jbuilder
+* **update** users/new to include an image upload field
 
 ## Backbone
-### Models
-* Blog (parses nested `posts` association)
-* Post
+#### Models
+* User (parses nested `hobbies` and `pictures` associations)
+* Picture
 
-### Collections
-* Blogs
-* Posts
+#### Collections
+* Users
+* Pictures
 
-### Views
-* BlogForm
-* BlogShow (composite view, contains PostsIndex subview)
-* PostsIndex (composite view, contains PostsIndexItem subviews)
-* PostsIndexItem
-* PostShow
+#### Views
+* Navbar View
+* EditProfile View
+* AddPhotoView
+* UserDashboard CompositeView (contains: UserNav View, UserDetail/UserLanding Views)
+* UserNav View
+* UserDetail View _(possibly composite? containing a PicturesCarousel View)_
+* UserLanding View _(possibly composite? containing a PicturesCarousel View)_
+
+
+#### Routers
+* router
 
 ## Gems/Libraries
+Paperclip/Filepicker?
+Jbuilder
+backbone-on-rails
+serializejson

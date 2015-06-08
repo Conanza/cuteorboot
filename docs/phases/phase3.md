@@ -1,21 +1,31 @@
-# Phase 3: Editing and Displaying Posts
+# Phase 3: "Game" Mode - View Feed of Other Users, Cute It or Boot It, Create Rating System
 
 ## Rails
-### Models
+#### Routes
+* Votes
 
-### Controllers
+#### Models
+* Vote
 
-### Views
+#### Controllers
+* Votes (create)
+
+#### Views
 
 ## Backbone
-### Models
+#### Models
+* User (parse `votes`)
+* Vote
 
-### Collections
+#### Collections
+* Votes
 
-### Views
-* PostForm
+#### Views
+* Navbar
+* UserDashboard (register events, listeners)
+* UserNav
+* UserLanding
+* UserDetail
 
 ## Gems/Libraries
-* Filepicker
-* Markdown-js
-* Bootstrap Markdown
+

@@ -1,28 +1,31 @@
-# Phase 1: User Authentication, Basic Blogs and Posts
+# Phase 1: User Auth, User Profile Creation
 
 ## Rails
-### Models
+#### Routes
+* users
+* session
+
+#### Models
 * User
-* Blog
-* Post
+* Hobby
+* Hobbying
 
-### Controllers
+#### Controllers
 * UsersController (create, new)
-* SessionsController (create, new, destroy)
-* BlogsController (create, new, show)
-* PostsController (create, new, show)
+* SessionsController (create, destroy)
 
-### Views
+#### Views
 * users/new.html.erb
-* session/new.html.erb
-* blogs/new.html.erb
-* blogs/show.html.erb
+* static_pages/root.html.erb
 
 ## Backbone
-### Models
+#### Models
 
-### Collections
+#### Collections
 
-### Views
+#### Views
+
+#### Routers
 
 ## Gems/Libraries
+* bcrypt

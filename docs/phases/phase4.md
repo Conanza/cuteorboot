@@ -1,20 +1,19 @@
 # Phase 4: User Feeds
 
 ## Rails
-### Models
+#### Models
 
-### Controllers
-Api::PostsController (feed)
+#### Controllers
 
-### Views
-posts/feed.json.jbuilder
+#### Views
 
 ## Backbone
-### Models
+#### Models
 
-### Collections
+#### Collections
 
-### Views
-* FeedShow (composite view, contains PostsIndex subview)
+#### Views
+* FansIndex (composite: contains IndexItem)
+* CutiesIndex (composite: contains IndexItem)
 
 ## Gems/Libraries
