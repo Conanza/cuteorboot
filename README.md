@@ -1,12 +1,11 @@
-# APP NAME TBD
+# Cute or Boot
 
 [Heroku link][heroku]
 
-[heroku]: https://hotornotpets.herokuapp.com/
+[heroku]: https://cuteorboot.herokuapp.com/
 
 ## Minimum Viable Product
-(APP NAME TBD) is built on Rails and Backbone, and it's a spinoff of hotornot.com for pets. Users (pets) can:
-
+Cute or Boot is built on Rails and Backbone, and it's a spinoff of hotornot.com for pets. Users (pets) can:
 
 - [ ] Create accounts
 - [ ] Create sessions (log in/log out)
@@ -96,4 +95,3 @@ collections, but they will fetch from the new `search` routes.
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
-

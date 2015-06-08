@@ -11,11 +11,15 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt'
 gem 'newrelic_rpm'
+gem 'rails_12factor', group: :production
+gem 'backbone-on-rails'
 
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry-rails'
+  gem 'annotate'
+  gem 'debugger'
 end
 
 group :development, :test do
@@ -23,5 +27,3 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-
-gem 'rails_12factor', group: :production
