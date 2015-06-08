@@ -36,7 +36,15 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    annotate (2.6.10)
+      activerecord (>= 3.2, <= 4.3)
+      rake (~> 10.4)
     arel (6.0.0)
+    backbone-on-rails (1.2.0.0)
+      eco
+      ejs
+      jquery-rails
+      railties
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -57,6 +65,12 @@ GEM
     coffee-script-source (1.9.1.1)
     columnize (0.9.0)
     debug_inspector (0.0.2)
+    eco (1.0.0)
+      coffee-script
+      eco-source
+      execjs
+    eco-source (1.1.0.rc.1)
+    ejs (1.1.1)
     erubis (2.7.0)
     execjs (2.5.2)
     globalid (0.3.5)
@@ -160,6 +174,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
+  backbone-on-rails
   bcrypt
   better_errors
   binding_of_caller
