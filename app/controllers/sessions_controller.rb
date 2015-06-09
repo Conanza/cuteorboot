@@ -10,16 +10,16 @@ class SessionsController < ApplicationController
 
     if @user
       login(@user)
-      # redirect_to some landing page
+      redirect_to root_url
     else
-      flash[:errors] = ["Invalid email and password combo"]
+      flash.now[:errors] = ["Invalid email and password combo"]
       render :new
     end
   end
 
   def destroy
     logout(current_user)
-    redirect_to root_url
+    redirect_to home_url
   end
 
   private

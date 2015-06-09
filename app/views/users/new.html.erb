@@ -1,0 +1,138 @@
+<%= render "layouts/navbar" %>
+<%= render "layouts/errors" %>
+
+<h1>Sign Up</h1>
+It's free.
+
+
+<form action="<%= users_url %>" method="POST" role="form">
+  <%= auth_token %>
+
+  <div class="form-group col-xs-4 col-xs-offset-4">
+    <label for="username">Username *
+      <input
+        id="username"
+        type="text"
+        name="user[username]"
+        placeholder="e.g. boo"
+        class="form-control"
+        value="<%= @user.username %>">
+    </label>
+  </div>
+
+  <div class="form-group col-xs-4 col-xs-offset-4">
+    <label for="password">New Password *
+    <input
+      id="password"
+      type="password"
+      name="user[password]"
+      placeholder="password"
+      class="form-control">
+    </label>
+  </div>
+
+  <div class="form-group col-xs-2 col-xs-offset-4">
+    <label for="city">City *
+    <input
+      id="city"
+      type="text"
+      name="user[city]"
+      placeholder="San Francisco"
+      class="form-control"
+      value="<%= @user.city %>">
+    </label>
+  </div>
+
+  <div class="form-group col-xs-2">
+    <label for="state">State *
+      <select id="state" name="user[state]" class="form-control">
+        <% User::STATES.each do |state| %>
+          <option
+            value="<%= state %>"
+            <% userstate = @user.state ||= "California" %>
+            <%= "selected" if state == userstate %>><%= state %>
+          </option>
+        <% end %>
+      </select>
+    </label>
+  </div>
+
+  <div class="form-group col-xs-2 col-xs-offset-4">
+    <label for="gender">Gender *
+      <select id="gender" name="user[gender]" class="form-control">
+        <% ["", "M", "F"].each do |gender| %>
+          <option
+            value="<%= gender %>"
+            <%= "selected" if @user.gender == gender %>>
+            <%= gender %>
+          </option>
+        <% end %>
+      </select>
+    </label>
+  </div>
+
+  <div class="form-group col-xs-2">
+    <label for="animaltype">Type *
+      <select id="animaltype" name="user[animal_type]" class="form-control">
+        <% [""].concat(User::ANIMAL_TYPES).each do |animaltype| %>
+          <option
+            value="<%= animaltype %>"
+            <%= "selected" if animaltype == @user.animal_type %>>
+            <%= animaltype.capitalize %>
+          </option>
+        <% end %>
+      </select>
+    </label>
+  </div>
+
+  <div class="form-group col-xs-4 col-xs-offset-4">
+    <label for="breed">Breed
+      <input
+        id="breed"
+        type="text"
+        name="user[breed]"
+        placeholder="e.g. Pomeranian"
+        class="form-control"
+        value="<%= @user.breed %>">
+    </label>
+  </div>
+
+  <div class="form-group col-xs-4 col-xs-offset-4">
+    <label for="website">Website
+      <input
+        id="website"
+        type="text"
+        name="user[website]"
+        placeholder="e.g. www.boothedog.net"
+        class="form-control"
+        value="<%= @user.website %>">
+    </label>
+  </div>
+
+  <div class="form-group col-xs-4 col-xs-offset-4">
+    <label for="instagram">Instagram Link
+      <input
+        id="instagram"
+        type="text"
+        name="user[instagram]"
+        placeholder="e.g. instagram.com/iamboo_officialfanpage"
+        class="form-control"
+        value="<%= @user.instagram %>">
+    </label>
+  </div>
+
+  <div class="form-group col-xs-4 col-xs-offset-4">
+    <label for="about-me">About Me
+      <textarea
+        id="about-me"
+        type="text"
+        name="user[about_me]"
+        placeholder="Describe yourself!"
+        class="form-control"></textarea>
+    </label>
+  </div>
+
+  <div class="form-group col-xs-4 col-xs-offset-4">
+    <button type="submit" class="btn btn-primary">Get Cute!</button>
+  </div>
+</form>
