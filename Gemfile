@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
 
 gem 'rails', '4.2.1'
 gem 'pg'
@@ -13,6 +12,8 @@ gem 'bcrypt'
 gem 'newrelic_rpm'
 gem 'rails_12factor', group: :production
 gem 'backbone-on-rails'
+gem 'bootstrap-sass'
+gem 'font-awesome-rails'
 
 group :development do
   gem 'better_errors'
