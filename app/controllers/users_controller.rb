@@ -1,25 +1,21 @@
 class UsersController < ApplicationController
   before_action :require_login, only: [:edit, :update, :destroy, :show]
-
+  before_action :require_logout, only: [:new, :create]
+  before_action :require_current_user, only: [:edit, :update, :destroy]
+  
   def new
     @user = User.new
-
-    if current_user
-      flash[:notices] = ["Please log out first"]
-      redirect_to root_url
-    else
-      render :new
-    end
   end
 
   def create
     @user = User.new(user_params)
 
     if @user.save
+      flash[:success] = ["Welcome to Cute or Not!"]
       login(@user)
       redirect_to root_url
     else
-      flash[:errors] = @user.errors.full_messages
+      flash.now[:errors] = @user.errors.full_messages
       render :new
     end
   end

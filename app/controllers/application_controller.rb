@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def logout(user)
     user.reset_session_token!
-    session_token[:session_token] = nil
+    session[:session_token] = nil
   end
 
   def require_login
@@ -23,5 +23,20 @@ class ApplicationController < ActionController::Base
     flash[:errors] = ["Log in first"]
 
     redirect_to new_session_url
+  end
+
+  def require_logout
+    if current_user
+      flash[:notices] = ["Please log out first"]
+      redirect_to root_url
+    end
+  end
+
+
+  def require_current_user
+    unless current_user.id == params[:id].to_i
+      flash[:notices] = ["You don't have that access"]
+      redirect_to root_url
+    end
   end
 end

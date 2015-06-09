@@ -1,14 +1,18 @@
 class SessionsController < ApplicationController
+  before_action :require_login, only: [:destroy]
+  before_action :require_logout, only: [:new, :create]
+
   def new
   end
 
   def create
     @user = User.find_by_credentials(
-      session[:username],
-      session[:password]
+      session_params[:username],
+      session_params[:password]
     )
 
     if @user
+      flash[:success] = ["Welcome to Cute or Not!"]
       login(@user)
       redirect_to root_url
     else

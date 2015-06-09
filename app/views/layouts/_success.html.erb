@@ -1,0 +1,7 @@
+<ul>
+  <% if flash[:success] %>
+    <% flash[:success].each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  <% end %>
+</ul>

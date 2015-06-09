@@ -7,8 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render "layouts/success" %>
+  <%= render "layouts/notices" %>
+  
+  <%= yield %>
 
-<%= yield %>
-
+  <% if current_user %>
+    <%= button_to "logout", session_url, method: :delete %>
+  <% end %>
 </body>
 </html>
