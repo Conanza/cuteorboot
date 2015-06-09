@@ -57,6 +57,17 @@ It's free.
     </label>
   </div>
 
+  <div class="form-group col-xs-4 col-xs-offset-4">
+    <label for="birthdate">Birthday
+      <input
+        id="birthdate"
+        type="date"
+        name="user[birthdate]"
+        class="form-control"
+        value="<%= @user.birthdate %>">
+    </label>
+  </div>
+
   <div class="form-group col-xs-2 col-xs-offset-4">
     <label for="gender">Gender *
       <select id="gender" name="user[gender]" class="form-control">
