@@ -1,8 +1,8 @@
 class StaticPagesController < ApplicationController
-  def root
-    redirect_to home_url unless current_user
+  def home
   end
 
-  def home
+  def root
+    redirect_to home_url unless current_user
   end
 end

@@ -18,6 +18,13 @@ class ApplicationController < ActionController::Base
     session[:session_token] = nil
   end
 
+  def require_current_user
+    unless current_user.id == params[:id].to_i
+      flash[:notices] = ["You don't have that access"]
+      redirect_to root_url
+    end
+  end
+
   def require_login
     return if current_user
     flash[:errors] = ["Log in first"]
@@ -28,13 +35,6 @@ class ApplicationController < ActionController::Base
   def require_logout
     if current_user
       flash[:notices] = ["Please log out first"]
-      redirect_to root_url
-    end
-  end
-
-  def require_current_user
-    unless current_user.id == params[:id].to_i
-      flash[:notices] = ["You don't have that access"]
       redirect_to root_url
     end
   end
