@@ -87,7 +87,7 @@ class User < ActiveRecord::Base
   validates :animal_type,
             inclusion: { in: ANIMAL_TYPES, message: "Must be one of the listed types" }
 
-  has_many :hobbyings
+  has_many :hobbyings, dependent: :destroy
   has_many :hobbies, through: :hobbyings
 
   after_initialize :set_session_token
