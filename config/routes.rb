@@ -3,10 +3,11 @@ Rails.application.routes.draw do
   get "/home", to: "static_pages#home", as: :home
 
   resource :session, only: [:new, :create, :destroy]
-  resources :users
+  resources :users, only: [:new, :create]
+  resources :users, except: [:new, :create], defaults: { format: :json }
 
   namespace :api, defaults: { format: :json } do
-    resources :hobbies
+    resources :hobbies, only: [:index]
     resources :hobbyings
   end
 end

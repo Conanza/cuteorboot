@@ -1,12 +1,12 @@
 CuteOrBoot.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
+    this.users = options.users;
   },
 
   routes: {
     "": "game",
     "users/:id": "showUser",
-    "1": "one",
     "2": "two",
     "3": "three",
     "4": "four"
@@ -17,11 +17,13 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
   },
 
   showUser: function (id) {
-    console.log("id " + id);
-  },
+    var user = this.users.getOrFetch(id);
+    var dashboardView = new CuteOrBoot.Views.UserDashboard({
+      model: user,
+      collection: this.users
+    });
 
-  one: function () {
-    console.log("one");
+    this._swapView(dashboardView);
   },
 
   two: function () {
