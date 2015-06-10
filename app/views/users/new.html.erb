@@ -134,17 +134,21 @@ It's free.
   <div class="form-group col-xs-4 col-xs-offset-4">
     <input type="hidden" name="user[hobby_ids][]" value="">
       <label>Hobbies</label>
-        <% @hobbies.each do |hobby| %>
-          <% checked = @user.hobby_ids.include?(hobby.id) %>
-          <label for="hobby-<%= hobby.id %>">
-            <input
-              id="hobby-<%= hobby.id %>"
-              type="checkbox"
-              name="user[hobby_ids][]"
-              value="<%= hobby.id %>"
-              <%= 'checked="checked"' if checked %>>
+        <ul>
+          <% @hobbies.each do |hobby| %>
+            <% checked = @user.hobby_ids.include?(hobby.id) %>
+            <label for="hobby-<%= hobby.id %>">
+            <li>
+              <input
+                id="hobby-<%= hobby.id %>"
+                type="checkbox"
+                name="user[hobby_ids][]"
+                value="<%= hobby.id %>"
+                <%= 'checked="checked"' if checked %>>
               <%= hobby.name %>
-        <% end %>
+            </li>
+          <% end %>
+        </ul>
       </label>
   </div>
 
