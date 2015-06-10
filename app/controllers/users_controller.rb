@@ -3,6 +3,10 @@ class UsersController < ApplicationController
   before_action :require_logout, only: [:new, :create]
   before_action :require_current_user, only: [:edit, :update, :destroy]
 
+  def index
+    @users = User.all
+  end
+
   def new
     @user = User.new
     @hobbies = Hobby.all
@@ -25,7 +29,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     @hobbies = Hobby.all
-
+    render json: @user
   end
 
   def update
@@ -41,7 +45,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    render :show
+    render json: @user
   end
 
   def destroy
