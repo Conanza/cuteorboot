@@ -1,0 +1,18 @@
+<% if (CURRENT_USER_ID !== user.id) { %>
+  <ul class="nav navbar-nav">
+    <li><a href="#cuteit">cute it</a></li>
+    <li><a href="#bootit">boot it</a></li>
+  </ul>
+<% } %>
+
+<div class="navbar-header">
+  <a class="navbar-brand" href="#toggleprofile"><%= user.escape("username") %></a>
+</div>
+
+<ul class="nav navbar-nav navbar-right">
+  <% if (CURRENT_USER_ID === user.id) { %>
+    <li><a href="#edit">Edit profile view</a></li>
+  <% } %>
+
+  <li><a href="#toggleprofile">Toggle profile view</a></li>
+</ul>

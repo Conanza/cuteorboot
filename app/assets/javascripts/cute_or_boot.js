@@ -6,6 +6,7 @@ window.CuteOrBoot = {
   initialize: function() {
     var $rootEl = $("#main");
     var users = new CuteOrBoot.Collections.Users();
+
     var router = new CuteOrBoot.Routers.Router({
       $rootEl: $rootEl,
       users: users
@@ -15,7 +16,8 @@ window.CuteOrBoot = {
       router: router
     });
 
-    $("#navbar").html(navbar.render().$el);
+    $("#navbar").html(navbar.$el);
+    navbar.render();
 
     Backbone.history.start();
   }

@@ -1,0 +1,17 @@
+<% current_loc = (user.escape("city") + ", " + user.escape("state")) %>
+
+<% attrs = [
+    ["Gender", "gender"],
+    ["Animal Type", "animal_type"],
+    ["Breed", "breed"],
+    ["About Me", "about_me"]
+  ]
+%>
+
+<h4>Current Location</h4>
+<p><%= current_loc %></p>
+
+<% attrs.forEach(function (attr) { %>
+  <h4><%= attr[0] %></h4>
+  <p><%= user.escape(attr[1]) %></p>
+<% }) %>

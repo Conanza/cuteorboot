@@ -1,12 +1,16 @@
 CuteOrBoot.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
+    // this needs to be collection of filtered users, rather than whole index
+    // index can even be the feed
+    // on vote, removeModel from collection,
+    // remove subviews where necessary
     this.users = options.users;
   },
 
   routes: {
     "": "game",
-    "users/:id": "showUser",
+    "cuties/:id": "showUser",
     "2": "two",
     "3": "three",
     "4": "four"
@@ -17,7 +21,9 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
   },
 
   showUser: function (id) {
-    var user = this.users.getOrFetch(id);
+    var user = new CuteOrBoot.Models.User({ id: id });
+    user.fetch();
+
     var dashboardView = new CuteOrBoot.Views.UserDashboard({
       model: user,
       collection: this.users
@@ -41,6 +47,7 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
   _swapView: function (view) {
     this._currentView && this._currentView.remove();
     this._currentView = view;
-    this.$rootEl.html(view.render().$el);
+    this.$rootEl.html(view.$el);
+    view.render();
   }
 });
