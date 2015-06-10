@@ -32,7 +32,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
   def require_current_user
     unless current_user.id == params[:id].to_i
       flash[:notices] = ["You don't have that access"]

@@ -2,9 +2,10 @@ class UsersController < ApplicationController
   before_action :require_login, only: [:edit, :update, :destroy, :show]
   before_action :require_logout, only: [:new, :create]
   before_action :require_current_user, only: [:edit, :update, :destroy]
-  
+
   def new
     @user = User.new
+    @hobbies = Hobby.all
   end
 
   def create
@@ -15,6 +16,7 @@ class UsersController < ApplicationController
       login(@user)
       redirect_to root_url
     else
+      @hobbies = Hobby.all
       flash.now[:errors] = @user.errors.full_messages
       render :new
     end
@@ -22,12 +24,19 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @hobbies = Hobby.all
+
   end
 
   def update
     @user = User.find(params[:id])
 
-    render :edit
+    if @user.update(user_params)
+
+    else
+      @hobbies = Hobby.all
+      render :edit
+    end
   end
 
   def show
@@ -54,7 +63,8 @@ class UsersController < ApplicationController
       :animal_type,
       :breed,
       :website,
-      :instagram
+      :instagram,
+      hobby_ids: []
     )
   end
 end

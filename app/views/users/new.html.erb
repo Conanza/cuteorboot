@@ -4,7 +4,6 @@
 <h1>Sign Up</h1>
 It's free.
 
-
 <form action="<%= users_url %>" method="POST" role="form">
   <%= auth_token %>
 
@@ -130,6 +129,23 @@ It's free.
         class="form-control"
         value="<%= @user.instagram %>">
     </label>
+  </div>
+
+  <div class="form-group col-xs-4 col-xs-offset-4">
+    <input type="hidden" name="user[hobby_ids][]" value="">
+      <label>Hobbies</label>
+        <% @hobbies.each do |hobby| %>
+          <% checked = @user.hobby_ids.include?(hobby.id) %>
+          <label for="hobby-<%= hobby.id %>">
+            <input
+              id="hobby-<%= hobby.id %>"
+              type="checkbox"
+              name="user[hobby_ids][]"
+              value="<%= hobby.id %>"
+              <%= 'checked="checked"' if checked %>>
+              <%= hobby.name %>
+        <% end %>
+      </label>
   </div>
 
   <div class="form-group col-xs-4 col-xs-offset-4">
