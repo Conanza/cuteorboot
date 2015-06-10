@@ -4,6 +4,16 @@ window.CuteOrBoot = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert("IT'S BACKBONE TIME");
+    var $rootEl = $("#main");
+    var router = new CuteOrBoot.Routers.Router({
+      $rootEl: $rootEl
+    });
+    var navbar = new CuteOrBoot.Views.Navbar({
+      router: router
+    });
+    
+    $("#navbar").html(navbar.render().$el);
+
+    Backbone.history.start();
   }
 };

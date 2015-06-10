@@ -1,4 +1,16 @@
+<div class="cuteorboot row">
+  <div id="navbar" class="col-xs-3">
+  </div>
+
+  <div id="main" class="col-xs-9">
+    <h1>main content here</h1>
+  </div>
+</div>
+
 <script type="text/javascript">
+  window.CURRENT_USER_ID = "<%= current_user.id %>"
+  window.CURRENT_USER_USERNAME = "<%= current_user.username %>"
+
   $(document).ready(function(){
     CuteOrBoot.initialize();
   });
