@@ -90,6 +90,9 @@ class User < ActiveRecord::Base
   has_many :hobbyings, dependent: :destroy
   has_many :hobbies, through: :hobbyings
 
+  has_many :given_votes, class_name: "Vote", foreign_key: :voter_id
+  has_many :received_votes, class_name: "Vote", foreign_key: :votee_id
+
   after_initialize :set_session_token
 
   def self.find_by_credentials(username, password)
@@ -118,5 +121,12 @@ class User < ActiveRecord::Base
 
   def set_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
+  end
+
+  def rating
+    cute_votes = self.received_votes.where("value = ?", 1).length
+    total_votes = self.received_votes.length
+
+    (cute_votes.to_f / total_votes) * 10
   end
 end
