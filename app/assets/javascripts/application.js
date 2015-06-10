@@ -16,7 +16,7 @@
 //= require bootstrap
 //= require underscore
 //= require backbone
-//= require sample_project_proposal_master
+//= require cute_or_boot
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
