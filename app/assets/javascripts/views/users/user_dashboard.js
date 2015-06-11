@@ -2,61 +2,41 @@ CuteOrBoot.Views.UserDashboard = Backbone.CompositeView.extend({
   template: JST["users/dashboard"],
 
   initialize: function () {
-    this.renderViews();
-
-    // if no specified user
-    if (!this.collection.currentUserId) {
-      // if collection is unfetched, wait for it
-      if (this.collection.length === 0) {
-        this.listenTo(this.collection, "sync", this.setCurrentUserId);
-      } else {
-        this.setCurrentUserId();
-      }
-    // specified a user
+    if (this.model) {
+      this.renderViews();
     } else {
-      if (this.collection.length === 0) {
-        this.listenTo(this.collection, "sync", this.triggerSelected);
-      } else {
-        this.triggerSelected();
-      }
+      this.listenTo(this.collection, "sync", this.addModel);
     }
 
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.collection, "remove", this.setCurrentUserId);
+    this.listenTo(this.collection, "remove", this.addModel);
   },
 
-  // fetch the first user from collection and trigger
-  setCurrentUserId: function (user) {
-    this.collection.currentUserId = this.collection.first().id;
-    this.collection.trigger("userselected", this.collection.first());
+  addModel: function (model) {
+    this.removeModelSubview(".usernav", model);
+    this.removeModelSubview(".userdetail", model);
+    this.removeModelSubview(".userlanding", model);
+    this.model = this.collection.first();
+    this.renderViews();
   },
-
-  // fetch the specified user and trigger
-  triggerSelected: function () {
-    this.collection.trigger("userselected", this.collection.get(this.collection.currentUserId));
-  },
-
-  // doesn't work, how do i take care of zombie views
-  // removeViews: function (user) {
-  //   this.removeModelSubview(".usernav", user);
-  //   this.removeModelSubview(".userdetail", user);
-  //   this.removeModelSubview(".userlanding", user);
-  // },
 
   renderViews: function () {
     var userNav = new CuteOrBoot.Views.UserNav({
+      model: this.model,
       collection: this.collection
     });
     var userDetail = new CuteOrBoot.Views.UserDetail({
+      model: this.model,
       collection: this.collection
     });
     var userLanding = new CuteOrBoot.Views.UserLanding({
+      model: this.model,
       collection: this.collection
     });
 
     this.addSubview(".usernav", userNav);
-    this.addSubview(".userdetail", userDetail);
     this.addSubview(".userlanding", userLanding);
+    this.addSubview(".userdetail", userDetail);
   },
 
   render: function () {

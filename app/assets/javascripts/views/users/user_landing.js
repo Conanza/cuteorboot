@@ -3,10 +3,8 @@ CuteOrBoot.Views.UserLanding = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.collection, "userselected", this.swapModel);
   },
 
-  // when id is set in dashboard, set new model and then render
   swapModel: function (newUser) {
     this.model = newUser;
     this.listenTo(this.model, "sync", this.render);

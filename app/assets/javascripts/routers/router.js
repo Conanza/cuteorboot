@@ -16,30 +16,27 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
     "4": "four"
   },
 
-  // start from the beginning of the users collection; no specified id
   game: function () {
-    if (this.users.length < 5) {
-      this.users.fetch();
-    }
+    this.users.fetch();
 
-    this.users.currentUserId = undefined;
+    var user = this.users.first();
 
     var dashboardView = new CuteOrBoot.Views.UserDashboard({
+      model: user,
       collection: this.users
     });
 
     this._swapView(dashboardView);
   },
 
-  // show a specific user
   showUser: function (id) {
-    if (this.users.length < 5) {
-      this.users.fetch();
-    }
+    this.users.fetch();
 
-    this.users.currentUserId = id;
+    var user = new CuteOrBoot.Models.User({ id: id });
+    user.fetch();
 
     var dashboardView = new CuteOrBoot.Views.UserDashboard({
+      model: user,
       collection: this.users
     });
 

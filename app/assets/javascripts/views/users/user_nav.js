@@ -3,7 +3,6 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.collection, "userselected", this.swapModel);
   },
 
   events: {
@@ -11,7 +10,6 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     "click .bootit": "bootVote"
   },
 
-  // when id is set in dashboard, set new model and then render
   swapModel: function (newUser) {
     this.model = newUser;
     this.listenTo(this.model, "sync", this.render);
@@ -23,6 +21,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     console.log("cuted");
 
     this.collection.remove(this.model);
+    Backbone.history.navigate("", { trigger: true });
     // var vote = new CuteOrBoot.Models.Vote({
     //   votee_id: this.model,
     //   value: 1,
@@ -36,6 +35,8 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     console.log("booted");
 
     this.collection.remove(this.model);
+    Backbone.history.navigate("", { trigger: true });
+
     // var vote = new CuteOrBoot.Models.Vote({
     //   votee_id: this.model,
     //   value: 0,

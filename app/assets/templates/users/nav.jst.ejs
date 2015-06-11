@@ -1,4 +1,4 @@
-<% if (parseInt(CURRENT_USER_ID) !== user.id) { %>
+<% if (parseInt(CURRENT_USER_ID) !== parseInt(user.id)) { %>
   <ul class="nav navbar-nav">
     <li><button class="btn btn-primary cuteit">cute it</button></li>
     <li><button class="btn btn-danger bootit">boot it</button></li>
@@ -9,14 +9,14 @@
   <a class="navbar-brand" href="#toggleprofile"><%= user.escape("username") %></a>
 </div>
 
-<% if (parseInt(CURRENT_USER_ID) === user.id) { %>
+<% if (parseInt(CURRENT_USER_ID) === parseInt(user.id)) { %>
   <div class="navbar-header">
     <a class="navbar-brand" href="#toggleprofile">I'm cute. Believe it.</a>
   </div>
 <% } %>
 
 <ul class="nav navbar-nav navbar-right">
-  <% if (CURRENT_USER_ID === user.id) { %>
+  <% if (parseInt(CURRENT_USER_ID) === parseInt(user.id)) { %>
     <li><a href="#edit">Edit profile view</a></li>
   <% } %>
 
