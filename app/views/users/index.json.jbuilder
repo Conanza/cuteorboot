@@ -11,7 +11,8 @@ json.array! @users do |user|
     :breed,
     :website,
     :instagram,
-    :about_me
+    :about_me,
+    :rating
   )
 
   json.hobbies user.hobbies do |hobby|

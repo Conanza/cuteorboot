@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   # incomplete
   def index
     @users = User.all
+
+    # @users.includes(:received_votes)
   end
 
   def new
@@ -17,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash[:success] = ["Welcome to Cute or Not!"]
+      flash[:success] = ["Welcome to Cute or Boot!"]
       login(@user)
       redirect_to root_url
     else
@@ -47,7 +49,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.includes(:hobbies).find(params[:id])
+    @user = User.includes(:hobbies, :rating).find(params[:id])
   end
 
   def destroy

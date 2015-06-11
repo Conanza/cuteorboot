@@ -63,7 +63,7 @@ User.create!(
   hobby_ids: ["1", "2", "3", "4"]
 )
 
-50.times do |i|
+100.times do |i|
   User.create!(
     username: "user#{i + 1}",
     password: "password",

@@ -5,7 +5,7 @@ window.CuteOrBoot = {
   Routers: {},
   initialize: function() {
     var $rootEl = $("#main");
-    var users = new CuteOrBoot.Collections.Users();
+    var users = window.x = new CuteOrBoot.Collections.Users();
 
     var router = new CuteOrBoot.Routers.Router({
       $rootEl: $rootEl,

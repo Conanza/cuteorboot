@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 
   def require_current_user
     unless current_user.id == params[:id].to_i
-      flash[:notices] = ["You don't have that access"]
+      flash[:warning] = ["You don't have that access"]
       redirect_to root_url
     end
   end
@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
 
   def require_logout
     if current_user
-      flash[:notices] = ["Please log out first"]
+      flash[:info] = ["Please log out first"]
       redirect_to root_url
     end
   end
