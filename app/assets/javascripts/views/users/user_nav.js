@@ -7,7 +7,8 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
   events: {
     "click .cuteit": "cuteVote",
-    "click .bootit": "bootVote"
+    "click .bootit": "bootVote",
+    "click .add-image": "addImage"
   },
 
   // fix success callback
@@ -52,6 +53,34 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
       error: function () {
         console.log("didnt work")
+      }
+    });
+  },
+
+  addImage: function (event) {
+    event.preventDefault();
+    var user = this.model;
+
+    cloudinary.openUploadWidget(CLOUDINARY_SETTINGS, function (error, results) {
+      if (error) {
+      } else {
+        results.forEach(function (pic) {
+          var data = {
+            thumb_url: pic.thumbnail_url,
+            image_url: pic.secure_url
+          };
+
+          var picture = new CuteOrBoot.Models.Picture(data);
+          user;
+
+          picture.save({}, {
+            success: function (model, response) {
+              user.pictures().add(model);
+            },
+            error: function (model, response) {
+            }
+          });
+        });
       }
     });
   },

@@ -1,5 +1,7 @@
 module Api
   class VotesController < ApplicationController
+    before_action :require_login
+
     def create
       @vote = current_user.given_votes.new(vote_params)
 

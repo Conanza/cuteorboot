@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 HOBBIES = ["Running", "Swimming", "Napping", "Cuddling", "Eating", "Sunbathing"]
+HOBBY_IDS = HOBBIES.map.with_index{ |hobby, i| (i + 1).to_s }
 
 HOBBIES.each do |hobby|
   Hobby.create!(name: hobby)
@@ -37,7 +38,7 @@ end
 
 def random_hobbies
   random_ids = []
-  hobby_ids = ["1", "2", "3", "4", "5", "6"]
+  hobby_ids = HOBBY_IDS
   hobby_amts = rand(7)
 
   hobby_amts.times do

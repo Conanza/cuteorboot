@@ -13,6 +13,6 @@ Rails.application.routes.draw do
     resources :votes, only: :create
     resources :hobbies, only: [:index]
     resources :hobbyings
-    resources :pictures
+    resources :pictures, only: [:create, :destroy]
   end
 end

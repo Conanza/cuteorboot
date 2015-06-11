@@ -13,10 +13,10 @@ class UsersController < ApplicationController
     query_fragment = "(" + ids.join(", ") + ")"
 
     if ids.empty?
-      @users = User.includes(:hobbies, :received_votes).limit(50)
+      @users = User.includes(:hobbies, :pictures, :received_votes).limit(50)
     else
       @users = User
-        .includes(:hobbies, :received_votes)
+        .includes(:hobbies, :pictures, :received_votes)
         .where("id NOT IN #{query_fragment}")
         .limit(50)
     end
@@ -61,7 +61,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User
+      .includes(:hobbies, :pictures, :received_votes)
+      .find(params[:id])
   end
 
   def destroy
