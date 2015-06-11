@@ -36,7 +36,6 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     event.preventDefault();
     console.log("booted");
 
-
     var vote = new CuteOrBoot.Models.Vote({
       votee_id: this.model.id,
       value: 0,

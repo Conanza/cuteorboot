@@ -5,8 +5,6 @@ class UsersController < ApplicationController
 
   # incomplete
   def index
-    @users = User.all
-
     ids = Vote
       .joins(:voter)
       .where("voter_id = ?", current_user.id)
@@ -14,7 +12,11 @@ class UsersController < ApplicationController
 
     query_fragment = "(" + ids.join(", ") + ")"
 
-    @users = User.includes(:hobbies).where("id NOT IN #{query_fragment}")
+    if ids.empty?
+      @users = User.includes(:hobbies).all.limit(50)
+    else
+      @users = User.includes(:hobbies).where("id NOT IN #{query_fragment}").limit(50)
+    end
   end
 
   def new
