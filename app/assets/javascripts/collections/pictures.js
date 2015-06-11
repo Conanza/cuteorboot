@@ -3,6 +3,10 @@ CuteOrBoot.Collections.Pictures = Backbone.Collection.extend({
 
   model: CuteOrBoot.Models.Picture,
 
+  initialize: function (options) {
+    this.user = options.user;
+  },
+
   getOrFetch: function (id) {
     var picture = this.get(id);
 

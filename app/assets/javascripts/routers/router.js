@@ -6,6 +6,7 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "": "game",
+    "petreel": "game",
     "cuties/:id": "showUser",
     "2": "two",
     "3": "three",
