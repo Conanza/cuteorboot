@@ -14,9 +14,6 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     event.preventDefault();
     console.log("cuted");
 
-    this.collection.remove(this.model);
-    Backbone.history.navigate("", { trigger: true });
-
     var vote = new CuteOrBoot.Models.Vote({
       votee_id: this.model.id,
       value: 1
@@ -25,11 +22,11 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     vote.save({}, {
       success: function (model, response) {
         console.log("worked")
-      },
+        this.collection.remove(this.model);
+        Backbone.history.navigate("", { trigger: true });
+      }.bind(this),
 
       error: function (model, response) {
-        debugger
-
         console.log("didnt work")
       }
     });
@@ -39,8 +36,6 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     event.preventDefault();
     console.log("booted");
 
-    this.collection.remove(this.model);
-    Backbone.history.navigate("", { trigger: true });
 
     var vote = new CuteOrBoot.Models.Vote({
       votee_id: this.model.id,
@@ -50,7 +45,9 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     vote.save({}, {
       success: function () {
         console.log("worked")
-      },
+        this.collection.remove(this.model);
+        Backbone.history.navigate("", { trigger: true });
+      }.bind(this),
 
       error: function () {
         console.log("didnt work")

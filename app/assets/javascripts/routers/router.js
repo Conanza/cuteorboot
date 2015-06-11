@@ -16,6 +16,7 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
     "4": "four"
   },
 
+  // LOAD TIME IS SLOW, deal with this fetching
   game: function () {
     this.users.fetch();
 

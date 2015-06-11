@@ -7,7 +7,14 @@ class UsersController < ApplicationController
   def index
     @users = User.all
 
-    # @users.includes(:received_votes)
+    ids = Vote
+      .joins(:voter)
+      .where("voter_id = ?", current_user.id)
+      .pluck(:votee_id)
+
+    query_fragment = "(" + ids.join(", ") + ")"
+
+    @users = User.includes(:hobbies).where("id NOT IN #{query_fragment}")
   end
 
   def new

@@ -132,6 +132,13 @@ class User < ActiveRecord::Base
 
   # the users where received_votes where value is 1
   def fans
+  end
 
+  # someone current user liked
+  def liked_by_current_user?
+  end
+
+  # liked_by_current_user && fan
+  def connected?
   end
 end
