@@ -7,13 +7,13 @@
 ## Minimum Viable Product
 Cute or Boot is built on Rails and Backbone, and it's a spinoff of hotornot.com for pets. Users (pets) can:
 
-- [ ] Create accounts
-- [ ] Create sessions (log in/log out)
-- [ ] Create user profiles
+- [x] Create accounts
+- [x] Create sessions (log in/log out)
+- [x] Create user profiles
 - [ ] Upload and delete profile pictures
 - [ ] View a feed of users and their pictures
-- [ ] Like/Dislike users
-- [ ] Users get a rating (hot votes/total votes)
+- [x] Like/Dislike users
+- [x] Users get a rating (hot votes/total votes)
 - [ ] View a user's profile
 - [ ] View a list of app's hottest users
 - [ ] View a list of your likers (fans)
@@ -46,7 +46,7 @@ Even more importantly, create a rating system and display score in `UserDetail` 
 [Details][phase-three]
 
 ### Phase 4: FansIndex and CutiesIndex (~1-2 days)
-Create a `FansIndex` View to let `current_user` see who's liked him so far. Create a `CutiesIndex` View to show the app's cutest users. It'll probably be easiest to define both these associations on the Rails end, and then parse for the info on the Backbone end. 
+Create a `FansIndex` View to let `current_user` see who's liked him so far. Create a `CutiesIndex` View to show the app's cutest users. It'll probably be easiest to define both these associations on the Rails end, and then parse for the info on the Backbone end.
 
 Both these views are composite, each containing `IndexItem` Views for each fan or top cutie that lead to that user's `UserDashboard`.
 
