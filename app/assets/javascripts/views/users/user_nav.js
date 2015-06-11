@@ -10,24 +10,29 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     "click .bootit": "bootVote"
   },
 
-  swapModel: function (newUser) {
-    this.model = newUser;
-    this.listenTo(this.model, "sync", this.render);
-    this.render();
-  },
-
   cuteVote: function (event) {
     event.preventDefault();
     console.log("cuted");
 
     this.collection.remove(this.model);
     Backbone.history.navigate("", { trigger: true });
-    // var vote = new CuteOrBoot.Models.Vote({
-    //   votee_id: this.model,
-    //   value: 1,
-    // });
-    //
-    // vote.save({}, {});
+
+    var vote = new CuteOrBoot.Models.Vote({
+      votee_id: this.model.id,
+      value: 1
+    });
+
+    vote.save({}, {
+      success: function (model, response) {
+        console.log("worked")
+      },
+
+      error: function (model, response) {
+        debugger
+
+        console.log("didnt work")
+      }
+    });
   },
 
   bootVote: function (event) {
@@ -37,12 +42,20 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     this.collection.remove(this.model);
     Backbone.history.navigate("", { trigger: true });
 
-    // var vote = new CuteOrBoot.Models.Vote({
-    //   votee_id: this.model,
-    //   value: 0,
-    // });
-    //
-    // vote.save({}, {});
+    var vote = new CuteOrBoot.Models.Vote({
+      votee_id: this.model.id,
+      value: 0,
+    });
+
+    vote.save({}, {
+      success: function () {
+        console.log("worked")
+      },
+
+      error: function () {
+        console.log("didnt work")
+      }
+    });
   },
 
   render: function () {

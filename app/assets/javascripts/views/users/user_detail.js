@@ -5,12 +5,6 @@ CuteOrBoot.Views.UserDetail = Backbone.CompositeView.extend({
     this.listenTo(this.model, "sync", this.render);
   },
 
-  swapModel: function (newUser) {
-    this.model = newUser;
-    this.listenTo(this.model, "sync", this.render);
-    this.render();
-  },
-
   render: function () {
     if (!this.model) {
       return this;

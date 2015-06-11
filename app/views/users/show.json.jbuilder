@@ -9,7 +9,8 @@ json.extract!(
   :breed,
   :website,
   :instagram,
-  :about_me
+  :about_me,
+  :rating
 )
 
 json.hobbies @user.hobbies do |hobby|

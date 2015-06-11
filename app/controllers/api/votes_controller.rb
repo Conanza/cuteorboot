@@ -1,19 +1,21 @@
-class UsersController < ApplicationController
-  def create
-    @vote = current_user.given_votes.new(vote_params)
+module Api
+  class VotesController < ApplicationController
+    def create
+      @vote = current_user.given_votes.new(vote_params)
 
-    if @vote.save
-      render json: @vote
-    else
-      flash[:errors] = @vote.errors.full_messages
-      redirect_to root_url
-      # render json: @vote.errors.full_messages, status: 422
+      if @vote.save
+        render json: @vote
+      else
+        flash[:errors] = @vote.errors.full_messages
+        redirect_to root_url
+        # render json: @vote.errors.full_messages, status: 422
+      end
     end
-  end
 
-  private
+    private
 
-  def vote_params
-    params.require(:vote).permit(:votee_id, :value)
+    def vote_params
+      params.require(:vote).permit(:votee_id, :value)
+    end
   end
 end

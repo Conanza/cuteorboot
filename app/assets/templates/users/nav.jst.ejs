@@ -5,8 +5,12 @@
   </ul>
 <% } %>
 
+<% rating = user.escape("rating") %>
+<% if (!rating) { rating = 0 } %>
+
 <div class="navbar-header">
   <a class="navbar-brand" href="#toggleprofile"><%= user.escape("username") %></a>
+  <%= "shorty's a " + rating %>
 </div>
 
 <% if (parseInt(CURRENT_USER_ID) === parseInt(user.id)) { %>
