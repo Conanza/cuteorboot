@@ -129,4 +129,9 @@ class User < ActiveRecord::Base
 
     (cute_votes.to_f / total_votes) * 10
   end
+
+  # the users where received_votes where value is 1
+  def fans
+
+  end
 end

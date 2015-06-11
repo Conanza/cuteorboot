@@ -1,4 +1,4 @@
-json.users @users do |user|
+json.array! @users do |user|
   json.extract!(
     user,
     :id,
@@ -13,4 +13,8 @@ json.users @users do |user|
     :instagram,
     :about_me
   )
+
+  json.hobbies user.hobbies do |hobby|
+    json.extract!(hobby, :id, :name)
+  end
 end

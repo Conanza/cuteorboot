@@ -17,15 +17,21 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
   },
 
   game: function () {
-    console.log("cute it or boot it");
+    this.users.fetch();
+    this.users.currentUserId = undefined;
+    
+    var dashboardView = new CuteOrBoot.Views.UserDashboard({
+      collection: this.users
+    });
+
+    this._swapView(dashboardView);
   },
 
   showUser: function (id) {
-    var user = new CuteOrBoot.Models.User({ id: id });
-    user.fetch();
+    this.users.fetch();
+    this.users.currentUserId = id;
 
     var dashboardView = new CuteOrBoot.Views.UserDashboard({
-      model: user,
       collection: this.users
     });
 

@@ -1,7 +1,8 @@
-<% if (CURRENT_USER_ID !== user.id) { %>
+
+<% if (parseInt(CURRENT_USER_ID) !== user.id) { %>
   <ul class="nav navbar-nav">
-    <li><a href="#cuteit">cute it</a></li>
-    <li><a href="#bootit">boot it</a></li>
+    <li><button class="btn btn-primary cuteit">cute it</button></li>
+    <li><button class="btn btn-danger bootit">boot it</button></li>
   </ul>
 <% } %>
 
