@@ -5,10 +5,6 @@ CuteOrBoot.Views.LargeCarousel = Backbone.CompositeView.extend({
     this.listenTo(this.model, "sync", this.render);
   },
 
-  events: {
-
-  },
-
   onRender: function () {
     setTimeout(function () {
       this.$("div.carousel").carousel();

@@ -5,6 +5,15 @@ div.carousel {
   background-color: rgb(47, 45, 45);
 }
 
+.carousel p {
+  color: whitesmoke;
+  position: relative;
+  margin: auto;
+  height: 100%;
+  text-align: center;
+  top: 50%;
+}
+
 div.carousel > div.items {
   /* relative so that inner absolutes are against the items, not the
      viewport */
@@ -25,7 +34,7 @@ div.carousel > div.items > *.active {
   left: 10%;
   width: 80%;
 
-  transition: left 150ms linear;
+  transition: left 100ms linear;
 }
 
 div.carousel > div.items > *.active.left {

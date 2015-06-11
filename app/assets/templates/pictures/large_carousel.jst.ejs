@@ -1,17 +1,20 @@
-PICTURE CAROUSEL
-
 <div class="carousel">
   <div class="items">
-    <% pictures.each(function (pic, i) { %>
-      <img src="<%= pic.escape("image_url") %>" alt="<%= 'pic' + i %>">
-    <% }) %>
+    <% if (pictures.length === 0) { %>
+      <p>Not cute enough for pictures. Yet.</p>
+    <% } else { %>
+      <% pictures.each(function (pic, i) { %>
+        <img src="<%= pic.escape("image_url") %>" alt="<%= 'pic' + i %>">
+      <% }); %>
+    <% } %>
   </div>
 
-
-  <a id="lc-controls" class="slide-left left carousel-control" href="javascript:void(0)">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="slide-right right carousel-control" href="javascript:void(0)">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
+  <% if (pictures.length !== 0) { %>
+    <a id="lc-controls" class="slide-left left carousel-control" href="javascript:void(0)">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="slide-right right carousel-control" href="javascript:void(0)">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  <% } %>
 </div>
