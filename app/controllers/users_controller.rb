@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :require_logout, only: [:new, :create]
   before_action :require_current_user, only: [:edit, :update, :destroy]
 
-  # incomplete
+  # may need to optimize User#rating
   def index
     ids = Vote
       .joins(:voter)
@@ -13,9 +13,12 @@ class UsersController < ApplicationController
     query_fragment = "(" + ids.join(", ") + ")"
 
     if ids.empty?
-      @users = User.includes(:hobbies).all.limit(50)
+      @users = User.includes(:hobbies, :received_votes).limit(50)
     else
-      @users = User.includes(:hobbies).where("id NOT IN #{query_fragment}").limit(50)
+      @users = User
+        .includes(:hobbies, :received_votes)
+        .where("id NOT IN #{query_fragment}")
+        .limit(50)
     end
   end
 

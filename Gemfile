@@ -14,6 +14,7 @@ gem 'rails_12factor', group: :production
 gem 'backbone-on-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
+gem 'figaro'
 
 group :development do
   gem 'better_errors'

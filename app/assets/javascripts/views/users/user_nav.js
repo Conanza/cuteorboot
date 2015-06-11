@@ -10,6 +10,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     "click .bootit": "bootVote"
   },
 
+  // fix success callback
   cuteVote: function (event) {
     event.preventDefault();
     console.log("cuted");
@@ -32,6 +33,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     });
   },
 
+  // fix success callback
   bootVote: function (event) {
     event.preventDefault();
     console.log("booted");

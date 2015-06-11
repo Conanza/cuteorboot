@@ -90,6 +90,8 @@ class User < ActiveRecord::Base
   has_many :hobbyings, dependent: :destroy
   has_many :hobbies, through: :hobbyings
 
+  has_many :pictures, dependent: :destroy
+
   has_many :given_votes, class_name: "Vote", foreign_key: :voter_id
   has_many :received_votes, class_name: "Vote", foreign_key: :votee_id
 
