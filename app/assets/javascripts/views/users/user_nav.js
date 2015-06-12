@@ -15,7 +15,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
   openEditForm: function (event) {
     event.preventDefault();
-    this.model.trigger("editFormOpened")
+    this.model.trigger("editFormOpened");
   },
 
   toggleProfile: function (event) {

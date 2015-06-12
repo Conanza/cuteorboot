@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:success] = ["Welcome to Cute or Boot!"]
       login(@user)
-      redirect_to '/#petreel'
+      redirect_to root_url
     else
       @hobbies = Hobby.all
       flash.now[:errors] = @user.errors.full_messages

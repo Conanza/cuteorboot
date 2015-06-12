@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     if @user
       flash[:success] = ["Welcome to Cute or Boot!"]
       login(@user)
-      redirect_to '/#petreel'
+      redirect_to root_url
     else
       flash.now[:errors] = ["Invalid email and password combo"]
       render :new
