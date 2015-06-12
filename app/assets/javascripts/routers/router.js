@@ -14,6 +14,7 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
   },
 
   game: function () {
+    // if this.users.length < 5, then fetch?
     this.users.fetch();
 
     var user = this.users.first();
@@ -51,7 +52,7 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
   // four: function () {
   //   console.log("four");
   // },
-  
+
   _swapView: function (view) {
     this._currentView && this._currentView.remove();
     this._currentView = view;

@@ -10,6 +10,28 @@ body {
   height: 100%;
 }
 
+.edit-content {
+  z-index: 101000000000000000000000000;
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  height: 256px;
+  width: 50%;
+  position: fixed;
+  /* margin: 0 auto; */
+  margin-top: 66px;
+  left: 25%;
+}
+.edit-backdrop {
+  position: absolute;
+  background-color: rgba(170, 169, 176, .5);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10100000000000000000000000;
+}
+
 section.toggled-on {
   display: none;
 }

@@ -27,6 +27,7 @@ class UsersController < ApplicationController
     @hobbies = Hobby.all
   end
 
+  # flash doesn't disappear
   def create
     @user = User.new(user_params)
 

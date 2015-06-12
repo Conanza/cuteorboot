@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
       session_params[:password]
     )
 
+    #  flash won't disappear once in backbone, duh
     if @user
       flash[:success] = ["Welcome to Cute or Boot!"]
       login(@user)

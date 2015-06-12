@@ -9,7 +9,8 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     "click .cuteit": "cuteVote",
     "click .bootit": "bootVote",
     "click .add-image": "addImage",
-    "click a.toggleprofile": "toggleProfile"
+    "click a.toggleprofile": "toggleProfile",
+    "click a.editprofile": "openEditForm"
   },
 
   // haven't needed this yet
@@ -18,6 +19,11 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
   //     Backbone.CompositeView.prototype.onRender.call(this);
   //   }.bind(this), 0);
   // },
+
+  openEditForm: function (event) {
+    event.preventDefault();
+    this.model.trigger("editFormOpened")
+  },
 
   toggleProfile: function (event) {
     event.preventDefault();
