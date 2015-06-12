@@ -12,11 +12,13 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     "click a.toggleprofile": "toggleProfile"
   },
 
-  toggleProfile: function () {
+  toggleProfile: function (event) {
+    debugger
     console.log("toggling user " + this.model.id)
   },
 
   // fix success callback
+  // what happens when this.collection is empty?
   cuteVote: function (event) {
     event.preventDefault();
     console.log("cuted");
@@ -30,6 +32,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
       success: function (model, response) {
         console.log("worked")
         this.collection.remove(this.model);
+        // not navigating anywhere atm
         Backbone.history.navigate("", { trigger: true });
       }.bind(this),
 

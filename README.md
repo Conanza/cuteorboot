@@ -10,8 +10,9 @@ Cute or Boot is built on Rails and Backbone, and it's a spinoff of hotornot.com 
 - [x] Create accounts
 - [x] Create sessions (log in/log out)
 - [x] Create user profiles
-- [ ] Upload and delete profile pictures
-- [ ] View a feed of users and their pictures
+- [x] Upload profile pictures
+- [ ] Delete profile pictures
+- [x] View a feed of users and their pictures
 - [x] Like/Dislike users
 - [x] Users get a rating (hot votes/total votes)
 - [ ] View a user's profile

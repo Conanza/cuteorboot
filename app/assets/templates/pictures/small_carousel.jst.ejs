@@ -1,7 +1,7 @@
 <div class="carousel-sm carousel">
   <div class="items">
     <% if (pictures.length === 0) { %>
-      <p>Not cute enough for pictures?</p>
+      <p>Don't be shy.</p>
     <% } else { %>
       <% pictures.each(function (pic, i) { %>
         <img src="<%= pic.escape("image_url") %>" alt="<%= 'pic' + i %>">
