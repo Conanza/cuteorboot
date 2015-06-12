@@ -12,6 +12,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     "click a.toggleprofile": "toggleProfile"
   },
 
+  // haven't needed this yet
   // onRender: function () {
   //   setTimeout(function () {
   //     Backbone.CompositeView.prototype.onRender.call(this);
@@ -20,8 +21,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
   toggleProfile: function (event) {
     event.preventDefault();
-    this.model.trigger("profileToggled")
-    console.log("toggling user " + this.model.id)
+    this.model.trigger("profileToggled");
   },
 
   // fix success callback
