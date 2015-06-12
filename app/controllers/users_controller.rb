@@ -51,7 +51,7 @@ class UsersController < ApplicationController
   # incomplete
   def update
     @user = User.find(params[:id])
-# fail
+
     if @user.update(user_params)
       render json: @user
     else
