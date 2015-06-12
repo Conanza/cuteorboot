@@ -9,6 +9,7 @@ CuteOrBoot.Views.UserDetail = Backbone.CompositeView.extend({
 
   removeDetailSubviews: function (model) {
     this.removeModelSubview(".detail-carousel", model);
+    this.removeModelSubview(".detail-info", model);
   },
 
   addDetailSubviews: function () {
@@ -17,6 +18,11 @@ CuteOrBoot.Views.UserDetail = Backbone.CompositeView.extend({
       collection: this.model.pictures()
     });
 
+    var userInfo = new CuteOrBoot.Views.UserInfo({
+      model: this.model
+    });
+
+    this.addSubview(".detail-info", userInfo);
     this.addSubview(".detail-carousel", smallCarousel);
   },
 

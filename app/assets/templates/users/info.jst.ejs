@@ -1,0 +1,17 @@
+<% current_loc = (user.escape("city") + ", " + user.escape("state")) %>
+
+<h4>Current Location</h4>
+<p><%= current_loc %></p>
+
+<% attrs.forEach(function (attr) { %>
+  <h4><%= attr[0] %></h4>
+  <p><%= user.escape(attr[1]) %></p>
+<% }) %>
+
+<h4>Hobbies
+  <ul>
+    <% user.hobbies().each(function (hobby) { %>
+      <li><%= hobby.escape("name") %></li>
+    <% }) %>
+  </ul>
+</h4>
