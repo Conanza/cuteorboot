@@ -28,10 +28,9 @@ CuteOrBoot.Views.UserEdit = Backbone.CompositeView.extend({
   editUser: function (event) {
     event.preventDefault();
     var data = $(event.currentTarget).serializeJSON().user;
-
+// debugger
     this.model.save(data, {
       success: function (model, response) {
-        this.collection.add(model, { merge: true });
         this.remove();
       }.bind(this)
     });

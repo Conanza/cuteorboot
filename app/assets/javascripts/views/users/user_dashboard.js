@@ -28,7 +28,6 @@ CuteOrBoot.Views.UserDashboard = Backbone.CompositeView.extend({
   openEditForm: function () {
     var editModal = new CuteOrBoot.Views.UserEdit({
       model: this.model,
-      collection: this.collection,
       hobbies: new CuteOrBoot.Collections.Hobbies([])
     });
 

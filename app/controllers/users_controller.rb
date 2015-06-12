@@ -42,17 +42,16 @@ class UsersController < ApplicationController
     end
   end
 
-  # incomplete
-  def edit
-    @user = User.find(params[:id])
-    @hobbies = Hobby.all
-    render json: @user
-  end
+  # def edit
+  #   @user = User.find(params[:id])
+  #   @hobbies = Hobby.all
+  #   render json: @user
+  # end
 
   # incomplete
   def update
     @user = User.find(params[:id])
-
+# fail
     if @user.update(user_params)
       render json: @user
     else
