@@ -20,7 +20,7 @@
           <% STATES.forEach(function (state) { %>
             <option
               value="<%= state %>"
-              <% userstate = user.escape("state") %>
+              <% var userstate = user.escape("state") %>
               <% if (state === userstate) { %>
                 <%= "selected" %>
               <% } %>>
@@ -37,7 +37,7 @@
           <% ["M", "F"].forEach(function (gender) { %>
             <option
               value="<%= gender %>"
-              <% usergender = user.escape("gender") %>
+              <% var usergender = user.escape("gender") %>
               <% if (gender === usergender) { %>
                 <%= "selected" %>
               <% } %>>
@@ -54,7 +54,7 @@
           <% ANIMAL_TYPES.forEach(function (animal) { %>
             <option
               value="<%= animal %>"
-              <% usertype = user.escape("animal_type") %>
+              <% var usertype = user.escape("animal_type") %>
               <% if (animal === usertype) { %>
                 <%= "selected" %>
               <% } %>>

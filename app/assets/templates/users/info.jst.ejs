@@ -1,11 +1,17 @@
-<% current_loc = (user.escape("city") + ", " + user.escape("state")) %>
+<% var current_loc = (user.escape("city") + ", " + user.escape("state")) %>
 
 <h4>Current Location</h4>
 <p><%= current_loc %></p>
 
 <% attrs.forEach(function (attr) { %>
   <h4><%= attr[0] %></h4>
-  <p><%= user.escape(attr[1]) %></p>
+
+  <% if (attr[0] === "Animal Type") { %>
+    <% var animal = user.escape(attr[1]) %>
+    <p><%= animal.charAt(0).toUpperCase() + animal.substring(1) %></p>
+  <% } else { %>
+    <p><%= user.escape(attr[1]) %></p>
+  <% } %>
 <% }) %>
 
 <h4>Hobbies
@@ -19,5 +25,8 @@
 
 <sidebar class="stats-sidebar">
   <h4>Score</h4>
-  <p><%= user.escape("rating") %></p>
+  <% var rating = user.escape("rating") %>
+  <% if (!rating) { rating = 0 } %>
+
+  <p><%= rating %></p>
 </sidebar>
