@@ -8,7 +8,7 @@ CuteOrBoot.Views.UserLanding = Backbone.CompositeView.extend({
   },
 
   removeLandingSubviews: function (model) {
-    this.removeModelSubview(".pic-carousel", model);
+    this.removeModelSubview(".landing-carousel", model);
   },
 
   addLandingSubviews: function () {
@@ -17,7 +17,7 @@ CuteOrBoot.Views.UserLanding = Backbone.CompositeView.extend({
       collection: this.model.pictures()
     });
 
-    this.addSubview(".pic-carousel", largeCarousel);
+    this.addSubview(".landing-carousel", largeCarousel);
   },
 
   render: function () {

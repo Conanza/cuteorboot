@@ -1,5 +1,5 @@
-CuteOrBoot.Views.LargeCarousel = Backbone.CompositeView.extend({
-  template: JST["pictures/large_carousel"],
+CuteOrBoot.Views.SmallCarousel = Backbone.CompositeView.extend({
+  template: JST["pictures/small_carousel"],
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
@@ -8,7 +8,7 @@ CuteOrBoot.Views.LargeCarousel = Backbone.CompositeView.extend({
 
   onRender: function () {
     setTimeout(function () {
-      this.$("div.carousel-lg").carousel();
+      this.$("div.carousel-sm").carousel();
       Backbone.CompositeView.prototype.onRender.call(this);
     }.bind(this), 0);
   },
