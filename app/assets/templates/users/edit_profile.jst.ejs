@@ -98,37 +98,36 @@
       </label>
     </div>
 
-<div class="form-group col-xs-4 col-xs-offset-4">
-  <input type="hidden" name="user[hobby_ids][]" value="">
-    <label>Hobbies</label>
-      <ul>
-        <% var checked %>
-        <% hobbies.forEach(function (hobby, i) { %>
-          <% if (userHobbies.indexOf(hobby) !== -1) { %>
-            <% checked = true; %>
-          <% } else { %>
-            <% checked = false; %>
-          <% }%>
+    <div class="form-group col-xs-4 col-xs-offset-4">
+      <input type="hidden" name="user[hobby_ids][]" value="">
+        <label>Hobbies</label>
+          <ul>
+            <% var checked %>
+            <% hobbies.forEach(function (hobby, i) { %>
+              <% if (userHobbies.indexOf(hobby) !== -1) { %>
+                <% checked = true; %>
+              <% } else { %>
+                <% checked = false; %>
+              <% }%>
 
-          <label for="hobby-<%= i + 1 %>">
-          <li>
-            <input
-              id="hobby-<%= i + 1 %>"
-              type="checkbox"
-              name="user[hobby_ids][]"
-              value="<%= i + 1 %>"
+              <label for="hobby-<%= i + 1 %>">
+                <li>
+                  <input
+                    id="hobby-<%= i + 1 %>"
+                    type="checkbox"
+                    name="user[hobby_ids][]"
+                    value="<%= i + 1 %>"
 
-              <% if (checked) { %>
-                <%= 'checked="checked"' %>
-              <% } %>
-            >
-            <%= hobby %>
-          </li>
-    </label>
-        <% }); %>
-      </ul>
-</div>
-
+                    <% if (checked) { %>
+                      <%= 'checked="checked"' %>
+                    <% } %>
+                  >
+                  <%= hobby %>
+                </li>
+              </label>
+            <% }); %>
+          </ul>
+    </div>
 
     <div class="form-group col-xs-4 col-xs-offset-4">
       <label for="about-me">About Me

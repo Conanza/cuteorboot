@@ -24,12 +24,11 @@ CuteOrBoot.Views.UserEdit = Backbone.CompositeView.extend({
     this.render();
   },
 
-
   // new hobbies aren't saving
   editUser: function (event) {
     event.preventDefault();
     var data = $(event.currentTarget).serializeJSON().user;
-debugger
+
     this.model.save(data, {
       success: function (model, response) {
         this.collection.add(model, { merge: true });
