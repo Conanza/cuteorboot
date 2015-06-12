@@ -12,8 +12,15 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     "click a.toggleprofile": "toggleProfile"
   },
 
+  // onRender: function () {
+  //   setTimeout(function () {
+  //     Backbone.CompositeView.prototype.onRender.call(this);
+  //   }.bind(this), 0);
+  // },
+
   toggleProfile: function (event) {
-    debugger
+    event.preventDefault();
+    this.model.trigger("profileToggled")
     console.log("toggling user " + this.model.id)
   },
 
@@ -100,6 +107,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
     var content = this.template({ user: this.model });
     this.$el.html(content);
+    // this.onRender();
 
     return this;
   }

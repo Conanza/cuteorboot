@@ -5,7 +5,12 @@ CuteOrBoot.Views.UserDetail = Backbone.CompositeView.extend({
     this.addDetailSubviews();
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.collection, "remove", this.removeDetailSubviews);
+    // this.listenTo(this.model, "profileToggled", this.toggleProfile);
   },
+
+  // toggleProfile: function () {
+  //
+  // },
 
   removeDetailSubviews: function (model) {
     this.removeModelSubview(".detail-carousel", model);

@@ -8,9 +8,9 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
     "": "game",
     "petreel": "game",
     "cuties/:id": "showUser",
-    "2": "two",
-    "3": "three",
-    "4": "four"
+    // "2": "two",
+    // "3": "three",
+    // "4": "four"
   },
 
   game: function () {
@@ -40,18 +40,18 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
     this._swapView(dashboardView);
   },
 
-  two: function () {
-    console.log("two");
-  },
-
-  three: function () {
-    console.log("three");
-  },
-
-  four: function () {
-    console.log("four");
-  },
-
+  // two: function () {
+  //   console.log("two");
+  // },
+  //
+  // three: function () {
+  //   console.log("three");
+  // },
+  //
+  // four: function () {
+  //   console.log("four");
+  // },
+  
   _swapView: function (view) {
     this._currentView && this._currentView.remove();
     this._currentView = view;

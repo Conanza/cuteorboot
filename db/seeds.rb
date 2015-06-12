@@ -38,10 +38,10 @@ end
 
 def random_hobbies
   random_ids = []
-  hobby_ids = HOBBY_IDS
-  hobby_amts = rand(7)
+  hobby_ids = HOBBY_IDS.dup
+  hobby_amt = rand(HOBBY_IDS.length + 1)
 
-  hobby_amts.times do
+  hobby_amt.times do
     hobby_ids.shuffle!
     random_ids << hobby_ids.pop
   end

@@ -5,7 +5,12 @@ CuteOrBoot.Views.UserLanding = Backbone.CompositeView.extend({
     this.addLandingSubviews();
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.collection, "remove", this.removeLandingSubviews);
+    // this.listenTo(this.model, "profileToggled", this.toggleProfile);
   },
+
+  // toggleProfile: function () {
+  //   debugger
+  // },
 
   removeLandingSubviews: function (model) {
     this.removeModelSubview(".landing-carousel", model);
