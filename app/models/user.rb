@@ -129,7 +129,7 @@ class User < ActiveRecord::Base
     cute_votes = self.received_votes.where("value = ?", 1).length
     total_votes = self.received_votes.length
 
-    (cute_votes.to_f / total_votes) * 10
+    ((cute_votes.to_f / total_votes) * 10).round(2)
   end
 
   # the users where received_votes where value is 1

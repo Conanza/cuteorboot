@@ -5,16 +5,16 @@ CuteOrBoot.Views.UserDashboard = Backbone.CompositeView.extend({
     if (this.model) {
       this.renderViews();
     } else {
-      this.listenTo(this.collection, "sync", this.addModel);
+      this.listenTo(this.collection, "sync", this.setNextUser);
     }
 
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.collection, "remove", this.addModel);
+    this.listenTo(this.collection, "remove", this.setNextUser);
     this.listenTo(this.model, "profileToggled", this.toggleProfile);
     this.listenTo(this.model, "editFormOpened", this.openEditForm);
   },
 
-  addModel: function (model) {
+  setNextUser: function (model) {
     this.removeModelSubview(".usernav", model);
     this.removeModelSubview(".userdetail", model);
     this.removeModelSubview(".userlanding", model);

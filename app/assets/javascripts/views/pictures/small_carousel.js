@@ -7,7 +7,7 @@ CuteOrBoot.Views.SmallCarousel = Backbone.CompositeView.extend({
   },
 
   onRender: function () {
-    setTimeout(function () {
+    setTimeout(function () { // TA: use pattern as it's ontended
       this.$("div.carousel-sm").carousel();
       Backbone.CompositeView.prototype.onRender.call(this);
     }.bind(this), 0);

@@ -27,14 +27,13 @@ class UsersController < ApplicationController
     @hobbies = Hobby.all
   end
 
-  # flash doesn't disappear
   def create
     @user = User.new(user_params)
 
     if @user.save
       flash[:success] = ["Welcome to Cute or Boot!"]
       login(@user)
-      redirect_to root_url
+      redirect_to '/#petreel'
     else
       @hobbies = Hobby.all
       flash.now[:errors] = @user.errors.full_messages

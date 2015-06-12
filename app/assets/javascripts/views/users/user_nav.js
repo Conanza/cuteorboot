@@ -13,13 +13,6 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     "click a.editprofile": "openEditForm"
   },
 
-  // haven't needed this yet
-  // onRender: function () {
-  //   setTimeout(function () {
-  //     Backbone.CompositeView.prototype.onRender.call(this);
-  //   }.bind(this), 0);
-  // },
-
   openEditForm: function (event) {
     event.preventDefault();
     this.model.trigger("editFormOpened")
@@ -34,7 +27,6 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
   // what happens when this.collection is empty?
   cuteVote: function (event) {
     event.preventDefault();
-    console.log("cuted");
 
     var vote = new CuteOrBoot.Models.Vote({
       votee_id: this.model.id,
@@ -43,10 +35,10 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
     vote.save({}, {
       success: function (model, response) {
-        console.log("worked")
         this.collection.remove(this.model);
         // not navigating anywhere atm
-        Backbone.history.navigate("", { trigger: true });
+        // if collection is low, navigate to "" ?
+        Backbone.history.navigate("petreel", { trigger: true });
       }.bind(this),
 
       error: function (model, response) {
@@ -58,7 +50,6 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
   // fix success callback
   bootVote: function (event) {
     event.preventDefault();
-    console.log("booted");
 
     var vote = new CuteOrBoot.Models.Vote({
       votee_id: this.model.id,
@@ -67,9 +58,9 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
     vote.save({}, {
       success: function () {
-        console.log("worked")
+        // if collection is low, refetch
         this.collection.remove(this.model);
-        Backbone.history.navigate("", { trigger: true });
+        Backbone.history.navigate("petreel", { trigger: true }); // navigate to petreel
       }.bind(this),
 
       error: function () {
@@ -113,7 +104,6 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
     var content = this.template({ user: this.model });
     this.$el.html(content);
-    // this.onRender();
 
     return this;
   }

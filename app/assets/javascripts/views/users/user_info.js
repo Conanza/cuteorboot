@@ -1,4 +1,6 @@
 CuteOrBoot.Views.UserInfo = Backbone.CompositeView.extend({
+  template: JST["users/info"],
+
   initialize: function () {
     this.attrs = [
       ["Gender", "gender"],
@@ -9,8 +11,6 @@ CuteOrBoot.Views.UserInfo = Backbone.CompositeView.extend({
 
     this.listenTo(this.model, "sync", this.render);
   },
-
-  template: JST["users/info"],
 
   render: function () {
     var content = this.template({

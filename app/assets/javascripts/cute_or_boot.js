@@ -19,6 +19,10 @@ window.CuteOrBoot = {
     $("#navbar").html(navbar.$el);
     navbar.render();
 
+    setTimeout(function () {
+      $('.alert').hide();
+    }, 4000);
+
     Backbone.history.start();
   }
 };

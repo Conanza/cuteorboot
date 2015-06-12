@@ -20,3 +20,9 @@ end
 json.pictures @user.pictures do |picture|
   json.extract!(picture, :user_id, :image_url, :thumb_url)
 end
+
+if current_user.id == @user.id
+  # send fans
+else
+  # json.fan_count = @user.fans.count
+end

@@ -11,11 +11,10 @@ class SessionsController < ApplicationController
       session_params[:password]
     )
 
-    #  flash won't disappear once in backbone, duh
     if @user
       flash[:success] = ["Welcome to Cute or Boot!"]
       login(@user)
-      redirect_to root_url
+      redirect_to '/#petreel'
     else
       flash.now[:errors] = ["Invalid email and password combo"]
       render :new

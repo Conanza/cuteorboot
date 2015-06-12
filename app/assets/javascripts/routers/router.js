@@ -5,12 +5,16 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "": "game",
+    "": "redirectToGame",
     "petreel": "game",
     "cuties/:id": "showUser",
     // "2": "two",
     // "3": "three",
     // "4": "four"
+  },
+
+  redirectToGame: function () {
+    Backbone.history.navigate('petreel', { trigger: true });
   },
 
   game: function () {
