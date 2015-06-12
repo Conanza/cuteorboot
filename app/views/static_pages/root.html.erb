@@ -8,6 +8,20 @@
   window.CURRENT_USER_ID = "<%= current_user.id %>"
   window.CURRENT_USER_USERNAME = "<%= current_user.username %>"
 
+  var states = [];
+  var animals = [];
+
+  <% User::STATES.each do |state| %>
+    states.push("<%= state.html_safe %>")
+  <% end %>
+
+  <% User::ANIMAL_TYPES.each do |animaltype| %>
+    animals.push("<%= animaltype.html_safe %>")
+  <% end %>
+
+  window.STATES = states;
+  window.ANIMAL_TYPES = animals;
+
   $(document).ready(function(){
     CuteOrBoot.initialize();
   });

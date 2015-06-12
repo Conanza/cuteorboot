@@ -15,11 +15,12 @@ body {
   background-color: white;
   border-radius: 5px;
   padding: 20px;
-  height: 256px;
+  height: 80%;
   width: 50%;
   position: fixed;
   /* margin: 0 auto; */
-  margin-top: 66px;
+  margin-top: auto;
+  overflow: scroll;
   left: 25%;
 }
 .edit-backdrop {

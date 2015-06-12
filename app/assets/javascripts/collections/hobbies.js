@@ -4,6 +4,8 @@ CuteOrBoot.Collections.Hobbies = Backbone.Collection.extend({
   model: CuteOrBoot.Models.Hobby,
 
   initialize: function (options) {
-    this.user = options.user;
+    if (options.user) {
+      this.user = options.user;
+    }
   }
 });

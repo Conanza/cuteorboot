@@ -3,7 +3,137 @@
   <button class="close">&times;</button>
   <h3>Update Information for <%= user.escape("username") %></h3>
   <form>
-    <textarea class="form-control" name="body"></textarea>
-    <button class="btn btn-primary">Send!</button>
+    <div class="form-group col-xs-offset-4">
+      <label for="city">City *
+      <input
+        id="city"
+        type="text"
+        name="user[city]"
+        class="form-control"
+        value="<%= user.escape("city") %>">
+      </label>
+    </div>
+
+    <div class="form-group col-xs-offset-4">
+      <label for="state">State *
+        <select id="state" name="user[state]" class="form-control">
+          <% STATES.forEach(function (state) { %>
+            <option
+              value="<%= state %>"
+              <% userstate = user.escape("state") %>
+              <% if (state === userstate) { %>
+                <%= "selected" %>
+              <% } %>>
+              <%= state %>
+            </option>
+          <% }); %>
+        </select>
+      </label>
+    </div>
+
+    <div class="form-group col-xs-offset-4">
+      <label for="gender">Gender *
+        <select id="gender" name="user[gender]" class="form-control">
+          <% ["M", "F"].forEach(function (gender) { %>
+            <option
+              value="<%= gender %>"
+              <% usergender = user.escape("gender") %>
+              <% if (gender === usergender) { %>
+                <%= "selected" %>
+              <% } %>>
+              <%= gender %>
+            </option>
+          <% }); %>
+        </select>
+      </label>
+    </div>
+
+    <div class="form-group col-xs-2">
+      <label for="animaltype">Type *
+        <select id="animaltype" name="user[animal_type]" class="form-control">
+          <% ANIMAL_TYPES.forEach(function (animal) { %>
+            <option
+              value="<%= animal %>"
+              <% usertype = user.escape("animal_type") %>
+              <% if (animal === usertype) { %>
+                <%= "selected" %>
+              <% } %>>
+              <%= animal.charAt(0).toUpperCase() + animal.substring(1) %>
+            </option>
+          <% }); %>
+        </select>
+      </label>
+    </div>
+
+    <div class="form-group col-xs-4 col-xs-offset-4">
+      <label for="breed">Breed
+        <input
+          id="breed"
+          type="text"
+          name="user[breed]"
+          class="form-control"
+          value="<%= user.escape("breed") %>">
+      </label>
+    </div>
+
+    <div class="form-group col-xs-4 col-xs-offset-4">
+      <label for="website">Website
+        <input
+          id="website"
+          type="text"
+          name="user[website]"
+          class="form-control"
+          value="<%= user.escape("website") %>">
+      </label>
+    </div>
+
+    <div class="form-group col-xs-4 col-xs-offset-4">
+      <label for="instagram">Instagram Link
+        <input
+          id="instagram"
+          type="text"
+          name="user[instagram]"
+          class="form-control"
+          value="<%= user.escape("instagram") %>">
+      </label>
+    </div>
+
+<div class="form-group col-xs-4 col-xs-offset-4">
+  <input type="hidden" name="user[hobby_ids][]" value="">
+    <label>Hobbies</label>
+      <ul>
+        <% hobbies.forEach(function (hobby, i) { %>
+          <% if (userHobbies.indexOf(hobby)) { %>
+            <% var checked = true; %>
+          <% } %>
+
+          <label for="hobby-<%= i + 1 %>">
+          <li>
+            <input
+              id="hobby-<%= i + 1 %>"
+              type="checkbox"
+              name="user[hobby_ids][]"
+              value="<%= i + 1 %>">
+            <%= checked %>
+          </li>
+        <% }); %>
+
+      </ul>
+    </label>
+</div>
+
+
+    <div class="form-group col-xs-4 col-xs-offset-4">
+      <label for="about-me">About Me
+        <textarea
+          id="about-me"
+          type="text"
+          name="user[about_me]"
+          class="form-control"><%= user.escape("about_me") %></textarea>
+      </label>
+    </div>
+
+    <button class="btn btn-primary">Update!</button>
+    <p>* required</p>
   </form>
 </div>
