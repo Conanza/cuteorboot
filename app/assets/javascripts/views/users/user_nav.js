@@ -13,7 +13,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
   },
 
   toggleProfile: function () {
-    
+    console.log("toggling user " + this.model.id)
   },
 
   // fix success callback
