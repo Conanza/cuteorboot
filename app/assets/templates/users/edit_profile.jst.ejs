@@ -103,11 +103,12 @@
     <label>Hobbies</label>
       <ul>
         <% var checked %>
-        <% userHobbies %>
         <% hobbies.forEach(function (hobby, i) { %>
-          <% if (userHobbies.indexOf(hobby)) { %>
+          <% if (userHobbies.indexOf(hobby) !== -1) { %>
             <% checked = true; %>
-          <% } %>
+          <% } else { %>
+            <% checked = false; %>
+          <% }%>
 
           <label for="hobby-<%= i + 1 %>">
           <li>
@@ -123,9 +124,9 @@
             >
             <%= hobby %>
           </li>
+    </label>
         <% }); %>
       </ul>
-    </label>
 </div>
 
 
