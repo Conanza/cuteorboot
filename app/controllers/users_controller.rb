@@ -48,7 +48,6 @@ class UsersController < ApplicationController
   #   render json: @user
   # end
 
-  # incomplete
   def update
     @user = User.find(params[:id])
 
