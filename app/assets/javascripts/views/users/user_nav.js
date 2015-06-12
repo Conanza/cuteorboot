@@ -8,7 +8,12 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
   events: {
     "click .cuteit": "cuteVote",
     "click .bootit": "bootVote",
-    "click .add-image": "addImage"
+    "click .add-image": "addImage",
+    "click a.toggleprofile": "toggleProfile"
+  },
+
+  toggleProfile: function () {
+    
   },
 
   // fix success callback

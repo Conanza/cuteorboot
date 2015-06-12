@@ -18,10 +18,7 @@ CuteOrBoot.Views.SmallCarousel = Backbone.CompositeView.extend({
       return this;
     }
 
-    var content = this.template({
-      user: this.model,
-      pictures: this.collection
-    });
+    var content = this.template({ pictures: this.collection });
 
     this.$el.html(content);
     this.attachSubviews();

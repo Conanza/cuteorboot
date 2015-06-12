@@ -21,9 +21,15 @@
 
 <ul class="nav navbar-nav navbar-right">
   <% if (parseInt(CURRENT_USER_ID) === parseInt(user.id)) { %>
-    <li><a class="add-image" href="#addImage">Add Cute Picture</a></li>
-    <li><a href="#edit">Edit profile view</a></li>
+    <li>
+      <a class="add-image" href="#addImage">Add Cute Picture</a>
+    </li>
+    <li>
+      <a class="editprofile" href="javascript:void(0)">Edit profile view</a>
+    </li>
   <% } %>
 
-  <li><a href="#toggleprofile">Toggle profile view</a></li>
+  <li>
+    <a class="toggleprofile" href="javascript:void(0)">Toggle profile view</a>
+  </li>
 </ul>
