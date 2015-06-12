@@ -102,9 +102,11 @@
   <input type="hidden" name="user[hobby_ids][]" value="">
     <label>Hobbies</label>
       <ul>
+        <% var checked %>
+        <% userHobbies %>
         <% hobbies.forEach(function (hobby, i) { %>
           <% if (userHobbies.indexOf(hobby)) { %>
-            <% var checked = true; %>
+            <% checked = true; %>
           <% } %>
 
           <label for="hobby-<%= i + 1 %>">
@@ -113,11 +115,15 @@
               id="hobby-<%= i + 1 %>"
               type="checkbox"
               name="user[hobby_ids][]"
-              value="<%= i + 1 %>">
-            <%= checked %>
+              value="<%= i + 1 %>"
+
+              <% if (checked) { %>
+                <%= 'checked="checked"' %>
+              <% } %>
+            >
+            <%= hobby %>
           </li>
         <% }); %>
-
       </ul>
     </label>
 </div>

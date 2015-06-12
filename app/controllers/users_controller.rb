@@ -54,7 +54,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-
+      render json: @user
     else
       @hobbies = Hobby.all
       render :edit

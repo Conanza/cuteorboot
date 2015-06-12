@@ -18,16 +18,24 @@ CuteOrBoot.Views.UserEdit = Backbone.CompositeView.extend({
 
   reRender: function () {
     setTimeout(function () {
-      this.$("input").focus();
+      this.$("input#city").focus();
     }.bind(this), 0);
 
-    this.render()
+    this.render();
   },
 
   editUser: function (event) {
     event.preventDefault();
+    var data = $(event.currentTarget).serializeJSON().user;
+
     console.log("thanks")
-    debugger
+
+    this.model.save(data, {
+      success: function (model, response) {
+        this.collection.add(model, { merge: true });
+        this.remove();
+      }.bind(this)
+    });
   },
 
   keydownHandler: function (event) {
