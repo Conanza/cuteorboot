@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
 
   namespace :api, defaults: { format: :json } do
-    resources :votes, only: :create
+    resources :votes, only: [:create]
     resources :hobbies, only: [:index]
     resources :hobbyings
     resources :pictures, only: [:create, :destroy]
