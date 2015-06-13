@@ -127,10 +127,12 @@ class User < ActiveRecord::Base
 
   def rating
     rating = Vote.where(votee_id: self.id).average(:value).to_f
-    # cute_votes = self.received_votes.where("value = ?", 1).count
-    # total_votes = self.received_votes.length
 
     (rating * 10).round(2)
+  end
+
+  def vote_by_user(user)
+    Vote.where(voter_id: user.id, votee_id: self.id).pluck(:value)[0]
   end
 
   # the users where received_votes where value is 1
@@ -138,11 +140,6 @@ class User < ActiveRecord::Base
 
   end
 
-  def vote_by_user(user)
-    vote = self.received_votes.find_by(voter_id: user.id)
-
-    vote ? vote.value : nil
-  end
 
   def cuted_by_user?(user)
     !!self.received_votes.where(value: 1).find_by(voter_id: user.id)
