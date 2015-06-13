@@ -26,7 +26,12 @@ CuteOrBoot.Views.Navbar = Backbone.CompositeView.extend({
     $(event.currentTarget).removeClass("hover");
   },
 
-  markActive: function (route) {
+  markActive: function (route, params) {
+    if (route === "showUser" && params[0] !== CURRENT_USER_ID) {
+      this.$(".active").removeClass("active");
+      return;
+    }
+
     this.$(".active").removeClass("active");
     this.$("." + route).addClass("active");
   }
