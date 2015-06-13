@@ -87,4 +87,12 @@ User.find_by_username("conan").pictures.create(image_url: "https://static.crowdv
     about_me: "I'm #{name}",
     hobby_ids: random_hobbies
   )
+
+  50.times do |i|
+    voter = i + 2
+    User
+      .find_by_username("conan")
+      .received_votes
+      .create(voter_id: voter, value: 1) if rand(2).zero?
+  end
 end
