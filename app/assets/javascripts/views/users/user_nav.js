@@ -24,7 +24,6 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
   },
 
   // fix success callback
-  // what happens when this.collection is empty?
   cuteVote: function (event) {
     event.preventDefault();
 
@@ -39,6 +38,8 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
         if (this.collection.length < 6) {
           Backbone.history.navigate("", { trigger: true });
+        } else {
+          Backbone.history.navigate("petreel", { trigger: true });
         }
       }.bind(this),
 
@@ -48,7 +49,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     });
   },
 
-  // fix success callback
+  // while voting in pet reel, profile remains toggled ?
   bootVote: function (event) {
     event.preventDefault();
 
@@ -63,6 +64,8 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
         if (this.collection.length < 6) {
           Backbone.history.navigate("", { trigger: true });
+        } else {
+          Backbone.history.navigate("petreel", { trigger: true });
         }
       }.bind(this),
 
