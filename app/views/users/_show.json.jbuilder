@@ -22,7 +22,13 @@ json.pictures user.pictures do |picture|
   json.extract!(picture, :user_id, :image_url, :thumb_url)
 end
 
-json.liked_by_current_user user.liked_by_user?(current_user)
+json.current_users_vote user.vote_by_user(current_user)
+
+
+
+
+
+
 
 
 if current_user.id == user.id

@@ -126,10 +126,11 @@ class User < ActiveRecord::Base
   end
 
   def rating
-    cute_votes = self.received_votes.where("value = ?", 1).length
-    total_votes = self.received_votes.length
+    rating = Vote.where(votee_id: self.id).average(:value).to_f
+    # cute_votes = self.received_votes.where("value = ?", 1).count
+    # total_votes = self.received_votes.length
 
-    ((cute_votes.to_f / total_votes) * 10).round(2)
+    (rating * 10).round(2)
   end
 
   # the users where received_votes where value is 1
@@ -137,8 +138,18 @@ class User < ActiveRecord::Base
 
   end
 
-  def liked_by_user?(user)
-    !!self.received_votes.find_by(voter_id: user.id)
+  def vote_by_user(user)
+    vote = self.received_votes.find_by(voter_id: user.id)
+
+    vote ? vote.value : nil
+  end
+
+  def cuted_by_user?(user)
+    !!self.received_votes.where(value: 1).find_by(voter_id: user.id)
+  end
+
+  def booted_by_user?(user)
+    !!self.received_votes.where(value: 0).find_by(voter_id: user.id)
   end
 
   # liked_by_current_user && fan

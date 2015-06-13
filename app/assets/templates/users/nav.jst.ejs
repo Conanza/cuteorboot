@@ -1,9 +1,20 @@
-<% if (parseInt(CURRENT_USER_ID) !== parseInt(user.id)) { %>
-  <ul class="nav navbar-nav">
-    <li><button class="btn btn-primary cuteit">cute it</button></li>
-    <li><button class="btn btn-danger bootit">boot it</button></li>
-  </ul>
+<% var currentUser = parseInt(CURRENT_USER_ID) === parseInt(user.id) %>
+<% var currentUsersVote = user.escape("current_users_vote") %>
+
+
+<% if (!currentUser) { %>
+  <% if (currentUsersVote === "0") { %>
+    <span class="glyphicon glyphicon-remove"></span>
+  <% } else if (currentUsersVote === "1") { %>
+    <span class="glyphicon glyphicon-heart"></span>
+  <% } else { %>
+    <ul class="nav navbar-nav">
+      <li><button class="btn btn-primary cuteit">cute it</button></li>
+      <li><button class="btn btn-danger bootit">boot it</button></li>
+    </ul>
+  <% } %>
 <% } %>
+
 
 <% var rating = user.escape("rating") %>
 <% if (!rating) { rating = 0 } %>
@@ -15,14 +26,14 @@
   <%= "shorty's a " + rating %>
 </div>
 
-<% if (parseInt(CURRENT_USER_ID) === parseInt(user.id)) { %>
+<% if (currentUser) { %>
   <div class="navbar-header">
     <a class="navbar-brand" href="#toggleprofile">I'm cute. Believe it.</a>
   </div>
 <% } %>
 
 <ul class="nav navbar-nav navbar-right">
-  <% if (parseInt(CURRENT_USER_ID) === parseInt(user.id)) { %>
+  <% if (currentUser) { %>
     <li>
       <a class="add-image" href="#addImage">Add Cute Picture</a>
     </li>
