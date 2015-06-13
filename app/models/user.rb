@@ -136,7 +136,7 @@ class User < ActiveRecord::Base
   end
 
   def fans
-    User.joins(:received_votes).where(votes: { votee_id: self.id, value: 1 })
+    User.joins(:given_votes).where(votes: { votee_id: self.id, value: 1 })
   end
 
   def cuted_by_user?(user)
