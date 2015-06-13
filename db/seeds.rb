@@ -65,18 +65,21 @@ User.create!(
 )
 
 100.times do |i|
+  name = Faker::Internet.user_name
+  url = Faker::Internet.url("www.facebook.com", "/#{name}")
+
   User.create!(
-    username: "user#{i + 1}",
+    username: name,
     password: "password",
     gender: random_gender,
     birthdate: Time.new(random_year, random_month, random_day),
-    city: "city",
+    city: Faker::Address.city,
     state: random_state,
     animal_type: random_type,
     breed: "breed",
-    website: "website",
-    instagram: "instagram.com/user#{i + 1}",
-    about_me: "I'm user #{i + 1}",
+    website: url,
+    instagram: "instagram.com/#{name}",
+    about_me: "I'm #{name}",
     hobby_ids: random_hobbies
   )
 end
