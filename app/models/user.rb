@@ -137,9 +137,8 @@ class User < ActiveRecord::Base
 
   # the users where received_votes where value is 1
   def fans
-
+    User.joins(:received_votes).where(votes: { votee_id: self.id, value: 1 })
   end
-
 
   def cuted_by_user?(user)
     !!self.received_votes.where(value: 1).find_by(voter_id: user.id)

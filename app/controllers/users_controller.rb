@@ -22,6 +22,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User
+      .includes(:hobbies, :pictures, :received_votes)
+      .find(params[:id])
+  end
+
   def new
     @user = User.new
     @hobbies = Hobby.all
@@ -56,12 +62,6 @@ class UsersController < ApplicationController
       @hobbies = Hobby.all
       render :edit
     end
-  end
-
-  def show
-    @user = User
-      .includes(:hobbies, :pictures, :received_votes)
-      .find(params[:id])
   end
 
   def destroy
