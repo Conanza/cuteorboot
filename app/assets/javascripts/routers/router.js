@@ -54,7 +54,7 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
       this.users.fetch();
     }
 
-    user = this.users.getOrFetch(CURRENT_USER_ID);
+    var user = this.users.getOrFetch(CURRENT_USER_ID);
 
     var fansView = new CuteOrBoot.Views.FansIndex({
       model: user
