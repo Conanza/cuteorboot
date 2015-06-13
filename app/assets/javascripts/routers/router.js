@@ -7,6 +7,7 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
   routes: {
     "": "redirectToGame",
     "petreel": "game",
+    "fans": "showFans",
     "cuties/:id": "showUser",
     // "2": "two",
     // "3": "three",
@@ -48,17 +49,19 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
     this._swapView(dashboardView);
   },
 
-  // two: function () {
-  //   console.log("two");
-  // },
-  //
-  // three: function () {
-  //   console.log("three");
-  // },
-  //
-  // four: function () {
-  //   console.log("four");
-  // },
+  showFans: function () {
+    if (this.users.length === 0) {
+      this.users.fetch();
+    }
+
+    user = this.users.getOrFetch(CURRENT_USER_ID);
+
+    var fansView = new CuteOrBoot.Views.FansIndex({
+      model: user
+    });
+
+    this._swapView(fansView);
+  },
 
   _swapView: function (view) {
     this._currentView && this._currentView.remove();

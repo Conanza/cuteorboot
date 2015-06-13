@@ -64,6 +64,11 @@ User.create!(
   hobby_ids: ["1", "2", "3", "4"]
 )
 
+User.find_by_username("conan").pictures.create(image_url: "http://img1.wikia.nocookie.net/__cb20080918055501/marveldatabase/images/c/c4/Conan_02.jpg",
+                                               thumb_url: "http://img1.wikia.nocookie.net/__cb20080918055501/marveldatabase/images/c/c4/Conan_02.jpg")
+User.find_by_username("conan").pictures.create(image_url: "https://static.crowdvoice.com/uploads/237M8sU_1389417789100_r11v9Wi7J2KnyWFe4RR68Q",
+                                              thumb_url: "https://static.crowdvoice.com/uploads/237M8sU_1389417789100_r11v9Wi7J2KnyWFe4RR68Q")
+
 100.times do |i|
   name = Faker::Internet.user_name
   url = Faker::Internet.url("www.facebook.com", "/#{name}")
