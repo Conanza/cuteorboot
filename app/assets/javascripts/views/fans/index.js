@@ -21,7 +21,7 @@ CuteOrBoot.Views.FansIndex = Backbone.CompositeView.extend({
 
   addFan: function (fan) {
     var fanItem = new CuteOrBoot.Views.FanItem({ model: fan });
-    fanItem.$el.attr("user-id", fan.id);
+    fanItem.$el.attr("fan-id", fan.id);
 
     this.addSubview(".fan-list", fanItem);
   },
@@ -32,7 +32,7 @@ CuteOrBoot.Views.FansIndex = Backbone.CompositeView.extend({
 
   showUser: function (event) {
     event.preventDefault();
-    var userId = $(event.currentTarget).attr("user-id");
+    var userId = $(event.currentTarget).attr("fan-id");
 
     Backbone.history.navigate("cuties/" + userId, { trigger: true });
   },
