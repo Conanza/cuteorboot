@@ -28,6 +28,8 @@ if current_user.id == user.id
   json.fans user.fans do |fan|
     json.extract!(fan, :id, :username, :gender, :city, :state)
   end
+
+  json.fan_count user.fans.count
 else
   json.fan_count user.fans.count
 end

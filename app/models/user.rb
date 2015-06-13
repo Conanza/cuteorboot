@@ -135,7 +135,6 @@ class User < ActiveRecord::Base
     Vote.where(voter_id: user.id, votee_id: self.id).pluck(:value)[0]
   end
 
-  # the users where received_votes where value is 1
   def fans
     User.joins(:received_votes).where(votes: { votee_id: self.id, value: 1 })
   end
