@@ -49,7 +49,7 @@ def random_hobbies
   random_ids
 end
 
-User.create!(
+User.create(
   username: "conan",
   password: "password",
   gender: "M",
@@ -73,7 +73,7 @@ User.find_by_username("conan").pictures.create(image_url: "https://static.crowdv
   name = Faker::Internet.user_name
   url = Faker::Internet.url("www.facebook.com", "/#{name}")
 
-  User.create!(
+  User.create(
     username: name,
     password: "password",
     gender: random_gender,
@@ -87,12 +87,14 @@ User.find_by_username("conan").pictures.create(image_url: "https://static.crowdv
     about_me: "I'm #{name}",
     hobby_ids: random_hobbies
   )
+end
 
-  50.times do |i|
-    voter = i + 2
-    User
-      .find_by_username("conan")
-      .received_votes
-      .create(voter_id: voter, value: 1) if rand(2).zero?
-  end
+50.times do |i|
+  next if rand(3) == 1
+  voter = i + 2
+
+  User
+    .find_by_username("conan")
+    .received_votes
+    .create(voter_id: voter, value: 1)
 end
