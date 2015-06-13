@@ -1,6 +1,14 @@
 CuteOrBoot.Views.FansIndex = Backbone.CompositeView.extend({
   template: JST["fans/index"],
 
+  tagName: "main",
+
+  className: "fans",
+
+  events: {
+    "click li": "showUser"
+  },
+
   initialize: function () {
     this.collection = this.model.fans();
 
@@ -14,11 +22,18 @@ CuteOrBoot.Views.FansIndex = Backbone.CompositeView.extend({
   addFan: function (fan) {
     var fanItem = new CuteOrBoot.Views.FanItem({ model: fan });
 
-    this.addSubview(".fans", fanItem);
+    this.addSubview(".fan-list", fanItem);
   },
 
   removeFan: function (fan) {
-    this.removeModelSubview(".fans", fan);
+    this.removeModelSubview(".fan-list", fan);
+  },
+
+  showUser: function (event) {
+    event.preventDefault();
+    var userId = $(event.currentTarget).data("user-id");
+
+    Backbone.history.navigate("cuties/" + userId, { trigger: true });
   },
 
   render: function () {

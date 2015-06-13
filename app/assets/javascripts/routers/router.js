@@ -38,8 +38,9 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
       this.users.fetch();
     }
 
-    var user = new CuteOrBoot.Models.User({ id: id });
-    user.fetch();
+    var user = this.users.getOrFetch(id);
+    // new CuteOrBoot.Models.User({ id: id });
+    // user.fetch();
 
     var dashboardView = new CuteOrBoot.Views.UserDashboard({
       model: user,
