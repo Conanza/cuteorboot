@@ -1,6 +1,7 @@
 <% var currentUser = parseInt(CURRENT_USER_ID) === parseInt(user.id) %>
 <% var currentUsersVote = user.escape("current_users_vote") %>
-
+<% var username = user.escape("username") %>
+<% username = username.charAt(0).toUpperCase() + username.substring(1) %>
 
 <% if (!currentUser) { %>
   <% if (currentUsersVote === "0") { %>
@@ -21,7 +22,7 @@
 
 <div class="navbar-header">
   <a class="navbar-brand" href="#toggleprofile">
-    <%= user.escape("username") %>, <%= user.escape("gender") %>
+    <%= username + ", " + user.escape("gender") %>
   </a>
   <%= "shorty's a " + rating %>
 </div>

@@ -12,6 +12,11 @@ CuteOrBoot.Models.User = Backbone.Model.extend({
       delete response.pictures;
     }
 
+    if (response.fans) {
+      this.fans().set(response.fans);
+      delete response.fans;
+    }
+
     return response;
   },
 
@@ -29,5 +34,13 @@ CuteOrBoot.Models.User = Backbone.Model.extend({
     }
 
     return this._hobbies;
+  },
+
+  fans: function () {
+    if (!this._fans) {
+      this._fans = new CuteOrBoot.Collections.Users([], { user: this });
+    }
+
+    return this._fans;
   }
 });

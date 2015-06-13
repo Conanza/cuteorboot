@@ -2,7 +2,6 @@ CuteOrBoot.Views.FansIndex = Backbone.CompositeView.extend({
   template: JST["fans/index"],
 
   initialize: function () {
-    
     this.listenTo(this.model, "sync", this.render);
   },
 
