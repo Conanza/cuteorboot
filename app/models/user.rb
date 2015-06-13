@@ -134,10 +134,11 @@ class User < ActiveRecord::Base
 
   # the users where received_votes where value is 1
   def fans
+
   end
 
-  # someone current user liked
-  def liked_by_current_user?
+  def liked_by_user?(user)
+    !!self.received_votes.find_by(voter_id: user.id)
   end
 
   # liked_by_current_user && fan
