@@ -36,9 +36,10 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     vote.save({}, {
       success: function (model, response) {
         this.collection.remove(this.model);
-        // not navigating anywhere atm
-        // if collection is low, navigate to "" ?
-        Backbone.history.navigate("petreel", { trigger: true });
+
+        if (this.collection.length < 6) {
+          Backbone.history.navigate("", { trigger: true });
+        }
       }.bind(this),
 
       error: function (model, response) {
@@ -58,9 +59,11 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
     vote.save({}, {
       success: function () {
-        // if collection is low, refetch
         this.collection.remove(this.model);
-        Backbone.history.navigate("petreel", { trigger: true }); // navigate to petreel
+
+        if (this.collection.length < 6) {
+          Backbone.history.navigate("", { trigger: true });
+        }
       }.bind(this),
 
       error: function () {
