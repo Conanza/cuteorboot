@@ -21,8 +21,5 @@
 
   <%= yield %>
 
-  <% if current_user %>
-    <%= button_to "logout", session_url, method: :delete %>
-  <% end %>
 </body>
 </html>
