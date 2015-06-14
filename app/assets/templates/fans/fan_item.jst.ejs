@@ -1,2 +1,6 @@
-<h4>fan: <%= user.escape("username") %></h4>
+<% current_loc = user.escape("city") + ", " + user.escape("state") %>
+
+<strong><%= user.escape("username") %></strong>, <%= user.escape("gender") %>
+<p><%= current_loc %></p>
+<% console.log(user.attributes) %>
 <% user.pictures() %>
