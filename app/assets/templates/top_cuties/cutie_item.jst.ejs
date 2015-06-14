@@ -1,2 +1,10 @@
+<% if (user.pictures().length > 0) { %>
+  <% var picture = user.pictures().first().escape("thumb_url") %>
+<% } %>
+
+<p class="rating"><%= user.escape("rating") %></p>
+<img class="cutie-item-img" src="<%= picture %>">
+
+<p class="name">
 <strong><%= user.escape("username") %></strong>, <%= user.escape("gender") %>
-<p><%= user.escape("rating") %></p>
+</p>
