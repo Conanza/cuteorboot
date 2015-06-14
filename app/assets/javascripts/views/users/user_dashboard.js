@@ -55,6 +55,8 @@ CuteOrBoot.Views.UserDashboard = Backbone.CompositeView.extend({
       collection: this.collection
     });
 
+    this.$("section.userlanding").removeClass("toggled-off");
+    this.$("section.userdetail").addClass("toggled-off");
     this.addSubview(".usernav", userNav);
     this.addSubview(".userlanding", userLanding);
     this.addSubview(".userdetail", userDetail);

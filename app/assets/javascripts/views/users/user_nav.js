@@ -10,7 +10,13 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     "click .bootit": "bootVote",
     "click .add-image": "addImage",
     "click a.toggleprofile": "toggleProfile",
-    "click a.editprofile": "openEditForm"
+    "click a.editprofile": "openEditForm",
+    "keydown": "handleKeydown"
+  },
+
+  handleKeydown: function (event) {
+    // 1 => keycode 49
+    // 2 => keycode 50
   },
 
   openEditForm: function (event) {
