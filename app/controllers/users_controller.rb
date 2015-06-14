@@ -5,22 +5,27 @@ class UsersController < ApplicationController
 
   # may need to optimize User#rating
   def index
-    ids = Vote
-      .joins(:voter)
-      .where("voter_id = ?", current_user.id)
-      .pluck(:votee_id)
-
-    query_fragment = "(" + ids.join(", ") + ")"
-
-    if ids.empty?
-      @users = User
-        .includes(:hobbies, :pictures, :given_votes)
-        .limit(50)
+    if params[:top_cuties].present?
+      render json: "yes"
+    # elsif params[:first_fetch].present?
     else
-      @users = User
-        .includes(:hobbies, :pictures, :given_votes)
-        .where("id NOT IN #{query_fragment}")
-        .limit(50)
+      ids = Vote
+        .joins(:voter)
+        .where("voter_id = ?", current_user.id)
+        .pluck(:votee_id)
+
+      if ids.empty?
+        @users = User
+          .includes(:hobbies, :pictures, :given_votes)
+          .limit(50)
+      else
+        query_fragment = "(" + ids.join(", ") + ")"
+
+        @users = User
+          .includes(:hobbies, :pictures, :given_votes)
+          .where("id NOT IN #{query_fragment}")
+          .limit(50)
+      end
     end
   end
 

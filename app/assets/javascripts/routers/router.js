@@ -48,13 +48,13 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
   },
 
   topCutiesList: function () {
-    if (this.users.length === 0) {
-      this.users.fetch();
-    }
+    var topCuties = new CuteOrBoot.Collections.Users();
 
-    var topCuties = new CuteOrBoot.Views.TopCutiesIndex();
+    var topCutiesView = new CuteOrBoot.Views.TopCutiesIndex({
+      collection: topCuties
+    });
 
-    this._swapView(topCuties);
+    this._swapView(topCutiesView);
   },
 
   showFans: function () {
