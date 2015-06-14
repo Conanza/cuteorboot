@@ -15,9 +15,9 @@ Cute or Boot is built on Rails and Backbone, and it's a spinoff of hotornot.com 
 - [x] View a feed of users and their pictures
 - [x] Like/Dislike users
 - [x] Users get a rating (hot votes/total votes)
-- [ ] View a user's profile
+- [x] View a user's profile
 - [ ] View a list of app's hottest users
-- [ ] View a list of your likers (fans)
+- [x] View a list of your likers (fans)
 
 ## Design Docs
 * [View Wireframes][views]
@@ -67,7 +67,7 @@ Both these views are composite, each containing `IndexItem` Views for each fan o
 - [ ] Badges/Awards for users with top ratings
 - [ ] Other misc. awards: most hobbies("interesting"), hot streaks (consecutive weeks liked), popularity thresholds
 - [ ] Counters: # of photos, fans, notifications, shared hobbies, hot streak
-- [ ] Carousel pictures
+- [x] Carousel pictures
 - [ ] Pagination or 'load more on scroll' for hotties and fans index
 - [ ] Stylish buttons
 - [ ] Bind shortcut keys for liking/disliking (e.g. 1 and 2)

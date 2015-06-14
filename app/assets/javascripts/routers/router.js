@@ -8,6 +8,7 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
     "": "redirectToGame",
     "petreel": "game",
     "fans": "showFans",
+    "cutest-cuties-list": "topCutiesList",
     "cuties/:id": "showUser",
     // "2": "two",
     // "3": "three",
@@ -47,6 +48,10 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(dashboardView);
+  },
+
+  topCutiesList: function () {
+    
   },
 
   showFans: function () {
