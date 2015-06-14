@@ -58,14 +58,10 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
   },
 
   showFans: function () {
-    if (this.users.length === 0) {
-      this.users.fetch();
-    }
-
-    var user = this.users.getOrFetch(CURRENT_USER_ID);
+    var fans = new CuteOrBoot.Collections.Users();
 
     var fansView = new CuteOrBoot.Views.FansIndex({
-      model: user
+      collection: fans
     });
 
     this._swapView(fansView);

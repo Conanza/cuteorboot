@@ -97,19 +97,17 @@ class User < ActiveRecord::Base
 
   after_initialize :set_session_token
 
+  def self.fans_for(user)
+    User
+      .includes(:hobbies, :pictures)
+      .joins(:given_votes)
+      .where(votes: { votee_id: user.id, value: 1 })
+  end
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
 
     user && user.is_password?(password) ? user : nil
-  end
-
-  def self.top_cuties
-    User
-      .includes(:hobbies, :pictures, :given_votes)
-      .joins(:received_votes)
-      .group("users.id")
-      .order("AVG(votes.value) DESC")
-      .limit(20)
   end
 
   def self.fresh_feed_for(user)
@@ -130,6 +128,15 @@ class User < ActiveRecord::Base
         .where("id NOT IN #{query_fragment}")
         .limit(50)
     end
+  end
+
+  def self.top_cuties
+    User
+      .includes(:hobbies, :pictures, :given_votes)
+      .joins(:received_votes)
+      .group("users.id")
+      .order("AVG(votes.value) DESC")
+      .limit(20)
   end
 
   attr_reader :password
@@ -162,10 +169,6 @@ class User < ActiveRecord::Base
 
   def vote_by_user(user)
     Vote.where(voter_id: user.id, votee_id: self.id).pluck(:value)[0]
-  end
-
-  def fans
-    User.includes(:pictures).joins(:given_votes).where(votes: { votee_id: self.id, value: 1 })
   end
 
   def cuted_by_user?(user)

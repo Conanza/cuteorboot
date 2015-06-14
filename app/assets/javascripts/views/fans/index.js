@@ -10,11 +10,13 @@ CuteOrBoot.Views.FansIndex = Backbone.CompositeView.extend({
   },
 
   initialize: function () {
-    this.collection = this.model.fans();
+    this.collection.fetch({
+      data: { fans: true }
+    });
 
     this.listenTo(this.collection, "remove", this.removeFan);
     this.listenTo(this.collection, "add", this.addFan);
-    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.collection, "sync", this.render);
 
     this.collection.each(this.addFan.bind(this));
   },

@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   def index
     if params[:top_cuties].present?
       @users = User.top_cuties
+    elsif params[:fans].present?
+      @users = User.fans_for(current_user)
     else
       @users = User.fresh_feed_for(current_user)
     end
