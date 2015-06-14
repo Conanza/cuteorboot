@@ -119,7 +119,7 @@ class User < ActiveRecord::Base
         20
     SQL
 
-    User.find_by_sql(query)
+    User.includes(:hobbies, :pictures, :given_votes).find_by_sql(query)
   end
 
   def self.fresh_feed_for(user)
