@@ -1,6 +1,13 @@
 <% current_loc = user.escape("city") + ", " + user.escape("state") %>
+<% if (user.pictures().length > 0) { %>
+  <% var picture = user.pictures().first().escape("thumb_url") %>
+<% } %>
 
-<strong><%= user.escape("username") %></strong>, <%= user.escape("gender") %>
-<p><%= current_loc %></p>
 
-<% user.pictures() %>
+<img class="fan-item-img" src="<%= picture %>">
+<div class="fan-item-description">
+  <p>
+    <strong><%= user.escape("username") %></strong>, <%= user.escape("gender") %>
+  </p>
+  <p><%= current_loc %></p>
+</div>

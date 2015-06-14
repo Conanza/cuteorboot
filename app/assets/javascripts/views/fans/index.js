@@ -38,7 +38,10 @@ CuteOrBoot.Views.FansIndex = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var content = this.template({ user: this.model });
+    var content = this.template({
+      user: this.model,
+      total: this.collection.length
+    });
     this.$el.html(content);
     this.attachSubviews();
 

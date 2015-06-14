@@ -26,7 +26,7 @@ json.current_users_vote user.vote_by_user(current_user)
 
 if current_user.id == user.id
   json.fans user.fans do |fan|
-    json.extract!(fan, :id, :username, :gender, :city, :state)
+    json.extract!(fan, :id, :username, :gender, :city, :state, :pictures)
   end
 
   json.fan_count user.fans.count
