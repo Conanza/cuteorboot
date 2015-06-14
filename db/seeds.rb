@@ -96,5 +96,5 @@ end
   User
     .find_by_username("conan")
     .received_votes
-    .create(voter_id: voter, value: 1)
+    .create(voter_id: voter, value: rand(2))
 end
