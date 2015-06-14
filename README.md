@@ -16,7 +16,7 @@ Cute or Boot is built on Rails and Backbone, and it's a spinoff of hotornot.com 
 - [x] Like/Dislike users
 - [x] Users get a rating (hot votes/total votes)
 - [x] View a user's profile
-- [ ] View a list of app's hottest users
+- [x] View a list of app's hottest users
 - [x] View a list of your likers (fans)
 
 ## Design Docs
