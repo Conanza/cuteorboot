@@ -12,9 +12,9 @@
   <% ratingClass = "rating-warm" %>
 <% } %>
 
-<p class="<%= ratingClass %>"><%= user.escape("rating") %></p>
 <img class="cutie-item-img <%= ratingClass %>" src="<%= picture %>">
 
 <p class="name">
-<strong><%= user.escape("username") %></strong>, <%= user.escape("gender") %>
+  <strong><%= user.escape("username") %></strong>, <%= user.escape("gender") %>
 </p>
+<p class="<%= ratingClass %>"><%= user.escape("rating") %></p>
