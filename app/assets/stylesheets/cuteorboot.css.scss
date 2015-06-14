@@ -6,8 +6,27 @@ body {
   text-align: center;
 }
 
+body#home {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://newevolutiondesigns.com/images/freebies/dog-wallpaper-12.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .cuteorboot {
   height: 100%;
+}
+
+.site-logo-lg > img {
+  vertical-align: middle;
+  border: 2px solid black;
+  border-radius: 200px;
+  width: 50%;
+  left: 25%;
+  position: relative;
+  margin-top: 75px;
 }
 
 .alert {
@@ -29,6 +48,9 @@ body {
   border: solid black 1px;
   z-index: 101000000000000000000000000;
   background-color: white;
+  background-image: url("http://www.spwallpapers.com/var/albums/640x480/Cute%20animals%20life%20wallpapers%20640x480/Cute%20animals%20life%20wallpapers%20640x480%20(02).jpg?m=1341300535");
+  background-size: cover;
+  background-position: center;
   border-radius: 5px;
   padding: 20px;
   height: 80%;
