@@ -9,23 +9,7 @@ class UsersController < ApplicationController
       @users = User.includes(:hobbies, :pictures, :given_votes).limit(50)
     # elsif params[:first_fetch].present?
     else
-      ids = Vote
-        .joins(:voter)
-        .where("voter_id = ?", current_user.id)
-        .pluck(:votee_id)
-
-      if ids.empty?
-        @users = User
-          .includes(:hobbies, :pictures, :given_votes)
-          .limit(50)
-      else
-        query_fragment = "(" + ids.join(", ") + ")"
-
-        @users = User
-          .includes(:hobbies, :pictures, :given_votes)
-          .where("id NOT IN #{query_fragment}")
-          .limit(50)
-      end
+      @users = User.fresh_feed_for(current_user)
     end
   end
 

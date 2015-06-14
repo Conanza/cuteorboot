@@ -103,6 +103,30 @@ class User < ActiveRecord::Base
     user && user.is_password?(password) ? user : nil
   end
 
+  def self.top_cuties
+    # query = <<--
+  end
+
+  def self.fresh_feed_for(user)
+    ids = Vote
+      .joins(:voter)
+      .where("voter_id = ?", user.id)
+      .pluck(:votee_id)
+
+    if ids.empty?
+      return User
+        .includes(:hobbies, :pictures, :given_votes)
+        .limit(50)
+    else
+      query_fragment = "(" + ids.join(", ") + ")"
+
+      return User
+        .includes(:hobbies, :pictures, :given_votes)
+        .where("id NOT IN #{query_fragment}")
+        .limit(50)
+    end
+  end
+
   attr_reader :password
 
   def is_password?(password)
