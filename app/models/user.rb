@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
     "California",
     "Colorado",
     "Conneticut",
-    "Deleware",
+    "Delaware",
     "Florida",
     "Georgia",
     "Hawaii",
