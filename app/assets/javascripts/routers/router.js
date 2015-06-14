@@ -9,10 +9,7 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
     "petreel": "game",
     "fans": "showFans",
     "cutest-cuties-list": "topCutiesList",
-    "cuties/:id": "showUser",
-    // "2": "two",
-    // "3": "three",
-    // "4": "four"
+    "cuties/:id": "showUser"
   },
 
   redirectToGame: function () {
@@ -51,7 +48,13 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
   },
 
   topCutiesList: function () {
-    
+    if (this.users.length === 0) {
+      this.users.fetch();
+    }
+
+    var topCuties = new CuteOrBoot.Views.TopCutiesIndex();
+
+    this._swapView(topCuties);
   },
 
   showFans: function () {

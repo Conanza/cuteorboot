@@ -3,13 +3,21 @@ CuteOrBoot.Views.Navbar = Backbone.CompositeView.extend({
 
   events: {
     "mouseover ul.nav li": "hoverOn",
-    "mouseout ul.nav li": "hoverOff"
+    "mouseout ul.nav li": "hoverOff",
+    "click .logout": "logout"
   },
 
   initialize: function (options) {
     this.router = options.router;
 
     this.listenTo(this.router, "route", this.markActive);
+  },
+
+  logout: function (event) {
+    $.ajax({
+      url: "/session",
+      type: "DELETE"
+    });
   },
 
   render: function () {
