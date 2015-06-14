@@ -5,47 +5,49 @@
   <h1>Pet Registration</h1>
   <h6>It's free.</h6>
 
-  <form action="<%= users_url %>" method="POST" role="form">
+  <form action="<%= users_url %>" method="POST" role="form" data-toggle="validator">
     <%= auth_token %>
 
     <div class="form-group col-xs-4 col-xs-offset-4">
-      <label for="username">What's your pet's name? *
+      <label for="username">What's your pet's name? *</label>
         <input
+          required
           id="username"
           type="text"
           name="user[username]"
           placeholder="e.g. boo"
           class="form-control"
           value="<%= @user.username %>">
-      </label>
     </div>
 
     <div class="form-group col-xs-4 col-xs-offset-4">
-      <label for="password">New Password *
+      <label for="password">New Password *</label>
       <input
+        required
         id="password"
         type="password"
         name="user[password]"
-        placeholder="password"
-        class="form-control">
-      </label>
+        placeholder="Password"
+        class="form-control"
+        data-minlength="6">
+      <span class="help-block with-errors">Minimum 6 characters</span>
     </div>
 
     <div class="form-group col-xs-2 col-xs-offset-4">
-      <label for="city">City *
+      <label for="city">City *</label>
       <input
+        required
         id="city"
         type="text"
         name="user[city]"
         placeholder="San Francisco"
         class="form-control"
         value="<%= @user.city %>">
-      </label>
     </div>
 
     <div class="form-group col-xs-2">
-      <label for="state">State *
-        <select id="state" name="user[state]" class="form-control">
+      <label for="state">State *</label>
+        <select id="state" name="user[state]" class="form-control" required>
           <% User::STATES.each do |state| %>
             <option
               value="<%= state %>"
@@ -54,23 +56,22 @@
             </option>
           <% end %>
         </select>
-      </label>
     </div>
 
     <div class="form-group col-xs-4 col-xs-offset-4">
-      <label for="birthdate">Birthday
+      <label for="birthdate">Birthday *</label>
         <input
+          required
           id="birthdate"
           type="date"
           name="user[birthdate]"
           class="form-control"
           value="<%= @user.birthdate %>">
-      </label>
     </div>
 
     <div class="form-group col-xs-2 col-xs-offset-4">
-      <label for="gender">Gender *
-        <select id="gender" name="user[gender]" class="form-control">
+      <label for="gender">Gender *</label>
+        <select id="gender" name="user[gender]" class="form-control" required>
           <% ["", "M", "F"].each do |gender| %>
             <option
               value="<%= gender %>"
@@ -79,12 +80,11 @@
             </option>
           <% end %>
         </select>
-      </label>
     </div>
 
     <div class="form-group col-xs-2">
-      <label for="animaltype">Type *
-        <select id="animaltype" name="user[animal_type]" class="form-control">
+      <label for="animaltype">Type *</label>
+        <select id="animaltype" name="user[animal_type]" class="form-control" required>
           <% [""].concat(User::ANIMAL_TYPES).each do |animaltype| %>
             <option
               value="<%= animaltype %>"
@@ -93,11 +93,10 @@
             </option>
           <% end %>
         </select>
-      </label>
     </div>
 
     <div class="form-group col-xs-4 col-xs-offset-4">
-      <label for="breed">Breed
+      <label for="breed">Breed</label>
         <input
           id="breed"
           type="text"
@@ -105,11 +104,10 @@
           placeholder="e.g. Pomeranian"
           class="form-control"
           value="<%= @user.breed %>">
-      </label>
     </div>
 
     <div class="form-group col-xs-4 col-xs-offset-4">
-      <label for="website">Website
+      <label for="website">Website</label>
         <input
           id="website"
           type="text"
@@ -117,11 +115,10 @@
           placeholder="e.g. www.boothedog.net"
           class="form-control"
           value="<%= @user.website %>">
-      </label>
     </div>
 
     <div class="form-group col-xs-4 col-xs-offset-4">
-      <label for="instagram">Instagram Link
+      <label for="instagram">Instagram Link</label>
         <input
           id="instagram"
           type="text"
@@ -129,7 +126,6 @@
           placeholder="e.g. instagram.com/iamboo_officialfanpage"
           class="form-control"
           value="<%= @user.instagram %>">
-      </label>
     </div>
 
     <div class="form-group col-xs-4 col-xs-offset-4">
@@ -154,18 +150,21 @@
     </div>
 
     <div class="form-group col-xs-4 col-xs-offset-4">
-      <label for="about-me">Description
+      <label for="about-me">Description</label>
         <textarea
           id="about-me"
           type="text"
           name="user[about_me]"
           placeholder="Tell us about your pet!"
           class="form-control"></textarea>
-      </label>
     </div>
 
     <div class="form-group col-xs-4 col-xs-offset-4">
       <button type="submit" class="btn btn-primary">Register!</button>
+    </div>
+
+    <div class="form-group col-xs-3 col-xs-offset-9">
+      <p>* required fields</p>
     </div>
   </form>
 </body>
