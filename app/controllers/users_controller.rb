@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # may need to optimize User#rating
   def index
     if params[:top_cuties].present?
-      @users = User.includes(:hobbies, :pictures, :given_votes).limit(50)
+      @users = User.includes(:hobbies, :pictures, :given_votes).top_cuties
     # elsif params[:first_fetch].present?
     else
       @users = User.fresh_feed_for(current_user)

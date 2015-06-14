@@ -1,5 +1,5 @@
 CuteOrBoot.Views.TopCutie = Backbone.CompositeView.extend({
-  template: JST["fans/fan_item"],
+  template: JST["top_cuties/cutie_item"],
 
   tagName: "li",
 

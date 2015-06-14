@@ -114,7 +114,7 @@ class User < ActiveRecord::Base
       GROUP BY
         users.id
       ORDER BY
-        AVG(votes.value)
+        AVG(votes.value) DESC
       LIMIT
         20
     SQL
