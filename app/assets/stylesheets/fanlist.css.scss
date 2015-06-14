@@ -1,0 +1,18 @@
+.fan-list-item p {
+  text-align: center;
+}
+
+.fan-item-img {
+  margin-left: 30%;
+  height: 100px;
+  width: 40%;
+  box-shadow: 0px 0px 20px 5px #5B84DD;
+  border-radius: 50px;
+  margin-right: 30%;
+}
+
+.fan-item-img.hover {
+  cursor: pointer;
+  opacity: .5;
+  box-shadow: 0px 0px 30px 5px;
+}

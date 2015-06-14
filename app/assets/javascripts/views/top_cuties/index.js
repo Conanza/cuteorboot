@@ -33,7 +33,6 @@ CuteOrBoot.Views.TopCutiesIndex = Backbone.CompositeView.extend({
 
   addTopCutie: function (cutie) {
     var cutieItem = new CuteOrBoot.Views.TopCutie({ model: cutie });
-    cutieItem.$el.attr("cutie-id", cutie.id);
 
     this.addSubview(".top-cuties-list", cutieItem);
   },

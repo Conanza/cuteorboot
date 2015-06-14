@@ -10,6 +10,7 @@ CuteOrBoot.Views.FanItem = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template({ user: this.model });
     this.$el.html(content);
+    this.$("img").attr("fan-id", this.model.id);
 
     return this;
   }

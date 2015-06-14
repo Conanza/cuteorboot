@@ -6,7 +6,9 @@ CuteOrBoot.Views.FansIndex = Backbone.CompositeView.extend({
   className: "fans",
 
   events: {
-    "click li": "showUser"
+    "click div.fan-list-item img": "showUser",
+    "mouseover img": "addHover",
+    "mouseout img": "removeHover"
   },
 
   initialize: function () {
@@ -19,6 +21,14 @@ CuteOrBoot.Views.FansIndex = Backbone.CompositeView.extend({
     this.listenTo(this.collection, "sync", this.render);
 
     this.collection.each(this.addFan.bind(this));
+  },
+
+  addHover: function (event) {
+    $(event.currentTarget).addClass("hover");
+  },
+
+  removeHover: function (event) {
+    $(event.currentTarget).removeClass("hover");
   },
 
   addFan: function (fan) {
