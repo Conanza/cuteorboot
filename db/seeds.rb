@@ -89,12 +89,14 @@ User.find_by_username("conan").pictures.create(image_url: "https://static.crowdv
   )
 end
 
-50.times do |i|
-  next if rand(3) == 1
-  voter = i + 2
+(1..50).each do |votee_id|
+  (1..50).each do |voter_id|
+    next if votee_id == voter_id
+    next if rand(3) == 1
 
-  User
-    .find_by_username("conan")
-    .received_votes
-    .create(voter_id: voter, value: rand(2))
+    User
+      .find(votee_id)
+      .received_votes
+      .create(voter_id: voter_id, value: rand(2))
+  end
 end
