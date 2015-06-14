@@ -104,22 +104,12 @@ class User < ActiveRecord::Base
   end
 
   def self.top_cuties
-    query = <<-SQL
-      SELECT
-        users.*, AVG(votes.value) AS rating
-      FROM
-        users
-      JOIN
-        votes ON users.id = votes.votee_id
-      GROUP BY
-        users.id
-      ORDER BY
-        AVG(votes.value) DESC
-      LIMIT
-        20
-    SQL
-
-    User.includes(:hobbies, :pictures, :given_votes).find_by_sql(query)
+    User
+      .includes(:hobbies, :pictures, :given_votes)
+      .joins(:received_votes)
+      .group("users.id")
+      .order("AVG(votes.value) DESC")
+      .limit(20)
   end
 
   def self.fresh_feed_for(user)
