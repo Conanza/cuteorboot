@@ -10,6 +10,20 @@ body {
   height: 100%;
 }
 
+.alert {
+  padding: 15px;
+  position: absolute;
+  margin: auto;
+  left: 25%;
+  right: 25%;
+  background-color: 1px solid transparent;
+  border-radius: 4px;
+  z-index: 10000000000000;
+  height: auto;
+  top: 0px;
+  text-align: center;
+}
+
 .edit-content {
   border: solid black 1px;
   z-index: 101000000000000000000000000;
