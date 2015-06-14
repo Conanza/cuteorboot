@@ -1,0 +1,6 @@
+<% current_loc = user.escape("city") + ", " + user.escape("state") %>
+
+<strong><%= user.escape("username") %></strong>, <%= user.escape("gender") %>
+<p><%= current_loc %></p>
+
+<% user.pictures() %>

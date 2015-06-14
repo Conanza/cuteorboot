@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # may need to optimize User#rating
   def index
     if params[:top_cuties].present?
-      render json: "yes"
+      @users = User.includes(:hobbies, :pictures, :given_votes).limit(50)
     # elsif params[:first_fetch].present?
     else
       ids = Vote

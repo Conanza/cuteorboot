@@ -8,9 +8,3 @@ else
     json.partial! "users/show", user: user
   end
 end
-
-
-# json.hotties User.limit(5) do |user|
-#   json.extract!(user, :username)
-#
-# end
