@@ -2,8 +2,18 @@
   <% var picture = user.pictures().first().escape("thumb_url") %>
 <% } %>
 
-<p class="rating"><%= user.escape("rating") %></p>
-<img class="cutie-item-img" src="<%= picture %>">
+<% var ratingClass %>
+<% var rating = parseInt(user.escape("rating")) %>
+<% if (rating > 9) { %>
+  <% ratingClass = "rating-sizzling" %>
+<% } else if (rating > 7.5) { %>
+  <% ratingClass = "rating-hot" %>
+<% } else if (rating > 5) { %>
+  <% ratingClass = "rating-warm" %>
+<% } %>
+
+<p class="<%= ratingClass %>"><%= user.escape("rating") %></p>
+<img class="cutie-item-img <%= ratingClass %>" src="<%= picture %>">
 
 <p class="name">
 <strong><%= user.escape("username") %></strong>, <%= user.escape("gender") %>
