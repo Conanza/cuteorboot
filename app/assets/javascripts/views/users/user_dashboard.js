@@ -40,9 +40,6 @@ CuteOrBoot.Views.UserDashboard = Backbone.CompositeView.extend({
   toggleProfile: function () {
     this.$("section.userlanding").toggleClass("toggled-off");
     this.$("section.userdetail").toggleClass("toggled-off");
-
-    // this.$("section.userlanding").slideToggle(600);
-    // this.$("section.userdetail").slideToggle(600);
   },
 
   renderViews: function () {
