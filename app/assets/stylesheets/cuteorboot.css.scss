@@ -66,6 +66,31 @@ main.top-cuties {
   overflow: scroll;
 }
 
+div.edit-backdrop.toggled-off {
+  opacity: 0;
+}
+
+div.edit-backdrop {
+  opacity: 1;
+  display: block;
+  overflow-y: hidden;
+
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+
+div.edit-content.toggled-off {
+  opacity: 0;
+}
+
+div.edit-content {
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+
 .edit-content {
   border: solid black 1px;
   z-index: 101000000000000000000000000;

@@ -11,17 +11,29 @@ CuteOrBoot.Views.UserEdit = Backbone.CompositeView.extend({
 
   events: {
     "keydown": "keydownHandler",
-    "click .close": "remove",
-    "click .edit-backdrop": "remove",
+    "click .close": "removeEdit",
+    "click .edit-backdrop": "removeEdit",
     "submit form": "editUser"
   },
 
   reRender: function () {
     setTimeout(function () {
       this.$("input#city").focus();
+      this.$(".edit-backdrop").removeClass("toggled-off");
+      this.$(".edit-content").removeClass("toggled-off");
+
     }.bind(this), 0);
 
     this.render();
+  },
+
+  removeEdit: function () {
+    this.$(".edit-backdrop").addClass("toggled-off");
+    this.$(".edit-content").addClass("toggled-off");
+
+    setTimeout(function () {
+      this.remove();
+    }.bind(this), 501);
   },
 
   editUser: function (event) {
@@ -38,7 +50,7 @@ CuteOrBoot.Views.UserEdit = Backbone.CompositeView.extend({
 
   keydownHandler: function (event) {
     if (event.keyCode === 27) {
-      this.remove();
+      this.removeEdit();
     }
   },
 
