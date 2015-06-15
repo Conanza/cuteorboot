@@ -3,11 +3,11 @@ CuteOrBoot.Views.Navbar = Backbone.CompositeView.extend({
 
   id: "sidebar",
 
-  className: "column col-xs-1 col-sm-2 sidebar-offcanvas",
+  className: "column col-xs-2 sidebar-offcanvas",
 
   events: {
-    "mouseover .nav": "toggleSidebar",
-    "mouseout .nav": "toggleSidebar",
+    "mouseover .row": "toggleSidebar",
+    "mouseout .row": "toggleSidebar",
     "mouseover ul.nav li": "hoverOn",
     "mouseout ul.nav li": "hoverOff",
     "click .logout": "logout"

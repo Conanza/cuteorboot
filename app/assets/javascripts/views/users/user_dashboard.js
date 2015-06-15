@@ -1,6 +1,8 @@
 CuteOrBoot.Views.UserDashboard = Backbone.CompositeView.extend({
   template: JST["users/dashboard"],
 
+  className: "dashboard",
+
   initialize: function () {
     if (this.model) {
       this.renderViews();

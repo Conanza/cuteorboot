@@ -16,7 +16,6 @@ window.CuteOrBoot = {
       router: router
     });
 
-    // $("#sidebar").html(navbar.$el);
     $("div.cuteorboot").prepend(navbar.$el);
     navbar.render();
 

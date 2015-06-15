@@ -48,6 +48,23 @@ body#home {
   box-shadow: 0px 0px 50px 1px rgb(141, 182, 223) inset;
 }
 
+
+#main {
+   background-color: white;
+   padding-left:0;
+   padding-right:0;
+   height: 100%;
+}
+
+
+div.dashboard {
+  height: 100%;
+  overflow: scroll;
+}
+
+
+
+
 .edit-content {
   border: solid black 1px;
   z-index: 101000000000000000000000000;

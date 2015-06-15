@@ -1,4 +1,9 @@
-<ul class="nav hidden-xs" id="lg-menu">
+<div class="row navbar-container">
+<div class="navbar-header col-xs-12">
+  <a class="navbar-brand" href="#">Cute or Boot</a>
+</div>
+
+<ul class="nav hidden-xs col-xs-12" id="lg-menu">
   <li class="showUser">
     <a href="<%= "#cuties/" + CURRENT_USER_ID %>">
       <%= CURRENT_USER_USERNAME %>
@@ -32,7 +37,7 @@
   </li>
 </ul>
 
-<ul class="list-unstyled hidden-xs" id="sidebar-footer">
+<ul class="list-unstyled hidden-xs col-xs-12" id="sidebar-footer">
   <li class="search">
     <a href="#search">Search
       <i class="pull-right glyphicon glyphicon-search"></i>
@@ -40,7 +45,7 @@
   </li>
 </ul>
 
-<ul class="nav nav-tiny visible-xs" id="xs-menu">
+<ul class="nav nav-tiny visible-xs col-xs-12" id="xs-menu">
   <li class="showUser">
     <a href="<%= "#cuties/" + CURRENT_USER_ID %>" class="text-center">
       <i class="glyphicon glyphicon-home"></i>
@@ -72,3 +77,4 @@
     </a>
   </li>
 </ul>
+</div>
