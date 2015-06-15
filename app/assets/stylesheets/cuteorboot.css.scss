@@ -1,9 +1,13 @@
 nav.railsnav {
-  opacity: .8;
+  background: transparent;
 }
 
 .railsnav li:hover {
-  background-color: white;
+  background-color: rgba(213,192,192,0.5);
+}
+
+#home a {
+  color: white;
 }
 
 body {
@@ -19,13 +23,41 @@ li {
   color: white;
 }
 
-body#home {
+body#home.home {
   color: white;
   margin-top: 50px;
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url("https://newevolutiondesigns.com/images/freebies/dog-wallpaper-12.jpg");
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: scroll;
+}
+
+body#home.signup {
+  color: white;
+  margin-top: 50px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("terriermeadows.jpg");
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: scroll;
+}
+
+body#home.login {
+  color: white;
+  margin-top: 50px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("terriermeadows.jpg");
+  background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -59,6 +91,7 @@ span.help-block {
   vertical-align: middle;
   border: 2px solid black;
   border-radius: 200px;
+  box-shadow: 0px 0px 20px 20px black inset;
   width: 50%;
   left: 25%;
   position: relative;
