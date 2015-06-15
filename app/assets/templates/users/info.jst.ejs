@@ -1,4 +1,4 @@
-<section class="col-xs-9 user-profile">
+<section class="col-xs-8 user-profile">
 <% var current_loc = (user.escape("city") + ", " + user.escape("state")) %>
 <% var score = parseInt(10 * user.escape("rating")) %>
 <% var rating = user.escape("rating") %>
@@ -21,16 +21,19 @@
 <% }) %>
 
 <h4>Hobbies
-  <ul>
+  <ul class="row">
     <% user.hobbies().each(function (hobby) { %>
-      <li><%= hobby.escape("name") %></li>
+      <li class="col-xs-3">
+        <%= hobby.escape("name") %>
+      </li>
     <% }) %>
   </ul>
+  <hr>
 </h4>
-</section
-<hr>
+</section>
 
-<sidebar class="stats-sidebar col-xs-3">
+
+<sidebar class="stats-sidebar col-xs-4">
   <h4>Score</h4>
 
   <div class="radial-progress <%= ratingClass %>" data-progress="<%= score %>">
