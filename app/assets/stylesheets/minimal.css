@@ -8,9 +8,9 @@
 
 #cloudinary-widget {
   background: #ffffff;
-  -moz-border-radius: 0;
-  -webkit-border-radius: 0;
-  border-radius: 0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
   border: none;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
@@ -81,7 +81,7 @@
 #cloudinary-widget .button {
   height: 45px;
   width: 180px;
-  line-height: 30px;  
+  line-height: 30px;
 }
 
 #cloudinary-widget .button.small_button {
@@ -110,7 +110,7 @@
 
 #cloudinary-widget .panel.progress .thumbnails {
   margin-top: 4px;
-}  
+}
 
 #cloudinary-widget .panel.camera .form .button_holder {
   margin-top: 10px;
