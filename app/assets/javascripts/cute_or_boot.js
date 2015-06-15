@@ -20,8 +20,8 @@ window.CuteOrBoot = {
     navbar.render();
 
     setTimeout(function () {
-      $('.alert').hide();
-    }, 4000);
+      $('.alert').fadeOut();
+    }, 3000);
 
     Backbone.history.start();
   }
