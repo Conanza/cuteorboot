@@ -56,6 +56,15 @@ body#home {
    height: 100%;
 }
 
+main.fans {
+  height: 100%;
+  overflow: scroll;
+}
+
+main.top-cuties {
+  height: 100%;
+  overflow: scroll;
+}
 
 .edit-content {
   border: solid black 1px;
