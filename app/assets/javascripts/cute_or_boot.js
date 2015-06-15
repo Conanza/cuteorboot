@@ -16,7 +16,8 @@ window.CuteOrBoot = {
       router: router
     });
 
-    $("#navbar").html(navbar.$el);
+    // $("#sidebar").html(navbar.$el);
+    $("div.cuteorboot").prepend(navbar.$el);
     navbar.render();
 
     setTimeout(function () {

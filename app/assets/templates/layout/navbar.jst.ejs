@@ -1,45 +1,74 @@
-<nav class="navbar navbar-inverse sidebar" role="navigation">
-  <div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">Cute or Boot</a>
-		</div>
+<ul class="nav hidden-xs" id="lg-menu">
+  <li class="showUser">
+    <a href="<%= "#cuties/" + CURRENT_USER_ID %>">
+      <%= CURRENT_USER_USERNAME %>
+      <i class="pull-right glyphicon glyphicon-home"></i>
+    </a>
+  </li>
+  <li class="game">
+    <a href="#petreel">Pet Reel
+      <i class="pull-right glyphicon glyphicon-film"></i>
+    </a>
+  </li>
+  <li class="notifications">
+    <a href="javascript:void(0)">Notifications
+      <i class="pull-right glyphicon glyphicon-comment"></i>
+    </a>
+  </li>
+  <li class="topCutiesList">
+    <a href="#top-cuties-list">Top Cuties List
+      <i class="pull-right glyphicon glyphicon-fire"></i>
+    </a>
+  </li>
+  <li class="showFans">
+    <a href="#fans">Your pet's fans
+      <i class="pull-right glyphicon glyphicon-heart"></i>
+    </a>
+  </li>
+  <li class="logout">
+    <a href="">Logout
+      <i class="pull-right glyphicon glyphicon-log-out"></i>
+    </a>
+  </li>
+</ul>
 
-		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li class="showUser">
-          <a href="<%= "#cuties/" + CURRENT_USER_ID %>">
-            <%= CURRENT_USER_USERNAME %>
-            <span class="pull-right glyphicon glyphicon-home"></span>
-          </a>
-        </li>
-				<li class="game">
-          <a href="#petreel">Pet Reel<span class="pull-right glyphicon glyphicon-film"></span></a>
-        </li>
-				<li class="notifications">
-          <a href="javascript:void(0)">Notifications<span class="pull-right glyphicon glyphicon-comment"></span></a>
-        </li>
-        <li class="topCutiesList">
-          <a href="#top-cuties-list">Top Cuties List<span class="pull-right glyphicon glyphicon-fire"></span></a>
-        </li>
-				<li class="showFans">
-          <a href="#fans">Your pet's fans<span class="pull-right glyphicon glyphicon-heart"></span></a>
-				</li>
-        <li class="logout">
-          <a href="">Logout<span class="pull-right glyphicon glyphicon-log-out"></span></a>
-				</li>
+<ul class="list-unstyled hidden-xs" id="sidebar-footer">
+  <li class="search">
+    <a href="#search">Search
+      <i class="pull-right glyphicon glyphicon-search"></i>
+    </a>
+  </li>
+</ul>
 
-        <li class="search">
-          <a href="#search">Search
-            <span class="pull-right glyphicon glyphicon-search"></span>
-          </a>
-        </li>
-			</ul>
-		</div>
-	</div>
-</nav>
+<ul class="nav nav-tiny visible-xs" id="xs-menu">
+  <li class="showUser">
+    <a href="<%= "#cuties/" + CURRENT_USER_ID %>" class="text-center">
+      <i class="glyphicon glyphicon-home"></i>
+    </a>
+  </li>
+  <li class="game">
+    <a href="#petreel" class="text-center">
+      <i class="glyphicon glyphicon-film"></i>
+    </a>
+  </li>
+  <li class="notifications">
+    <a href="javascript:void(0)" class="text-center">
+      <i class="glyphicon glyphicon-comment"></i>
+    </a>
+  </li>
+  <li class="topCutiesList">
+    <a class="text-center" href="#top-cuties-list">
+      <i class="glyphicon glyphicon-fire"></i>
+    </a>
+  </li>
+  <li class="showFans">
+    <a class="text-center" href="#fans">
+      <i class="glyphicon glyphicon-heart"></i>
+    </a>
+  </li>
+  <li class="logout">
+    <a class="text-center" href="">
+      <i class="glyphicon glyphicon-log-out"></i>
+    </a>
+  </li>
+</ul>

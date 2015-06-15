@@ -3,6 +3,8 @@
 <h4>Current Location</h4>
 <p><%= current_loc %></p>
 
+<hr>
+
 <% attrs.forEach(function (attr) { %>
   <h4><%= attr[0] %></h4>
 
@@ -12,6 +14,8 @@
   <% } else { %>
     <p><%= user.escape(attr[1]) %></p>
   <% } %>
+
+  <hr>
 <% }) %>
 
 <h4>Hobbies
@@ -22,6 +26,7 @@
   </ul>
 </h4>
 
+<hr>
 
 <sidebar class="stats-sidebar">
   <h4>Score</h4>
