@@ -1,3 +1,35 @@
-section.toggled-off {
-  display: none;
+div.dashboard {
+  height: 100%;
+  overflow: scroll;
+}
+
+section.userlanding {
+  opacity: 1;
+  max-height: 600px;
+  overflow-y: hidden;
+
+  -webkit-transition: all 0.6s ease-out;
+  -moz-transition: all 0.6s ease-out;
+  transition: all 0.6s ease-out;
+}
+
+section.userlanding.toggled-off {
+  opacity: 0;
+  max-height: 0;
+}
+
+section.userdetail {
+  opacity: 1;
+  max-height: 100%;
+  overflow-y: hidden;
+  display: block;
+
+  -webkit-transition: all 0.6s ease-in;
+  -moz-transition: all 0.6s ease-in;
+  transition: all 0.6s ease-in;
+}
+
+section.userdetail.toggled-off {
+  max-height: 0;
+  opacity: 0;
 }
