@@ -3,11 +3,17 @@ nav.railsnav {
 }
 
 .railsnav li:hover {
-  background-color: rgba(213,192,192,0.5);
 }
 
 #home a {
   color: white;
+  opacity: 0.7;
+  transition: 0.3s ease-in;
+}
+
+#home a:hover {
+  opacity: 1;
+  transition: 0.3s ease-in;
 }
 
 body {
