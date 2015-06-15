@@ -1,8 +1,8 @@
 /* custom template */
 html, body {
-   height: 100%;
-   font-family:verdana,arial,sans-serif;
-   color:#555555;
+ height: 100%;
+ font-family:verdana,arial,sans-serif;
+ color: #555555;
 }
 
 .nav {
@@ -10,15 +10,15 @@ html, body {
 }
 
 a {
-  color:#222222;
+  color: #222222;
 }
 
 a:hover {
-  text-decoration:none;
+  text-decoration: none;
 }
 
 hr {
-  border-color:#dedede;
+  border-color: #dedede;
 }
 
 div.navbar-container {
@@ -32,9 +32,9 @@ li.active {
 
 
 .wrapper, .row {
-   height: 100%;
-   margin-left: 0px;
-   margin-right: 0px;
+  height: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 div.row {
@@ -44,33 +44,33 @@ div.row {
 
 .wrapper:before, .wrapper:after,
 .column:before, .column:after {
-    content: "";
-    display: table;
+  content: "";
+  display: table;
 }
 
 .wrapper:after,
 .column:after {
-    clear: both;
+  clear: both;
 }
 
 .column {
-    height: 100%;
-    overflow: hidden;
-    *zoom:1;
+  height: 100%;
+  overflow: hidden;
+  *zoom:1;
 }
 
 .column .padding {
-    padding: 20px;
+  padding: 20px;
 }
 
 
 .box {
-  	bottom: 0; /* increase for footer use */
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0px;
-    background-color:#444444;
+  bottom: 0; /* increase for footer use */
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0px;
+  background-color:#444444;
   /*
     background-image:url('/assets/example/bg_suburb.jpg');
     background-size:cover;
@@ -83,18 +83,18 @@ div.row {
 }
 
 #sidebar {
-    padding:0px;
+  padding:0px;
 	padding-top:15px;
 }
 
 #sidebar, #sidebar a, #sidebar-footer a {
-    color:#ffffff;
-    background-color:transparent;
-	text-shadow:0 0 2px #000000;
-    padding-left:5px;
+  color:#ffffff;
+  background-color:transparent;
+  text-shadow:0 0 2px #000000;
+  padding-left:5px;
 }
 #sidebar .nav li>a:hover {
-    background-color:#393939;
+  background-color:#393939;
 }
 
 #sidebar-footer {
@@ -110,13 +110,13 @@ div.row {
 
 .modal-header, .modal-footer {
 	background-color:#f2f2f2;
-    font-weight:800;
-    font-size:12px;
+  font-weight:800;
+  font-size:12px;
 }
 
 .modal-footer i, .well i {
-    font-size:20px;
-    color:#c0c0c0;
+  font-size:20px;
+  color:#c0c0c0;
 }
 
 .modal-body {
@@ -125,29 +125,20 @@ div.row {
 
 .modal-body textarea.form-control
 {
-   resize: none;
-   border:0;
-   box-shadow:0 0 0;
+  resize: none;
+  border:0;
+  box-shadow:0 0 0;
 }
 
 /* adjust the contents on smaller devices */
 @media (max-width: 768px) {
-
   .column .padding {
     padding: 7px;
   }
 
   .full{
-	padding-top:20px;
+    padding-top:20px;
   }
-
-  .navbar-blue {
-	background-color:#3B5999;
-    top:0;
-    width:100%;
-    position:relative;
-  }
-
 }
 
 
