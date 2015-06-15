@@ -2,22 +2,6 @@
   <% var picture = user.pictures().first().escape("thumb_url") %>
 <% } %>
 
-<% var ratingClass %>
-<% var rating = user.escape("rating") %>
-<% if (rating > 9) { %>
-  <% ratingClass = "rating-sizzling" %>
-<% } else if (rating > 7) { %>
-  <% ratingClass = "rating-hot" %>
-<% } else if (rating > 6) { %>
-  <% ratingClass = "rating-warm" %>
-<% } else if (rating >= 5){ %>
-  <% ratingClass = "rating-lukewarm" %>
-<% } else { %>
-  <% ratingClass = "rating-cold" %>
-<% } %>
-
-
-
 <img class="cutie-item-img <%= ratingClass %>" src="<%= picture %>">
 
 <p class="name">
