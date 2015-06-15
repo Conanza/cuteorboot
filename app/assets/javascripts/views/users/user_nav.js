@@ -16,7 +16,6 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
   },
 
   handleKeydown: function (event) {
-    // 1 => keycode 49
     // 2 => keycode 50
     console.log(window.location.hash)
   },
