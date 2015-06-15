@@ -3,6 +3,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
+    $(window).keydown(this.handleKeydown.bind(this));
   },
 
   events: {
@@ -11,12 +12,13 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     "click .add-image": "addImage",
     "click a.toggleprofile": "toggleProfile",
     "click a.editprofile": "openEditForm",
-    "keydown": "handleKeydown"
+    // "keydown": "handleKeydown"
   },
 
   handleKeydown: function (event) {
     // 1 => keycode 49
     // 2 => keycode 50
+    console.log(window.location.hash)
   },
 
   openEditForm: function (event) {

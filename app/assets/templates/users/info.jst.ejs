@@ -1,5 +1,20 @@
 <section class="col-xs-9 user-profile">
 <% var current_loc = (user.escape("city") + ", " + user.escape("state")) %>
+<% var score = parseInt(10 * user.escape("rating")) %>
+<% var rating = user.escape("rating") %>
+
+<% var ratingClass %>
+<% if (rating > 9) { %>
+  <% ratingClass = "sizzling" %>
+<% } else if (rating > 7) { %>
+  <% ratingClass = "hot" %>
+<% } else if (rating > 6) { %>
+  <% ratingClass = "warm" %>
+<% } else if (rating >= 5){ %>
+  <% ratingClass = "lukewarm" %>
+<% } else { %>
+  <% ratingClass = "cold" %>
+<% } %>
 
 <h4>Current Location</h4>
 <p><%= current_loc %></p>
@@ -30,8 +45,22 @@
 
 <sidebar class="stats-sidebar col-xs-3">
   <h4>Score</h4>
-  <% var rating = user.escape("rating") %>
-  <% if (!rating) { rating = 0 } %>
 
-  <p><%= rating %></p>
+  <div class="radial-progress <%= ratingClass %>" data-progress="<%= score %>">
+  	<div class="circle">
+  		<div class="mask full">
+  			<div class="fill"></div>
+  		</div>
+  		<div class="mask half">
+  			<div class="fill"></div>
+  			<div class="fill fix"></div>
+  		</div>
+  		<div class="shadow"></div>
+  	</div>
+  	<div class="inset">
+  		<div class="percentage">
+  			<div class="numbers"><span>-</span><span><%= rating %></span></div>
+  		</div>
+  	</div>
+  </div>
 </sidebar>

@@ -16,6 +16,9 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
     Backbone.history.navigate('petreel', { trigger: true });
   },
 
+  // when game finishes and there's no users to fetch, game won't
+  // refetch if a new user joins in current_user's session; this.model
+  // already exists so dashboard never hits setNextUser
   game: function () {
     if (this.users.length < 6) {
       this.users.fetch();

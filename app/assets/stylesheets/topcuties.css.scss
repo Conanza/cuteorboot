@@ -20,7 +20,15 @@
 }
 
 .cutie-item-img.rating-warm {
-  box-shadow: 0px 0px 20px 5px rgb(255, 136, 0);
+  box-shadow: 0px 0px 20px 5px #FF9100;
+}
+
+.cutie-item-img.rating-lukewarm {
+  box-shadow: 0px 0px 20px 5px #FFE800;
+}
+
+.cutie-item-img.rating-cold {
+  box-shadow: 0px 0px 20px 5px blue;
 }
 
 .cutie-item-img.hover {
