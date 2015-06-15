@@ -17,14 +17,10 @@
     <% } %>
   <% } %>
 
-  <% var rating = user.escape("rating") %>
-  <% if (!rating) { rating = 0 } %>
-
   <div class="navbar-header">
     <a class="navbar-brand" href="#toggleprofile">
       <%= username + ", " + user.escape("gender") %>
     </a>
-    <%= "shorty's a " + rating %>
   </div>
 
   <% if (currentUser) { %>

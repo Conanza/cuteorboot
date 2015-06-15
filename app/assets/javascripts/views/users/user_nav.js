@@ -3,7 +3,6 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
-    $(window).keydown(this.handleKeydown.bind(this));
   },
 
   events: {
@@ -11,13 +10,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     "click .bootit": "bootVote",
     "click .add-image": "addImage",
     "click a.toggleprofile": "toggleProfile",
-    "click a.editprofile": "openEditForm",
-    // "keydown": "handleKeydown"
-  },
-
-  handleKeydown: function (event) {
-    // 2 => keycode 50
-    console.log(window.location.hash)
+    "click a.editprofile": "openEditForm"
   },
 
   openEditForm: function (event) {
@@ -56,7 +49,6 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     });
   },
 
-  // while voting in pet reel, profile remains toggled ?
   bootVote: function (event) {
     event.preventDefault();
 
