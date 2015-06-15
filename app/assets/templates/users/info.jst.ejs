@@ -1,8 +1,8 @@
+<section class="col-xs-9 user-profile">
 <% var current_loc = (user.escape("city") + ", " + user.escape("state")) %>
 
 <h4>Current Location</h4>
 <p><%= current_loc %></p>
-
 <hr>
 
 <% attrs.forEach(function (attr) { %>
@@ -25,10 +25,10 @@
     <% }) %>
   </ul>
 </h4>
-
+</section
 <hr>
 
-<sidebar class="stats-sidebar">
+<sidebar class="stats-sidebar col-xs-3">
   <h4>Score</h4>
   <% var rating = user.escape("rating") %>
   <% if (!rating) { rating = 0 } %>
