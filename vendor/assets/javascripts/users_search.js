@@ -29,12 +29,12 @@ $.UsersSearch.prototype.renderResults = function (users) {
 
     var $a = $("<a></a>");
     $a.text(user.username);
-    $a.attr("href", "/users/" + user.id);
+    $a.attr("href", "/#cuties/" + user.id);
 
     var $li = $("<li></li>");
     $li.append($a);
 
-    this.$ul.append($li);
+    this.$ul.prepend($li);
   }
 };
 

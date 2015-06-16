@@ -61,6 +61,7 @@ class UsersController < ApplicationController
       @users = User
         .includes(:pictures)
         .where("username ~ ?", params[:query])
+        .order("username DESC")
     else
       @users = User.none
     end
