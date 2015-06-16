@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create] do
+    get "search", on: :collection
+  end
 
   resources :users, except: [:new, :create], defaults: { format: :json }
 

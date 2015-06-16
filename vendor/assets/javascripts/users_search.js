@@ -1,7 +1,7 @@
 $.UsersSearch = function (el) {
   this.$el = $(el);
   this.$input = this.$el.find("input[name=username]");
-  this.$ul = this.$el.find(".users");
+  this.$ul = this.$el.find(".users-results");
 
   this.$input.on("input", this.handleInput.bind(this));
 };
@@ -33,7 +33,6 @@ $.UsersSearch.prototype.renderResults = function (users) {
 
     var $li = $("<li></li>");
     $li.append($a);
-    $li.append($followToggle);
 
     this.$ul.append($li);
   }

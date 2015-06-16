@@ -57,6 +57,13 @@ class UsersController < ApplicationController
   end
 
   def search
+    if params[:query].present?
+      @users = User
+        .includes(:pictures)
+        .where("username ~ ?", params[:query])
+    else
+      @users = User.none
+    end
   end
 
   private

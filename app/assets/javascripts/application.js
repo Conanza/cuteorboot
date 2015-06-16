@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require underscore
 //= require backbone
+//= require users_search
 //= require carousel
 //= require cute_or_boot
 //= require_tree ../templates

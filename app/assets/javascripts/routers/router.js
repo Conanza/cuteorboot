@@ -72,15 +72,9 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
   },
 
   searchUsers: function () {
-    openSearchForm: function (event) {
-      debugger
-      var searchForm = new CuteOrBoot.Views.UserSearch();
+    var searchForm = new CuteOrBoot.Views.UserSearch();
 
-      $("body").prepend(searchForm.$el);
-      searchForm.render();
-    },
-
-
+    this._swapView(searchForm);
   },
 
   _swapView: function (view) {
