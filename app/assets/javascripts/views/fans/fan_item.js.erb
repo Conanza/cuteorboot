@@ -7,10 +7,15 @@ CuteOrBoot.Views.FanItem = Backbone.CompositeView.extend({
     this.listenTo(this.model, "sync", this.render);
   },
 
+  // extend file to be able to use rails helper
   render: function () {
     var content = this.template({ user: this.model });
     this.$el.html(content);
     this.$("img").attr("fan-id", this.model.id);
+
+    if (this.model.pictures().length <= 0) {
+      this.$("img").attr("src", "<%= asset_path('spotinahole.png') %>");
+    }
 
     return this;
   }
