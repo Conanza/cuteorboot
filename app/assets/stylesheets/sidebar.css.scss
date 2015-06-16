@@ -23,7 +23,7 @@ a:hover {
 
 #sidebar div ul li a {
   color: white;
-  opacity: 0.8;
+  opacity: 0.5;
   transition: 0.3s ease-out;
 }
 
@@ -41,10 +41,9 @@ hr {
 div.navbar-container {
 }
 
-li.active {
-  background-color: white;
-  color: black;
-  opacity: .8;
+#sidebar div ul li.active a {
+  color: white;
+  opacity: 1.0;
 }
 
 
@@ -105,9 +104,6 @@ div.row {
   text-shadow:0 0 2px #000000;
   padding-left:5px;
 }
-#sidebar .nav li>a:hover {
-  background-color:#393939;
-}
 
 #sidebar-footer {
   background-color:#444;
@@ -117,29 +113,6 @@ div.row {
 }
 #footer {
   margin-bottom:20px;
-}
-
-
-.modal-header, .modal-footer {
-	background-color:#f2f2f2;
-  font-weight:800;
-  font-size:12px;
-}
-
-.modal-footer i, .well i {
-  font-size:20px;
-  color:#c0c0c0;
-}
-
-.modal-body {
-	padding:0px;
-}
-
-.modal-body textarea.form-control
-{
-  resize: none;
-  border:0;
-  box-shadow:0 0 0;
 }
 
 /* adjust the contents on smaller devices */
