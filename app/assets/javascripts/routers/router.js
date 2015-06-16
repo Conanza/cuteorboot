@@ -8,6 +8,7 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
     "": "redirectToGame",
     "petreel": "game",
     "fans": "showFans",
+    "search": "searchUsers",
     "top-cuties-list": "topCutiesList",
     "cuties/:id": "showUser"
   },
@@ -68,6 +69,18 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(fansView);
+  },
+
+  searchUsers: function () {
+    openSearchForm: function (event) {
+      debugger
+      var searchForm = new CuteOrBoot.Views.UserSearch();
+
+      $("body").prepend(searchForm.$el);
+      searchForm.render();
+    },
+
+
   },
 
   _swapView: function (view) {

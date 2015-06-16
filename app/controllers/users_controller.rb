@@ -56,6 +56,9 @@ class UsersController < ApplicationController
     redirect_to home_url
   end
 
+  def search
+  end
+
   private
 
   def user_params
