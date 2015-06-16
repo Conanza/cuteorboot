@@ -17,7 +17,24 @@ CuteOrBoot.Models.User = Backbone.Model.extend({
       delete response.fans;
     }
 
+    if (response.birthdate) {
+      this.age = this.calculateAge(response.birthdate);
+      delete response.birthdate;
+    }
+
     return response;
+  },
+
+  calculateAge: function (birthday) {
+    var today = new Date();
+    var bday = new Date(birthday);
+    var age = today.getYear() - bday.getYear();
+
+    if (bday.getMonth() > today.getMonth()) {
+      age -= 1
+    }
+
+    return age;
   },
 
   pictures: function () {
