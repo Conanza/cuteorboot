@@ -8,8 +8,6 @@ CuteOrBoot.Views.Navbar = Backbone.CompositeView.extend({
   events: {
     "mouseover .row": "toggleSidebar",
     "mouseout .row": "toggleSidebar",
-    "mouseover ul.nav li": "hoverOn",
-    "mouseout ul.nav li": "hoverOff",
     "click .logout": "logout"
   },
 
@@ -41,14 +39,6 @@ CuteOrBoot.Views.Navbar = Backbone.CompositeView.extend({
     var content = this.template();
     this.$el.html(content);
     return this;
-  },
-
-  hoverOn: function (event) {
-    $(event.currentTarget).addClass("hover");
-  },
-
-  hoverOff: function (event) {
-    $(event.currentTarget).removeClass("hover");
   },
 
   markActive: function (route, params) {

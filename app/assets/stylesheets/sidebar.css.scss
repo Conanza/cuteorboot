@@ -21,6 +21,19 @@ a:hover {
   text-decoration: none;
 }
 
+#sidebar div ul li a {
+  color: white;
+  opacity: 0.8;
+  transition: 0.3s ease-out;
+}
+
+#sidebar div ul li a:hover {
+  color: white;
+  opacity: 1;
+
+  transition: 0.3s ease-in;
+}
+
 hr {
   border-color: #dedede;
 }
