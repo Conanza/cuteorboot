@@ -23,7 +23,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     this.model.trigger("profileToggled");
   },
 
-  // fix success callback
+  // fix error callback?
   cuteVote: function (event) {
     event.preventDefault();
 

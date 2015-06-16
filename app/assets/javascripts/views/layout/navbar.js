@@ -8,13 +8,18 @@ CuteOrBoot.Views.Navbar = Backbone.CompositeView.extend({
   events: {
     "mouseover .row": "toggleSidebar",
     "mouseout .row": "toggleSidebar",
-    "click .logout": "logout"
+    "click .logout": "logout",
+    "click div.backbone-sidebar.navbar-header": "returnToReel"
   },
 
   initialize: function (options) {
     this.router = options.router;
 
     this.listenTo(this.router, "route", this.markActive);
+  },
+
+  returnToReel: function (event) {
+    Backbone.history.navigate("#petreel", { trigger: true });
   },
 
   logout: function (event) {

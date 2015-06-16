@@ -6,7 +6,17 @@ html, body {
 }
 
 .backbone-sidebar.navbar-header {
+  height: 10%;
   margin-bottom: 20px;
+  background-image: url("spoteye.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 15px;
+}
+
+.backbone-sidebar.navbar-header:hover {
+  cursor: pointer;
 }
 
 .nav {
@@ -79,7 +89,6 @@ div.row {
   padding: 20px;
 }
 
-
 .box {
   bottom: 0; /* increase for footer use */
   left: 0;
@@ -105,12 +114,12 @@ div.row {
   padding-left:5px;
 }
 
-#sidebar-footer {
-  background-color:#444;
+div.backbone-sidebar ul.logout {
   position:absolute;
-  bottom:5px;
+  bottom:40px;
   padding:5px;
 }
+
 #footer {
   margin-bottom:20px;
 }

@@ -121,10 +121,11 @@ span.help-block {
 
 
 #main {
-   background-color: white;
-   padding-left:0;
-   padding-right:0;
-   height: 100%;
+  max-width: 1024px;
+  background-color: white;
+  padding-left:0;
+  padding-right:0;
+  height: 100%;
 }
 
 main.fans {
