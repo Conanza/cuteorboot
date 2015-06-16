@@ -1,13 +1,13 @@
 div.dashboard {
   height: 100%;
   width: 100%;
-  overflow: scroll;
 }
 
 section.userlanding {
+  padding-right: 0px;
   opacity: 1;
   max-height: 600px;
-  overflow-y: hidden;
+  overflow-y: scroll;
 
   -webkit-transition: all 0.6s ease-out;
   -moz-transition: all 0.6s ease-out;
@@ -20,9 +20,10 @@ section.userlanding.toggled-off {
 }
 
 section.userdetail {
+  padding-right: 0px;
   opacity: 1;
   max-height: 100%;
-  overflow-y: hidden;
+  overflow-y: scroll;
   display: block;
 
   -webkit-transition: all 0.6s ease-in;
@@ -33,4 +34,29 @@ section.userdetail {
 section.userdetail.toggled-off {
   max-height: 0;
   opacity: 0;
+}
+
+section.detail-carousel {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+main.detail-info {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+section.user-profile {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+sidebar.stats-sidebar {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+main.landing-carousel {
+  padding-right: 0px;
+  padding-left: 0px;
 }

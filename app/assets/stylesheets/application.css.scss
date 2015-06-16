@@ -17,3 +17,8 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+
+ *.row {
+   margin-left: 0px;
+   margin-right: 0px;
+ }
