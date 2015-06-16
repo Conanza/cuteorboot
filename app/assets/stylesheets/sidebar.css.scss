@@ -36,6 +36,18 @@ html, body {
   margin-bottom: 0px;
 }
 
+.backbone-sidebar ul li span {
+  opacity: 0;
+  transition: 0.2s ease-out;
+  font-size: 10px;
+}
+
+// .backbone-sidebar ul li a.logout:hover + span {
+//   opacity: 0.7;
+//   transition: 0.2s ease-in;
+//   font-size: 10px;
+// }
+
 .nav {
   font-size:15px;
 }
@@ -59,6 +71,20 @@ a:hover {
   opacity: 1;
 
   transition: 0.3s ease-in;
+}
+
+#sidebar div ul li a.logout {
+  opacity: 0;
+}
+
+#sidebar div ul li.showuser:hover > a.logout {
+  opacity: 0.5;
+  transition: 0.2s ease-in;
+}
+
+#sidebar div ul li.showuser:hover > a.logout:hover {
+  opacity: 1;
+  transition: 0.2s ease-in;
 }
 
 hr {
