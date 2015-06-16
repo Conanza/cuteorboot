@@ -42,12 +42,6 @@ html, body {
   font-size: 10px;
 }
 
-// .backbone-sidebar ul li a.logout:hover + span {
-//   opacity: 0.7;
-//   transition: 0.2s ease-in;
-//   font-size: 10px;
-// }
-
 .nav {
   font-size:15px;
 }
@@ -83,6 +77,11 @@ a:hover {
 }
 
 #sidebar div ul li.showuser:hover > a.logout:hover {
+  opacity: 1;
+  transition: 0.2s ease-in;
+}
+
+#sidebar div ul li.showuser:hover > a.logout:hover + span {
   opacity: 1;
   transition: 0.2s ease-in;
 }
