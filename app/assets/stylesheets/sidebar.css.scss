@@ -5,6 +5,11 @@ html, body {
  color: #555555;
 }
 
+.backbone-sidebar h4 {
+  text-align: center;
+  opacity: 0.5;
+}
+
 .backbone-sidebar.navbar-header {
   height: 10%;
   margin-bottom: 20px;
@@ -13,6 +18,7 @@ html, body {
   background-repeat: no-repeat;
   background-position: center;
   padding: 15px;
+  text-align: center;
 }
 
 .backbone-sidebar.navbar-header:hover {

@@ -6,8 +6,6 @@ CuteOrBoot.Views.Navbar = Backbone.CompositeView.extend({
   className: "column col-xs-2 sidebar-offcanvas",
 
   events: {
-    // "mouseover .row": "toggleSidebar",
-    // "mouseout .row": "toggleSidebar",
     "click .logout": "logout",
     "click div.backbone-sidebar.navbar-header": "returnToReel"
   },
@@ -29,17 +27,6 @@ CuteOrBoot.Views.Navbar = Backbone.CompositeView.extend({
       url: "/session",
       type: "DELETE"
     });
-  },
-
-  toggleSidebar: function (event) {
-    if (window.innerWidth > 768) {
-      return;
-    }
-
-    // $(this).toggleClass('visible-xs text-center');
-    // $('.row-offcanvas').toggleClass('active');
-    // $('#lg-menu').toggleClass('hidden-xs').toggleClass('visible-xs');
-    // $('#xs-menu').toggleClass('visible-xs').toggleClass('hidden-xs');
   },
 
   render: function () {
