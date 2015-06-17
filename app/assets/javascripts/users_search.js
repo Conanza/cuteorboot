@@ -29,6 +29,8 @@ $.UsersSearch.prototype.renderResults = function (users) {
       this.$div.append(searchItem.$el);
       searchItem.render();
     }.bind(this));
+  } else {
+    this.$div.append("No matches found");    
   }
 };
 
