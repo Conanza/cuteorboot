@@ -7,16 +7,15 @@ $.UsersSearch = function (el) {
 };
 
 $.UsersSearch.prototype.handleInput = function (event) {
-  if (this.$input.val() === "") {
+  var input = this.$input.val();
+  if (input === "") {
     this.renderResults([]);
     return;
   }
 
-  $.ajax({
-    url: "/users/search",
-    dataType: "json",
-    method: "GET",
-    data: { query: this.$input.val() },
+  var searchResults = new CuteOrBoot.Collections.Users();
+  searchResults.fetch({
+    data: { query: input },
     success: this.renderResults.bind(this)
   });
 };
@@ -24,19 +23,15 @@ $.UsersSearch.prototype.handleInput = function (event) {
 $.UsersSearch.prototype.renderResults = function (users) {
   this.$ul.empty();
 
-  for (var i = 0; i < users.length; i++) {
-    var user = users[i];
-
-    var $a = $("<a></a>");
-    $a.text(user.username);
-    $a.attr("href", "/#cuties/" + user.id);
-
-    var $li = $("<li></li>");
-    $li.append($a);
-
-    this.$ul.prepend($li);
+  if (users.length > 0) {
+    users.each(function (user) {
+      var searchItem = new CuteOrBoot.Views.SearchItem({ model: user });
+      this.$ul.append(searchItem.$el);
+      searchItem.render();
+    }.bind(this));
   }
 };
+
 
 $.fn.usersSearch = function () {
   return this.each(function () {

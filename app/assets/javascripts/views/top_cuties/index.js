@@ -6,9 +6,7 @@ CuteOrBoot.Views.TopCutiesIndex = Backbone.CompositeView.extend({
   className: "top-cuties",
 
   events: {
-    "click div.top-cuties-list-item img": "showUser",
-    "mouseover img": "addHover",
-    "mouseout img": "removeHover"
+    "click div.top-cuties-list-item img": "showUser"
   },
 
   initialize: function () {
@@ -21,14 +19,6 @@ CuteOrBoot.Views.TopCutiesIndex = Backbone.CompositeView.extend({
     this.listenTo(this.collection, "sync", this.render);
 
     this.collection.each(this.addTopCutie.bind(this));
-  },
-
-  addHover: function (event) {
-    $(event.currentTarget).addClass("hover");
-  },
-
-  removeHover: function (event) {
-    $(event.currentTarget).removeClass("hover");
   },
 
   addTopCutie: function (cutie) {

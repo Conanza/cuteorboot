@@ -1,0 +1,21 @@
+CuteOrBoot.Views.SearchItem = Backbone.CompositeView.extend({
+  template: JST["search/search_item"],
+
+  className: "search-result-item col-xs-3",
+
+  initialize: function () {
+    this.listenTo(this.model, "sync", this.render);
+  },
+
+  render: function () {
+    var content = this.template({ user: this.model });
+    this.$el.html(content);
+    this.$("img").attr("user-id", this.model.id);
+
+    if (this.model.pictures().length <= 0) {
+      this.$("img").attr("src", "<%= asset_path('spotinahole.png') %>");
+    }
+
+    return this;
+  }
+});

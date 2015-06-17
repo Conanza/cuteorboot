@@ -5,7 +5,12 @@ class UsersController < ApplicationController
 
   # may need to optimize User#rating
   def index
-    if params[:top_cuties].present?
+    if params[:query].present?
+      @users = User
+        .includes(:pictures, :hobbies, :received_votes)
+        .where("username ~ ?", params[:query])
+        .order("username ASC")
+    elsif params[:top_cuties].present?
       @users = User.top_cuties
     elsif params[:fans].present?
       @users = User.fans_for(current_user)
@@ -54,17 +59,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect_to home_url
-  end
-
-  def search
-    if params[:query].present?
-      @users = User
-        .includes(:pictures)
-        .where("username ~ ?", params[:query])
-        .order("username DESC")
-    else
-      @users = User.none
-    end
   end
 
   private

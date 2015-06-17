@@ -1,0 +1,13 @@
+<% if (user.pictures().length > 0) { %>
+  <% var picture = user.pictures().first().escape("thumb_url") %>
+  <img class="search-item-img" src="<%= picture %>">
+<% } else { %>
+  <img class="search-item-img">
+<% }%>
+
+<div class="search-item-description">
+  <p>
+    <strong><%= user.escape("username") %></strong>, <%= user.escape("gender") %>
+    <br><%= user.escape("state") %>
+  </p>
+</div>
