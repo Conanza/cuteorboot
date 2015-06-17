@@ -57,8 +57,8 @@ Both these views are composite, each containing `IndexItem` Views for each fan o
 - [ ] Sort users shown in feed by distance from
 - [ ] Game filter: edit settings to search by animal type, age
 - [ ] Heat map for fans: Sort list of fans by city
-- [ ] Interactive search (by username)
-- [ ] Thumbnail view for search results
+- [x] Interactive search (by username)
+- [x] Thumbnail view for search results
 - [ ] "Up next" thumbnails: interactive preview of users coming up next in feed
 - [ ] Notifications for new likes and messages
 - [ ] Chatting, enabled by mutual likes
