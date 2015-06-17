@@ -1,7 +1,7 @@
 $.UsersSearch = function (el) {
   this.$el = $(el);
   this.$input = this.$el.find("input[name=username]");
-  this.$ul = this.$el.find(".users-results");
+  this.$div = this.$el.find(".users-results");
 
   this.$input.on("input", this.handleInput.bind(this));
 };
@@ -21,12 +21,12 @@ $.UsersSearch.prototype.handleInput = function (event) {
 };
 
 $.UsersSearch.prototype.renderResults = function (users) {
-  this.$ul.empty();
+  this.$div.empty();
 
   if (users.length > 0) {
     users.each(function (user) {
       var searchItem = new CuteOrBoot.Views.SearchItem({ model: user });
-      this.$ul.append(searchItem.$el);
+      this.$div.append(searchItem.$el);
       searchItem.render();
     }.bind(this));
   }
