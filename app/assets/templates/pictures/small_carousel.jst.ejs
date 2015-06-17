@@ -1,20 +1,9 @@
-<div class="carousel-sm carousel">
-  <div class="items">
-    <% if (pictures.length === 0) { %>
-      <p>Don't be shy.</p>
-    <% } else { %>
-      <% pictures.each(function (pic, i) { %>
-        <img src="<%= pic.escape("thumb_url") %>" alt="<%= 'pic' + i %>">
-      <% }); %>
-    <% } %>
-  </div>
-
-  <% if (pictures.length > 1) { %>
-    <a class="slide-left left carousel-control" href="javascript:void(0)">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-    <a class="slide-right right carousel-control" href="javascript:void(0)">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
-  <% } %>
+<div class="slick-small">
+<% if (pictures.length === 0) { %>
+  <div class="default-image"></div>
+<% } else { %>
+  <% pictures.each(function (pic, i) { %>
+    <div><img src="<%= pic.escape("image_url") %>"></div>
+  <% }); %>
+<% } %>
 </div>

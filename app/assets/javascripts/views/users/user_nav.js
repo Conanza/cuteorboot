@@ -81,7 +81,6 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     cloudinary.openUploadWidget(CLOUDINARY_SETTINGS, function (error, results) {
       if (error) {
       } else {
-        debugger
         results.forEach(function (pic) {
           var data = {
             thumb_url: "https://res.cloudinary.com/dfvpir1ro/image/upload/h_160/" + pic.path,
