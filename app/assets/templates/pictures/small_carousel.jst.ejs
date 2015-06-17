@@ -4,7 +4,7 @@
       <p>Don't be shy.</p>
     <% } else { %>
       <% pictures.each(function (pic, i) { %>
-        <img src="<%= pic.escape("image_url") %>" alt="<%= 'pic' + i %>">
+        <img src="<%= pic.escape("thumb_url") %>" alt="<%= 'pic' + i %>">
       <% }); %>
     <% } %>
   </div>

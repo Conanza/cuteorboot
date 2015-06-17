@@ -31,9 +31,8 @@ div.carousel-lg > div.items > *:not(.active) {
 
 div.carousel-lg > div.items > *.active {
   position: absolute;
-  left: 10%;
-  width: 80%;
-
+  left: 50%
+  height: 100%;
   transition: left 100ms linear;
 }
 
@@ -79,7 +78,7 @@ div.carousel-sm > div.items > *:not(.active) {
 div.carousel-sm > div.items > *.active {
   position: absolute;
   left: 10%;
-  width: 80%;
+  height: 100%;
 
   transition: left 100ms linear;
 }

@@ -58,8 +58,8 @@ User.create(
   state: "California",
   animal_type: "other",
   breed: "human",
-  website: "conantzou.tumblr.com",
-  instagram: "instagram.com/conanza",
+  website: "https://conantzou.tumblr.com",
+  instagram: "https://instagram.com/conanza",
   about_me: "I'm the owner!",
   hobby_ids: ["1", "2", "3", "4"]
 )
@@ -83,7 +83,7 @@ User.find_by_username("conan").pictures.create(image_url: "https://static.crowdv
     animal_type: random_type,
     breed: "breed",
     website: url,
-    instagram: "instagram.com/#{name}",
+    instagram: "https://instagram.com/#{name}",
     about_me: "I'm #{name}",
     hobby_ids: random_hobbies
   )
