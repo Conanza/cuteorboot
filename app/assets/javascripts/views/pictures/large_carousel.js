@@ -10,12 +10,12 @@ CuteOrBoot.Views.LargeCarousel = Backbone.CompositeView.extend({
     setTimeout(function () {
       this.$(".slick-large").slick({
         dots: true,
-        infinite: true,
+        infinite: false,
         speed: 500,
         fade: true,
         cssEase: 'linear'
       });
-				
+
       Backbone.CompositeView.prototype.onRender.call(this);
     }.bind(this), 0);
   },

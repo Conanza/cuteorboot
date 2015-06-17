@@ -202,7 +202,9 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-small img {
-  
+  max-height: 160px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .slick-large div.default-image {
@@ -210,5 +212,13 @@ $slick-opacity-not-active: 0.25 !default;
   background-repeat: no-repeat;
   background-position: center;
   height: 440px;
+  width: 1024px;
+}
+
+.slick-small div.default-image {
+  background-image: asset-url("cuteorboot-icon.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 160px;
   width: 1024px;
 }
