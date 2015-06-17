@@ -17,7 +17,7 @@
 //= require underscore
 //= require backbone
 //= require users_search
-//= require carousel
+//= require jquery.slick
 //= require cute_or_boot
 //= require_tree ../templates
 //= require_tree ./utils

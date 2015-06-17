@@ -15,6 +15,7 @@ gem 'backbone-on-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'figaro'
+gem "jquery-slick-rails"
 
 group :development do
   gem 'better_errors'
