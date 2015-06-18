@@ -1,3 +1,6 @@
+$cob-purple: rgb(53, 32, 99);
+$cob-teal: rgb(69, 194, 197);
+
 .fan-list-item p {
   text-align: center;
 }
@@ -17,7 +20,8 @@
 .fan-item-img:hover {
   cursor: pointer;
   opacity: 1;
-  box-shadow: 0px 0px 15px 5px;
+  background-color: $cob-purple;
+  box-shadow: 0px 0px 15px 5px $cob-purple;
   transition: 0.3s ease-in;
 }
 
@@ -40,6 +44,7 @@
 .search-item-img:hover {
   cursor: pointer;
   opacity: 1;
-  box-shadow: 0px 0px 15px 5px;
+  background-color: $cob-purple;
+  box-shadow: 0px 0px 15px 5px $cob-purple;
   transition: 0.3s ease-in;
 }
