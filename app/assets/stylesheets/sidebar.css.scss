@@ -1,8 +1,11 @@
+$cob-purple: rgb(53, 32, 99);
+$cob-teal: rgb(69, 194, 197);
+$questrial: 'Questrial', sans-serif;
+
+
 /* custom template */
 html, body {
- height: 100%;
- font-family:verdana,arial,sans-serif;
- color: #555555;
+ font-family: $questrial !important;
 }
 
 .backbone-sidebar h4 {
@@ -13,7 +16,7 @@ html, body {
 .backbone-sidebar.navbar-header {
   height: 10%;
   margin-bottom: 20px;
-  background-image: asset-url("spoteye.png");
+  background-image: asset-url("cob.gif");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
