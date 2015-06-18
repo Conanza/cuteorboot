@@ -9,13 +9,13 @@ CuteOrBoot.Views.SmallCarousel = Backbone.CompositeView.extend({
   onRender: function () {
     setTimeout(function () {
       this.$(".slick-small").slick({
-      dots: true,
-      infinite: true,
-      speed: 300,
-      slidesToShow: 1,
-      centerMode: true,
-      variableWidth: true
-    });
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        centerMode: true,
+        variableWidth: true
+      });
 
       Backbone.CompositeView.prototype.onRender.call(this);
     }.bind(this), 0);
