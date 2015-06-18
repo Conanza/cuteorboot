@@ -217,7 +217,10 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-small div.default-image {
-  color: white;
+  background-position-x: -14px;
+  background-image: asset-url("sadface.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
   margin-left: -50px;
   height: 160px;
   width: 1024px;
