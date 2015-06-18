@@ -12,13 +12,21 @@
     <% } else { %>
       <ul class="nav navbar-nav">
         <li>
-          <button class="btn btn-primary cuteit">
-            <span class="glyphicon glyphicon-ok-circle"></span>cute it
+          <button
+            class="btn btn-primary cuteit"
+            data-toggle="tooltip"
+            data-placement="bottom"
+            title="cute it">
+            <span class="glyphicon glyphicon-ok-circle"></span>
           </button>
         </li>
         <li>
-          <button class="btn btn-danger bootit">
-            <span class="glyphicon glyphicon-remove-circle"></span>boot it
+          <button
+            class="btn btn-danger bootit"
+            data-toggle="tooltip"
+            data-placement="bottom"
+            title="boot it">
+            <span class="glyphicon glyphicon-remove-circle"></span>
           </button>
         </li>
       </ul>
@@ -26,14 +34,14 @@
   <% } %>
 
   <div class="navbar-header">
-    <a class="navbar-brand" href="#toggleprofile">
+    <a class="navbar-brand" href="#cuties/<%= user.id %>">
       <%= username + ", " + user.age %>
     </a>
   </div>
 
   <% if (currentUser) { %>
     <div class="navbar-header">
-      <a class="navbar-brand" href="#toggleprofile">I'm cute. Believe it.</a>
+      <a class="navbar-brand">I'm cute. Believe it.</a>
     </div>
   <% } %>
 
