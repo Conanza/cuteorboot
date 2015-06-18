@@ -3,6 +3,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model, "gameOver", this.gameOverNotify)
   },
 
   events: {
@@ -11,6 +12,10 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     "click .add-image": "addImage",
     "click a.toggleprofile": "toggleProfile",
     "click a.editprofile": "openEditForm"
+  },
+
+  gameOverNotify: function () {
+    $("#gameover").modal('show');
   },
 
   openEditForm: function (event) {

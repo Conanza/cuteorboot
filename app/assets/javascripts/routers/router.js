@@ -25,6 +25,7 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
       this.users.fetch({
         success: function (collection, response) {
           if (collection.length === 1) {
+            collection.first().trigger("gameOver");
             Backbone.history.navigate("#cuties/" + CURRENT_USER_ID, { trigger: true });
           }
         }.bind(this)
