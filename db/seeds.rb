@@ -5,7 +5,23 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-HOBBIES = ["Running", "Swimming", "Napping", "Cuddling", "Eating", "Sunbathing"]
+HOBBIES = [
+  "Running",           #1
+  "Swimming",          #2
+  "Napping",           #3
+  "Cuddling",          #4
+  "Eating",            #5
+  "Sunbathing",        #6
+  "Flying",            #7
+  "Long Walks",        #8
+  "Fetch",             #9
+  "Kissing",           #10
+  "Chasing",           #11
+  "People Watching",   #12
+  "Stalking",          #13
+  "Grooming"           #14
+]
+
 HOBBY_IDS = HOBBIES.map.with_index{ |hobby, i| (i + 1).to_s }
 
 HOBBIES.each do |hobby|
@@ -49,6 +65,115 @@ def random_hobbies
   random_ids
 end
 
+def save_pictures(username, image_path)
+  User
+    .find_by_username(username)
+    .pictures
+    .create(image_url: "https://res.cloudinary.com/dfvpir1ro/image/upload/h_440/#{image_path}",
+            thumb_url: "https://res.cloudinary.com/dfvpir1ro/image/upload/h_160/#{image_path}")
+end
+
+User.create(
+  username: "drogon",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(2011, 6, 19),
+  city: "Westeros",
+  state: "Florida",
+  animal_type: "dragon",
+  website: "http://gameofthrones.wikia.com/wiki/Drogon",
+  instagram: "https://instagram.com/gameofthrones/",
+  about_me: "My mom's a hottie, right? Right? She can be annoying though. She wasn't going to sign me up for this site, so I did it myself. I'm the oldest, so I'll do whatever I want. Jk, I love my mom.",
+  hobby_ids: ["5", "6", "7", "8"]
+)
+save_pictures("drogon", "v1434620348/dvzwqz0emdf5tkcteqar.jpg")
+save_pictures("drogon", "v1434620352/goc0t6fibligpny5vgjl.png")
+save_pictures("drogon", "v1434620350/v3dljccz9lxcnaxrgpa6.png")
+save_pictures("drogon", "v1434620348/hmlwkdonpi4egzvmc3hm.jpg")
+save_pictures("drogon", 'v1434620348/sl4n1sfgoeomspq70zgv.jpg')
+
+User.create(
+  username: "charley",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(2013, 3, 18),
+  city: "San Francisco",
+  state: "California",
+  animal_type: "dog",
+  breed: "Retriever, Labrador Mix",
+  website: "https://www.sfspca.org/adoptions/pet-details/20818764",
+  about_me: "Charley needs a family! He's a big boy with a goofy smile and would love a human to play with to his heart's content.",
+  hobby_ids: ["1", "4", "9", "11"]
+)
+save_pictures("charley", "v1434621458/jsbmrnimgnzwjxptx8kh.jpg")
+save_pictures("charley", "v1434621457/xi9atb5drn4906jg5sxi.jpg")
+save_pictures("charley", "v1434621458/jeptv5duokogt9q7hugt.jpg")
+
+User.create(
+  username: "hugo",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(2013, 8, 1),
+  city: "San Jose",
+  state: "California",
+  animal_type: "dog",
+  breed: "Pug",
+  instagram: "https://instagram.com/_hugothepug",
+  about_me: "His favorite things are his toy duckie and cuddling with mommmy and daddy! Often looks confused, but always fun to dress up!",
+  hobby_ids: ["3", "4", "9", "10", "12"]
+)
+save_pictures("hugo", "v1434622459/r0jfspssujtgaahaiivk.jpg")
+save_pictures("hugo", "v1434622459/i8dacubp2o0owl9speir.jpg")
+save_pictures("hugo", "v1434622459/qjpwk0w3daw4ifuiging.jpg")
+save_pictures("hugo", "v1434622459/b13qposywpgyikqgfgia.jpg")
+save_pictures("hugo", "v1434622460/sq2vxts84cbnkaaym2zr.jpg")
+
+User.create(
+  username: "teddy",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(2012, 8, 13),
+  city: "Boston",
+  state: "Massachusetts",
+  animal_type: "cat",
+  breed: "Jerk",
+  website: "https://www.youtube.com/watch?v=b_mVb-G1v1I",
+  about_me: "They say black cats are bad luck. Teddy is just bad.",
+  hobby_ids: ["3", "6", "13"]
+)
+save_pictures("teddy", "v1434622919/vme5k51w6s49gfppcla4.jpg")
+save_pictures("teddy", "v1434622919/ukh2fs6q8yrme20x11he.jpg")
+save_pictures("teddy", "v1434622919/rt4x0ykqxk0drapyogbv.jpg")
+
+create(
+  username: "pumbaa",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(2012, 9, 4),
+  city: "San Francisco",
+  state: "California",
+  animal_type: "dog",
+  breed: "Bulldog",
+  about_me: "He's brought such joy to our lives...when he's not sleeping. Or farting in his sleep.",
+  hobby_ids: ["3", "5", "9", "12"]
+)
+save_pictures("pumbaa", "v1434624281/hfqrao2gl6h8xybnqefk.jpg")
+save_pictures("pumbaa", "v1434623871/uwwef5onghreigrp3x3b.jpg")
+save_pictures("pumbaa", "v1434624281/obgzoqvcye6dazo67i5i.jpg")
+save_pictures("pumbaa", "v1434624281/mpdnnx0lumeavcrqpmmp.jpg")
+save_pictures("pumbaa", "v1434623871/vqjpnoo1mcx6xulcx9l9.jpg")
+save_pictures("pumbaa", "v1434623871/gphyeg7tygifzsleivaz.jpg")
+save_pictures("pumbaa", "v1434623872/onhhjbxb1bpw66jzllob.jpg")
+save_pictures("pumbaa", "v1434624281/tibt1lmkypfeixy0qxdk.jpg")
+save_pictures("pumbaa", "v1434623871/vgp6sxvbebrx0czdeokj.jpg")
+save_pictures("pumbaa", "v1434623871/n6yjnw1a7ope4umvanjy.jpg")
+
+
+
+
+
+
+
 User.create(
   username: "conan",
   password: "password",
@@ -64,6 +189,8 @@ User.create(
   hobby_ids: ["1", "2", "3", "4"]
 )
 
+save_pictures("conan", "v1434560509/tpaorjsumovlefzywncj.jpg")
+save_pictures("conan", "v1434587074/e0v8ffuuw7aau11iqltd.jpg")
 User.find_by_username("conan").pictures.create(image_url: "http://img1.wikia.nocookie.net/__cb20080918055501/marveldatabase/images/c/c4/Conan_02.jpg",
                                                thumb_url: "http://img1.wikia.nocookie.net/__cb20080918055501/marveldatabase/images/c/c4/Conan_02.jpg")
 User.find_by_username("conan").pictures.create(image_url: "https://static.crowdvoice.com/uploads/237M8sU_1389417789100_r11v9Wi7J2KnyWFe4RR68Q",
