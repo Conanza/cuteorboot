@@ -1,9 +1,9 @@
 <div class="slick-large">
-<% if (pictures.length === 0) { %>
-  <div class="default-image"></div>
-<% } else { %>
-  <% pictures.each(function (pic, i) { %>
-    <div><img src="<%= pic.escape("image_url") %>"></div>
-  <% }); %>
-<% } %>
+  <% if (pictures.length === 0) { %>
+    <div class="default-image"></div>
+  <% } else { %>
+    <% pictures.each(function (pic, i) { %>
+      <div><img src="<%= pic.escape("image_url") %>"></div>
+    <% }); %>
+  <% } %>
 </div>
