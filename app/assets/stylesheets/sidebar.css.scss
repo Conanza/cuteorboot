@@ -65,12 +65,12 @@ a:hover {
 
 #sidebar div ul li a {
   color: white;
-  opacity: 0.5;
+  opacity: 0.7;
   transition: 0.3s ease-out;
 }
 
 #sidebar div ul li a:hover {
-  color: white;
+  color: $cob-purple;
   opacity: 1;
 
   transition: 0.3s ease-in;
@@ -101,12 +101,13 @@ hr {
 }
 
 #sidebar div ul li.active a {
-  color: white;
+  color: $cob-purple;
   opacity: 1.0;
 }
 
 #sidebar div ul li a.active {
-  color: white;
+  color: $cob-purple;
+
   opacity: 1.0;
 }
 
@@ -148,7 +149,7 @@ div.row {
   position: absolute;
   right: 0;
   top: 0px;
-  background-color:#444444;
+  background-color: $cob-teal;
 }
 
 .divider {
