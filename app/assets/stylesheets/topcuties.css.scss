@@ -40,7 +40,7 @@
 .cutie-item-img:hover {
   cursor: pointer;
   opacity: 1;
-  box-shadow: 0px 0px 15px 5px;
-
+  background-color: rgba(53, 32, 99, 0.6);
+  box-shadow: 0px 0px 15px 5px rgba(53, 32, 99, 0.8);
   transition: 0.3s ease-in;
 }
