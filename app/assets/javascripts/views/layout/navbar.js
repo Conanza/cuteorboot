@@ -27,6 +27,8 @@ CuteOrBoot.Views.Navbar = Backbone.CompositeView.extend({
       url: "/session",
       type: "DELETE"
     });
+    // success:
+    // window.location.href = ("/session/new")
   },
 
   render: function () {

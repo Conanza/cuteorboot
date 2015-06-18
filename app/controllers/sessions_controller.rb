@@ -23,6 +23,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout(current_user)
+    # render empty obj
     redirect_to home_url
   end
 
