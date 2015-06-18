@@ -9,10 +9,10 @@ $cob-teal: rgb(69, 194, 197);
   margin-left: 30%;
   height: 100px;
   width: 40%;
-  box-shadow: 0px 0px 10px 2px #5B84DD;
+  box-shadow: 0px 0px 10px 2px rgba(91,132,221,0.8);
   border-radius: 50px;
   margin-right: 30%;
-  background-color: #5B84DD;
+  background-color: rgba(91,132,221,0.6);
   opacity: 0.8;
   transition: 0.3s ease-out;
 }
@@ -20,8 +20,8 @@ $cob-teal: rgb(69, 194, 197);
 .fan-item-img:hover {
   cursor: pointer;
   opacity: 1;
-  background-color: $cob-purple;
-  box-shadow: 0px 0px 15px 5px $cob-purple;
+  background-color: rgba(53, 32, 99, 0.6);
+  box-shadow: 0px 0px 15px 5px rgba(53, 32, 99, 0.8);
   transition: 0.3s ease-in;
 }
 
@@ -33,10 +33,10 @@ $cob-teal: rgb(69, 194, 197);
   margin-left: 30%;
   height: 100px;
   width: 40%;
-  box-shadow: 0px 0px 10px 2px black;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.8);
   border-radius: 50px;
   margin-right: 30%;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.6);
   opacity: 0.8;
   transition: 0.3s ease-out;
 }
@@ -44,7 +44,7 @@ $cob-teal: rgb(69, 194, 197);
 .search-item-img:hover {
   cursor: pointer;
   opacity: 1;
-  background-color: $cob-purple;
-  box-shadow: 0px 0px 15px 5px $cob-purple;
+  background-color: rgba(53, 32, 99, 0.6);
+  box-shadow: 0px 0px 15px 5px rgba(53, 32, 99, 0.8);
   transition: 0.3s ease-in;
 }
