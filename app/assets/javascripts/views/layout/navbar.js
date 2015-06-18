@@ -25,10 +25,11 @@ CuteOrBoot.Views.Navbar = Backbone.CompositeView.extend({
   logout: function (event) {
     $.ajax({
       url: "/session",
-      type: "DELETE"
+      type: "DELETE",
+      success: function () {
+        window.location.href = "/session/new";
+      }
     });
-    // success:
-    // window.location.href = ("/session/new")
   },
 
   render: function () {
