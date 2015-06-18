@@ -11,8 +11,16 @@
       <span class="glyphicon glyphicon-heart"></span>
     <% } else { %>
       <ul class="nav navbar-nav">
-        <li><button class="btn btn-primary cuteit">cute it</button></li>
-        <li><button class="btn btn-danger bootit">boot it</button></li>
+        <li>
+          <button class="btn btn-primary cuteit">
+            <span class="glyphicon glyphicon-ok-circle"></span>cute it
+          </button>
+        </li>
+        <li>
+          <button class="btn btn-danger bootit">
+            <span class="glyphicon glyphicon-remove-circle"></span>boot it
+          </button>
+        </li>
       </ul>
     <% } %>
   <% } %>
@@ -32,17 +40,21 @@
   <ul class="nav navbar-nav navbar-right">
     <% if (currentUser) { %>
       <li>
-        <a class="add-image" href="#addImage">Add Cute Picture</a>
+        <a class="add-image" href="#addImage">
+          <span class="glyphicon glyphicon-picture"></span>Add Cute Picture
+        </a>
       </li>
       <li>
-        <a class="editprofile" href="#editprofile">Edit profile view</a>
+        <a class="editprofile" href="#editprofile">
+          <span class="glyphicon glyphicon-cog"></span>Edit profile view
+        </a>
       </li>
     <% } %>
 
     <li>
-      <a
-        class="toggleprofile"
-        href="javascript:void(0)"><span class="glyphicon glyphicon-user"</span>Profile</a>
+      <a class="toggleprofile" href="javascript:void(0)">
+        <span class="glyphicon glyphicon-user"></span>Profile
+      </a>
     </li>
   </ul>
 <% } else { %>
