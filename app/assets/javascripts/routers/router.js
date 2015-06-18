@@ -22,7 +22,13 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
   // already exists so dashboard never hits setNextUser
   game: function () {
     if (this.users.length < 6) {
-      this.users.fetch();
+      this.users.fetch({
+        success: function (collection, response) {
+          if (collection.length === 1) {
+            Backbone.history.navigate("#cuties/" + CURRENT_USER_ID, { trigger: true });
+          }
+        }.bind(this)
+      });
     }
 
     var user = this.users.first();
