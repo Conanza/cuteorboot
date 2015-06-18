@@ -44,7 +44,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
       }.bind(this),
 
       error: function (model, response) {
-        console.log("didnt work")
+        Backbone.history.navigate("", { trigger: true });
       }
     });
   },
@@ -69,7 +69,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
       }.bind(this),
 
       error: function () {
-        console.log("didnt work")
+        Backbone.history.navigate("", { trigger: true });
       }
     });
   },
@@ -93,8 +93,6 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
           picture.save({}, {
             success: function (model, response) {
               user.pictures().add(model);
-            },
-            error: function (model, response) {
             }
           });
         });
