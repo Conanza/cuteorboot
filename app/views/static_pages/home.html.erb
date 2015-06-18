@@ -3,8 +3,15 @@
 
 <body id="home" class="home">
   <div class="site-logo-lg">
-    <%= image_tag("windowpuppy.jpg") %>
-    <h1>Cute or Boot</h1>
-    <h6>How cute is your pet?</h6>
+    <%= image_tag("cuteorboot-banner-noborder.jpg") %>
+    <h5>How cute is your pet?</h5>
+
+    <form action="<%= session_url %>" method="POST">
+      <%= auth_token %>
+      <input type="hidden" name="session[username]" value="conan">
+      <input type="hidden" name="session[password]" value="password">
+
+      <input class="btn" value="Take the tour!" type="submit">
+    </form>
   </div>
 </body>

@@ -1,8 +1,9 @@
+$cob-purple: rgb(53, 32, 99);
+$cob-teal: rgb(69, 194, 197);
+$questrial: 'Questrial', sans-serif;
+
 nav.railsnav {
   background: transparent;
-}
-
-.railsnav li:hover {
 }
 
 #home a {
@@ -12,12 +13,9 @@ nav.railsnav {
 }
 
 #home a:hover {
+  color: white;
   opacity: 1;
   transition: 0.3s ease-in;
-}
-
-body {
-  // padding-top: 50px;
 }
 
 li {
@@ -35,11 +33,31 @@ body#home.home {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: black;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  overflow: scroll;
+  background-color: $cob-teal;
+}
+
+.site-logo-lg {
+  color: white;
+  font-family: $questrial;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.site-logo-lg > img {
+  vertical-align: middle;
+  width: 50%;
+  left: 25%;
+  position: relative;
+  margin-top: 75px;
+}
+
+.site-logo-lg .btn {
+  vertical-align: middle;
+  position: relative;
+  width: 20%;
+  left: 40%;
 }
 
 body#home.signup {
@@ -70,9 +88,6 @@ body#home.login {
   overflow: scroll;
 }
 
-#home div.row {
-}
-
 #home div.row.login {
   position: fixed;
   width: 100%;
@@ -85,23 +100,6 @@ span.help-block {
 
 .cuteorboot {
   height: 100%;
-}
-
-.site-logo-lg {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-}
-
-.site-logo-lg > img {
-  vertical-align: middle;
-  border: 2px solid black;
-  border-radius: 200px;
-  box-shadow: 0px 0px 20px 20px black inset;
-  width: 50%;
-  left: 25%;
-  position: relative;
-  margin-top: 75px;
 }
 
 .alert {
