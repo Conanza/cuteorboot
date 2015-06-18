@@ -145,7 +145,7 @@ save_pictures("teddy", "v1434622919/vme5k51w6s49gfppcla4.jpg")
 save_pictures("teddy", "v1434622919/ukh2fs6q8yrme20x11he.jpg")
 save_pictures("teddy", "v1434622919/rt4x0ykqxk0drapyogbv.jpg")
 
-create(
+User.create(
   username: "pumbaa",
   password: "password",
   gender: "M",
