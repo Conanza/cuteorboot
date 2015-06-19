@@ -61,11 +61,14 @@ class UsersController < ApplicationController
   private
 
   def search_by(form_type)
-    if form_type == "username"
-      query = params[:query].downcase
-    elsif form_type == "state"
-      query = params[:query].downcase.split.map(&:capitalize).join(" ")
-    end
+    query = case form_type
+            when "username"
+              params[:query].downcase
+            when "state"
+              params[:query].downcase.split.map(&:capitalize).join(" ")
+            when "hobby"
+              params[:query].downcase.split.map(&:capitalize).join(" ")
+            end
 
     query_string = "#{form_type} ~ '#{query}'"
 
