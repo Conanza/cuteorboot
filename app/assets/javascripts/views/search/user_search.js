@@ -27,7 +27,7 @@ CuteOrBoot.Views.UserSearch = Backbone.CompositeView.extend({
     this.render({ form: "hobby" });
   },
 
-  onRender: function (options) {
+  onRender: function () {
     setTimeout(function () {
       this.$el.usersSearch();
       Backbone.CompositeView.prototype.onRender.call(this);
@@ -41,12 +41,12 @@ CuteOrBoot.Views.UserSearch = Backbone.CompositeView.extend({
     if (!!options) {
       content = this.template({ formName: options.form });
       this.$el.html(content);
-      this.onRender({ form: options.form });
+      this.onRender();
       this.$("ul li." + options.form + "-search").addClass("active");
     } else {
       content = this.template({ formName: "username" });
       this.$el.html(content);
-      this.onRender({ form: "username" });
+      this.onRender();
       this.$("ul li.username-search").addClass("active");
     }
 
