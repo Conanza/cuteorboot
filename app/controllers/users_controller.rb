@@ -74,12 +74,11 @@ class UsersController < ApplicationController
               when "state"
                 my_titleize(params[:query])
               end
-
-      query_string = "#{form_type} ~ '#{query}'" # SQL INJECTION?!
+      query_string = "#{form_type} ~ ?"
 
       User
         .includes(:pictures, :hobbies, :received_votes)
-        .where(query_string)
+        .where(query_string, query)
         .order(form_type)
     end
   end
