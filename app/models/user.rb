@@ -83,7 +83,8 @@ class User < ActiveRecord::Base
             :state,
             :animal_type,
             presence: true
-  validates :username, :session_token, uniqueness: true
+  validates :username, uniqueness: { case_sensitive: false }
+  validates :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :gender, inclusion: { in: ["M", "F"], message: "Must be M or F" }
   validates :state, inclusion: { in: STATES, message: "Must be in the U.S." }
@@ -98,6 +99,7 @@ class User < ActiveRecord::Base
   has_many :given_votes, class_name: "Vote", foreign_key: :voter_id
   has_many :received_votes, class_name: "Vote", foreign_key: :votee_id
 
+  before_save :downcase_username
   after_initialize :set_session_token
 
   def self.fans_for(user)
@@ -108,7 +110,7 @@ class User < ActiveRecord::Base
   end
 
   def self.find_by_credentials(username, password)
-    user = User.find_by(username: username)
+    user = User.find_by(username: username.downcase)
 
     user && user.is_password?(password) ? user : nil
   end
@@ -184,5 +186,9 @@ class User < ActiveRecord::Base
 
   # liked_by_current_user && fan
   def connected?
+  end
+
+  def downcase_username
+    username.downcase!
   end
 end

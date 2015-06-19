@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if params[:query].present?
       @users = User
         .includes(:pictures, :hobbies, :received_votes)
-        .where("username ~ ?", params[:query])
+        .where("username ~ ?", params[:query].downcase)
         .order("username ASC")
     elsif params[:top_cuties].present?
       @users = User.top_cuties
