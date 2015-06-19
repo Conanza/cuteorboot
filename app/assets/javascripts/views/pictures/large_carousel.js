@@ -17,15 +17,6 @@ CuteOrBoot.Views.LargeCarousel = Backbone.CompositeView.extend({
       });
 
       Backbone.CompositeView.prototype.onRender.call(this);
-
-
-    }.bind(this), 0);
-
-    setTimeout(function () {
-      if (this.collection.length === 0) {
-        var defaultImg = $("<div>").addClass("default-image");
-        this.$(".slick-large").append(defaultImg);
-      }
     }.bind(this), 0);
   },
 
