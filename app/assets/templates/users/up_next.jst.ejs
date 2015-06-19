@@ -1,8 +1,14 @@
-<h4>UP NEXT</h4>
+<div class="up-next-users col-xs-5 col-xs-offset-7">
+  <h4>UP NEXT</h4>
 
+  <% users.forEach(function (user) { %>
+    <div class="next-user col-xs-3">
+      <% if (user.pictures().length === 0) { %>
 
-<ul>
-<% users.forEach(function (user) { %>
-  <li><%= user.escape("username") %></li>
-<% }) %>
-</ul>
+      <% } else {%>
+
+      <% } %>
+      <%= user.escape("username") %>
+    </div>
+  <% }) %>
+</div>
