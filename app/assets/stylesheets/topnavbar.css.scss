@@ -15,17 +15,18 @@
   font-size: 30px;
   line-height: 1.33;
   border-radius: 35px;
+  transition: 0.2s ease-out;
 }
 
 .btn-circle.btn-xl:hover {
-  margin: 3px;
+  margin: 7px;
   width: 76px;
   height: 76px;
   padding: 7px 13px;
   font-size: 35px;
   line-height: 1.33;
   border-radius: 60px;
-  transition: 0.1s ease-in;
+  transition: 0.2s ease-in;
 }
 
 .btn-circle.btn-xl.bootit {
