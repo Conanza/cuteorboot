@@ -3,7 +3,7 @@ $.UsersSearch = function (el) {
   this.formName = this.$el.find("div.search-form").data("form-name");
   this.$input = this.$el.find("input[name="+ this.formName + "]");
   this.$div = this.$el.find(".users-results");
-
+  this.$input.focus();
   this.$input.on("input", this.handleInput.bind(this));
 };
 
