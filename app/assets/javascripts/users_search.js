@@ -1,7 +1,7 @@
 $.UsersSearch = function (el) {
   this.$el = $(el);
   this.formName = this.$el.find("div.search-form").data("form-name");
-  this.$input = this.$el.find("input[name=username]");
+  this.$input = this.$el.find("input[name="+ this.formName + "]");
   this.$div = this.$el.find(".users-results");
 
   this.$input.on("input", this.handleInput.bind(this));
