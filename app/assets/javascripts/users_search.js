@@ -1,5 +1,6 @@
 $.UsersSearch = function (el) {
   this.$el = $(el);
+  this.formName = this.$el.find("div.search-form").data("form-name");
   this.$input = this.$el.find("input[name=username]");
   this.$div = this.$el.find(".users-results");
 
@@ -15,7 +16,11 @@ $.UsersSearch.prototype.handleInput = function (event) {
 
   var searchResults = new CuteOrBoot.Collections.Users();
   searchResults.fetch({
-    data: { query: input },
+    data: {
+      form_type: this.formName,
+      query: input
+    },
+    
     success: this.renderResults.bind(this)
   });
 };
@@ -30,7 +35,7 @@ $.UsersSearch.prototype.renderResults = function (users) {
       searchItem.render();
     }.bind(this));
   } else {
-    this.$div.append("No matches found");    
+    this.$div.append("No matches found");
   }
 };
 
