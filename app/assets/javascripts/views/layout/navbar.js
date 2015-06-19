@@ -32,10 +32,18 @@ CuteOrBoot.Views.Navbar = Backbone.CompositeView.extend({
     });
   },
 
+  onRender: function () {
+    setTimeout(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+      Backbone.CompositeView.prototype.onRender.call(this);
+    }.bind(this), 0);
+  },
+
   render: function () {
     var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
+    this.onRender();
 
     return this;
   },

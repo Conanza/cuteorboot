@@ -24,10 +24,13 @@
       <a class="showUser col-xs-8" href="<%= "#cuties/" + CURRENT_USER_ID %>">
         <%= CURRENT_USER_USERNAME %>
       </a>
-      <a class="logout col-xs-4" href="">
+      <a
+        class="logout col-xs-4"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="logout">
         <i class="pull-right glyphicon glyphicon-log-out"></i>
       </a>
-      <span class="logout-helper-msg pull-right">Log out</span>
     </li>
     <hr>
     <li class="game col-xs-12">
