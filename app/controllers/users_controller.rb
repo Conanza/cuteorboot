@@ -75,7 +75,7 @@ class UsersController < ApplicationController
                 my_titleize(params[:query])
               end
 
-      query_string = "#{form_type} ~ '#{query}'"
+      query_string = "#{form_type} ~ '#{query}'" # SQL INJECTION?!
 
       User
         .includes(:pictures, :hobbies, :received_votes)
