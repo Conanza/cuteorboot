@@ -119,7 +119,7 @@ User.create(
   animal_type: "dog",
   breed: "Pug",
   instagram: "https://instagram.com/_hugothepug",
-  about_me: "His favorite things are his toy duckie and cuddling with mommmy and daddy! Often looks confused, but always fun to dress up!",
+  about_me: "His favorite things are his toy duckie and cuddling with mommy and daddy! Often looks confused, but always fun to dress up!",
   hobby_ids: ["3", "4", "9", "10", "12"]
 )
 save_pictures("hugo", "v1434622459/r0jfspssujtgaahaiivk.jpg")
