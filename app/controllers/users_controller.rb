@@ -75,6 +75,7 @@ class UsersController < ApplicationController
       :breed,
       :website,
       :instagram,
+      :about_me,
       hobby_ids: []
     )
   end
