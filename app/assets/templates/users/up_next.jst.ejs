@@ -1,0 +1,8 @@
+<h4>UP NEXT</h4>
+
+
+<ul>
+<% users.forEach(function (user) { %>
+  <li><%= user.escape("username") %></li>
+<% }) %>
+</ul>

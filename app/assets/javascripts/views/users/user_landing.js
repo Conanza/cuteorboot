@@ -9,6 +9,12 @@ CuteOrBoot.Views.UserLanding = Backbone.CompositeView.extend({
 
   removeLandingSubviews: function (model) {
     this.removeModelSubview(".landing-carousel", model);
+
+    if (window.location.hash === "#petreel") {
+      var user = this.collection.first();
+
+      this.removeModelSubview(".user-preview", user);
+    }
   },
 
   addLandingSubviews: function () {
@@ -16,6 +22,14 @@ CuteOrBoot.Views.UserLanding = Backbone.CompositeView.extend({
       model: this.model,
       collection: this.model.pictures()
     });
+
+    if (window.location.hash === "#petreel") {
+      var userPreview = new CuteOrBoot.Views.UpNext({
+        collection: this.collection
+      });
+
+      this.addSubview(".user-preview", userPreview);
+    }
 
     this.addSubview(".landing-carousel", largeCarousel);
   },
@@ -28,6 +42,7 @@ CuteOrBoot.Views.UserLanding = Backbone.CompositeView.extend({
     var content = this.template({ user: this.model });
     this.$el.html(content);
     this.attachSubviews();
+
     return this;
   }
 });
