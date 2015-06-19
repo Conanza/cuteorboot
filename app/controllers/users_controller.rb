@@ -61,21 +61,31 @@ class UsersController < ApplicationController
   private
 
   def search_by(form_type)
-    query = case form_type
-            when "username"
-              params[:query].downcase
-            when "state"
-              params[:query].downcase.split.map(&:capitalize).join(" ")
-            when "hobby"
-              params[:query].downcase.split.map(&:capitalize).join(" ")
-            end
+    if form_type == "hobby"
+      User
+        .includes(:hobbies, :pictures, :received_votes)
+        .joins(:hobbies)
+        .where("hobbies.name ~ ?", my_titleize(params[:query]))
+        .order(:username)
+    else
+      query = case form_type
+              when "username"
+                params[:query].downcase
+              when "state"
+                my_titleize(params[:query])
+              end
 
-    query_string = "#{form_type} ~ '#{query}'"
+      query_string = "#{form_type} ~ '#{query}'"
 
-    User
-      .includes(:pictures, :hobbies, :received_votes)
-      .where(query_string)
-      .order(form_type)
+      User
+        .includes(:pictures, :hobbies, :received_votes)
+        .where(query_string)
+        .order(form_type)
+    end
+  end
+
+  def my_titleize(param)
+    param.downcase.split.map(&:capitalize).join(" ")
   end
 
   def user_params

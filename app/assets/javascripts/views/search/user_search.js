@@ -8,7 +8,8 @@ CuteOrBoot.Views.UserSearch = Backbone.CompositeView.extend({
   events: {
     "click img": "showUser",
     "click li.username-search": "usernameSearch",
-    "click li.state-search": "stateSearch"
+    "click li.state-search": "stateSearch",
+    "click li.hobby-search": "hobbySearch"
   },
 
   initialize: function () {
@@ -20,6 +21,10 @@ CuteOrBoot.Views.UserSearch = Backbone.CompositeView.extend({
 
   stateSearch: function () {
     this.render({ form: "state" });
+  },
+
+  hobbySearch: function () {
+    this.render({ form: "hobby" });
   },
 
   onRender: function (options) {

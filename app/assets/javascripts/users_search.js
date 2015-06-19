@@ -39,7 +39,6 @@ $.UsersSearch.prototype.renderResults = function (users) {
   }
 };
 
-
 $.fn.usersSearch = function () {
   return this.each(function () {
     new $.UsersSearch(this);
