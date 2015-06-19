@@ -168,6 +168,62 @@ save_pictures("pumbaa", "v1434624281/tibt1lmkypfeixy0qxdk.jpg")
 save_pictures("pumbaa", "v1434623871/vgp6sxvbebrx0czdeokj.jpg")
 save_pictures("pumbaa", "v1434623871/n6yjnw1a7ope4umvanjy.jpg")
 
+User.create(
+  username: "piopi",
+  password: "password",
+  gender: "F",
+  birthdate: Time.new(2009, 10, 12),
+  city: "San Jose",
+  state: "California",
+  animal_type: "dog",
+  breed: "Yorkie",
+  about_me: "Piopi's adorable. So is my son. I'm not sure who I'm actually showcasing here. Oh well, double the cuteness! Proceed to melt!",
+  hobby_ids: ["4", "10", "14"]
+)
+save_pictures("piopi", "v1434705097/tafmb2glbfe6crug8y0a.jpg")
+save_pictures("piopi", "v1434705097/psta5pkykwouso54soz2.jpg")
+save_pictures("piopi", "v1434705424/clhmg510szen3ib9xwli.jpg")
+save_pictures("piopi", "v1434705098/fspjinq5biiagf3f8g7l.jpg")
+save_pictures("piopi", "v1434705097/xje2jlozkzovhbjm6ot1.jpg")
+save_pictures("piopi", "v1434705097/gw6c2gymp9rqqijosdqc.jpg")
+
+User.create(
+  username: "baiyun",
+  password: "password",
+  gender: "F",
+  birthdate: Time.new(1991, 9, 7),
+  city: "San Diego",
+  state: "California",
+  animal_type: "panda",
+  breed: "giant panda",
+  website: "https://en.wikipedia.org/wiki/Bai_Yun",
+  about_me: "Bai Yun, meaning White Cloud in Chinese, has birthed 6 cubs. Considered the most surviving pandas at a breeding facility outside of China.",
+  hobby_ids: ["3", "4", "5"]
+)
+save_pictures("baiyun", "v1434706393/iju3tntqnfqpfrgz0lzh.jpg")
+save_pictures("baiyun", "v1434706393/t70lzxcntk4i5vvcb3qa.jpg")
+save_pictures("baiyun", "v1434706393/iqlwipnrbgt6kmlmrmye.jpg")
+save_pictures("baiyun", "v1434706393/e8g3e3bnnaik5kburera.jpg")
+save_pictures("baiyun", "v1434706393/yimzbfdp7uypusbhlvxb.jpg")
+
+User.create(
+  username: "charliesheen",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(1965, 9, 3),
+  city: "Beverly Hills",
+  state: "California",
+  animal_type: "other",
+  breed: "winner",
+  website: "http://www.charliesheen.com/",
+  instagram: "https://instagram.com/charliesheen/",
+  about_me: "What am I doing here? I've decided to expand my winning to the animal kingdom as well. Duh!"
+)
+save_pictures("charliesheen", "v1434708390/zqxjb57hnmm3j6jcbyoe.jpg")
+save_pictures("charliesheen", "v1434708390/kldsohriu7p2dskijbor.jpg")
+save_pictures("charliesheen", "v1434708390/opxcvz6otztbmg7pmcpv.jpg")
+
+
 
 #frenchie: cutest little nuggest!
 #scruffy: they call me scruffy mcscrufferson
