@@ -1,35 +1,39 @@
 <section class="col-xs-8 user-profile">
-<% var current_loc = (user.escape("city") + ", " + user.escape("state")) %>
-<% var score = parseInt(10 * user.escape("rating")) %>
-<% var rating = user.escape("rating") %>
+  <% var current_loc = (user.escape("city") + ", " + user.escape("state")) %>
+  <% var score = parseInt(10 * user.escape("rating")) %>
+  <% var rating = user.escape("rating") %>
 
-<h4>Current Location</h4>
-<p><%= current_loc %></p>
-<hr>
-
-<% attrs.forEach(function (attr) { %>
-  <h4><%= attr[0] %></h4>
-
-  <% if (attr[0] === "Animal Type") { %>
-    <% var animal = user.escape(attr[1]) %>
-    <p><%= animal.charAt(0).toUpperCase() + animal.substring(1) %></p>
-  <% } else { %>
-    <p><%= user.escape(attr[1]) %></p>
-  <% } %>
-
+  <h4>About Me</h4>
+    <p><%= user.escape("about_me") %></p>
   <hr>
-<% }) %>
 
-<h4>Hobbies
-  <ul class="row">
-    <% user.hobbies().each(function (hobby) { %>
-      <li class="col-xs-3">
-        <%= hobby.escape("name") %>
-      </li>
-    <% }) %>
-  </ul>
+  <h4>Current Location</h4>
+    <p><%= current_loc %></p>
   <hr>
-</h4>
+
+  <% attrs.forEach(function (attr) { %>
+    <h4><%= attr[0] %></h4>
+
+    <% if (attr[0] === "Animal Type") { %>
+      <% var animal = user.escape(attr[1]) %>
+      <p><%= animal.charAt(0).toUpperCase() + animal.substring(1) %></p>
+    <% } else { %>
+      <p><%= user.escape(attr[1]) %></p>
+    <% } %>
+
+    <hr>
+  <% }) %>
+
+  <h4>Hobbies
+    <ul class="row">
+      <% user.hobbies().each(function (hobby) { %>
+        <li class="col-xs-3">
+          <%= hobby.escape("name") %>
+        </li>
+      <% }) %>
+    </ul>
+    <hr>
+  </h4>
 </section>
 
 <sidebar class="stats-sidebar col-xs-4">

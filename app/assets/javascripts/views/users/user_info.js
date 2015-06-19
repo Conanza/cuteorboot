@@ -5,8 +5,7 @@ CuteOrBoot.Views.UserInfo = Backbone.CompositeView.extend({
     this.attrs = [
       ["Gender", "gender"],
       ["Animal Type", "animal_type"],
-      ["Breed", "breed"],
-      ["About Me", "about_me"]
+      ["Breed", "breed"]
     ];
 
     this.listenTo(this.model, "sync", this.render);
