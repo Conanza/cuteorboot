@@ -1,3 +1,6 @@
+$cob-purple: rgb(53, 32, 99);
+$cob-teal: rgb(69, 194, 197);
+
 nav.usernav.navbar.navbar-default {
   min-height: 90px;
   margin-bottom: 0px;
@@ -42,4 +45,18 @@ nav.usernav.navbar.navbar-default {
   line-height: 1.33;
   border-radius: 50px;
   margin: 20px;
+  transition: 0.2s ease-out;
+}
+
+.btn-circle.btn-lg:hover {
+  border: 1px solid $cob-purple;
+  transition: 0.2s ease-in;
+  background: white;
+}
+
+.btn-circle.btn-lg.active {
+  border: 1px solid $cob-purple;
+  transition: 0.2s ease-in;
+  background: rgba(247, 152, 55, 0.9);
+  box-shadow: 0px 0px 10px 1px $cob-purple inset;
 }

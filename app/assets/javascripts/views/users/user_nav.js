@@ -26,6 +26,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
   toggleProfile: function (event) {
     event.preventDefault();
     this.$("button").blur();
+    $(event.currentTarget).toggleClass("active");
     this.model.trigger("profileToggled");
   },
 
@@ -108,6 +109,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
   onRender: function () {
     setTimeout(function () {
+      $("button").removeClass("active");
       $('[data-toggle="tooltip"]').tooltip();
       Backbone.CompositeView.prototype.onRender.call(this);
     }.bind(this), 0);
