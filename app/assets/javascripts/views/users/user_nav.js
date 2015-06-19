@@ -10,8 +10,8 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     "click .cuteit": "cuteVote",
     "click .bootit": "bootVote",
     "click .add-image": "addImage",
-    "click a.toggleprofile": "toggleProfile",
-    "click a.editprofile": "openEditForm"
+    "click button.toggleprofile": "toggleProfile",
+    "click button.editprofile": "openEditForm"
   },
 
   gameOverNotify: function () {
@@ -25,6 +25,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
   toggleProfile: function (event) {
     event.preventDefault();
+    this.$("button").blur();
     this.model.trigger("profileToggled");
   },
 
@@ -105,6 +106,13 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     });
   },
 
+  onRender: function () {
+    setTimeout(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+      Backbone.CompositeView.prototype.onRender.call(this);
+    }.bind(this), 0);
+  },
+
   render: function () {
     if (!this.model) {
       return this;
@@ -112,7 +120,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
     var content = this.template({ user: this.model });
     this.$el.html(content);
-    $('[data-toggle="tooltip"]').tooltip();
+    this.onRender();
 
     return this;
   }

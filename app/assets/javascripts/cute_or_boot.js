@@ -18,8 +18,7 @@ window.CuteOrBoot = {
 
     $("div.cuteorboot").prepend(navbar.$el);
     navbar.render();
-    $('[data-toggle="tooltip"]').tooltip();
-    
+
     setTimeout(function () {
       $('.alert').fadeOut();
     }, 3000);

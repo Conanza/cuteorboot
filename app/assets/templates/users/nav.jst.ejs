@@ -48,21 +48,36 @@
   <ul class="nav navbar-nav navbar-right">
     <% if (currentUser) { %>
       <li>
-        <a class="add-image" href="#addImage">
-          <span class="glyphicon glyphicon-picture"></span>Add Cute Picture
-        </a>
+        <button
+          type="button"
+          class="add-image btn btn-default btn-circle btn-lg"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="upload picture">
+          <i class="glyphicon glyphicon-picture"></i>
+        </button>
       </li>
       <li>
-        <a class="editprofile" href="#editprofile">
-          <span class="glyphicon glyphicon-cog"></span>Edit profile
-        </a>
+        <button
+          type="button"
+          class="editprofile btn btn-default btn-circle btn-lg"
+          data-toggle="tooltip"
+          data-placement="bottom"
+          title="settings">
+          <i class="glyphicon glyphicon-cog"></i>
+        </button>
       </li>
     <% } %>
 
     <li>
-      <a class="toggleprofile" href="javascript:void(0)">
-        <span class="glyphicon glyphicon-user"></span>Profile
-      </a>
+      <button
+        type="button"
+        class="toggleprofile btn btn-default btn-circle btn-lg"
+        data-toggle="tooltip"
+        data-placement="bottom"
+        title="profile">
+        <i class="glyphicon glyphicon-user"></i>
+      </button>
     </li>
   </ul>
 <% } else { %>

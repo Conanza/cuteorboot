@@ -88,6 +88,5 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
     this._currentView = view;
     this.$rootEl.html(view.$el);
     view.render();
-    $('[data-toggle="tooltip"]').tooltip();
   }
 });
