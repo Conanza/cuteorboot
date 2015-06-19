@@ -169,7 +169,8 @@ save_pictures("pumbaa", "v1434623871/vgp6sxvbebrx0czdeokj.jpg")
 save_pictures("pumbaa", "v1434623871/n6yjnw1a7ope4umvanjy.jpg")
 
 
-
+#frenchie: cutest little nuggest!
+#scruffy: they call me scruffy mcscrufferson
 
 
 

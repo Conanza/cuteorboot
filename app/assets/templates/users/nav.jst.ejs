@@ -5,12 +5,20 @@
 
 <% if (username) { %>
   <% if (!currentUser) { %>
-    <% if (currentUsersVote === "0") { %>
-      <span class="glyphicon glyphicon-remove"></span>
-    <% } else if (currentUsersVote === "1") { %>
-      <span class="glyphicon glyphicon-heart"></span>
-    <% } else { %>
-      <ul class="nav navbar-nav">
+    <ul class="nav navbar-nav">
+      <% if (currentUsersVote === "0") { %>
+        <li>
+          <button class="btn btn-circle disabled btn-xl booted">
+            <i class="glyphicon glyphicon-remove"></i>
+          </button>
+        </li>
+      <% } else if (currentUsersVote === "1") { %>
+        <li>
+          <button class="btn btn-danger btn-circle disabled btn-xl cuted">
+            <i class="glyphicon glyphicon-heart"></i>
+          </button>
+        </li>
+      <% } else { %>
         <li>
           <button
             class="btn btn-info btn-circle btn-xl cuteit"
@@ -29,8 +37,8 @@
             <i class="glyphicon glyphicon-remove"></i>
           </button>
         </li>
-      </ul>
-    <% } %>
+      <% } %>
+    </ul>
   <% } %>
 
   <div class="navbar-header">
