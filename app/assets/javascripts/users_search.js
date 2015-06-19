@@ -20,7 +20,7 @@ $.UsersSearch.prototype.handleInput = function (event) {
       form_type: this.formName,
       query: input
     },
-    
+
     success: this.renderResults.bind(this)
   });
 };

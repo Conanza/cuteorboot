@@ -5,11 +5,8 @@ class UsersController < ApplicationController
 
   # may need to optimize User#rating
   def index
-    if params[:query].present?
-      @users = User
-        .includes(:pictures, :hobbies, :received_votes)
-        .where("username ~ ?", params[:query].downcase)
-        .order("username ASC")
+    if params[:form_type].present?
+      @users = search_by(params[:form_type])
     elsif params[:top_cuties].present?
       @users = User.top_cuties
     elsif params[:fans].present?
@@ -62,6 +59,21 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def search_by(form_type)
+    if form_type == "username"
+      query = params[:query].downcase
+    elsif form_type == "state"
+      query = params[:query].downcase.split.map(&:capitalize).join(" ")
+    end
+
+    query_string = "#{form_type} ~ '#{query}'"
+
+    User
+      .includes(:pictures, :hobbies, :received_votes)
+      .where(query_string)
+      .order(form_type)
+  end
 
   def user_params
     params.require(:user).permit(
