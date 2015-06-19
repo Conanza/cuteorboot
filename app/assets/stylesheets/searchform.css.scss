@@ -1,0 +1,22 @@
+$cob-purple: rgb(53, 32, 99);
+$cob-teal: rgb(69, 194, 197);
+
+ul.nav-tabs.search-tabs li:hover {
+  cursor: pointer;
+}
+
+ul.nav-tabs.search-tabs li:not(.active) a {
+  color: rgba(69, 194, 197, 0.5);
+  transition: 0.2s ease-in;
+}
+
+ul.nav-tabs.search-tabs li.active a {
+  color: $cob-purple;
+  transition: 0.2s ease-in;
+}
+
+ul.nav-tabs.search-tabs li:not(.active):hover a {
+  background-color: rgba(53, 32, 99, 0.1);
+  transition: 0.2s ease-in;
+  color: rgba(69, 194, 197, 1);
+}
