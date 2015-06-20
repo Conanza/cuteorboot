@@ -3,7 +3,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.model, "gameOver", this.gameOverNotify)
+    this.listenTo(this.model, "gameOver", this.gameOverNotify);
   },
 
   events: {
