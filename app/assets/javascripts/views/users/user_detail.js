@@ -13,6 +13,10 @@ CuteOrBoot.Views.UserDetail = Backbone.CompositeView.extend({
   },
 
   addDetailSubviews: function () {
+    if (!this.model) {
+      return;
+    }
+
     var smallCarousel = new CuteOrBoot.Views.SmallCarousel({
       model: this.model,
       collection: this.model.pictures()

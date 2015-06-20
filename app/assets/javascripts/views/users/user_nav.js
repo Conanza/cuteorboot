@@ -30,7 +30,6 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
     this.model.trigger("profileToggled");
   },
 
-  // fix error callback?
   cuteVote: function (event) {
     event.preventDefault();
 
@@ -43,7 +42,9 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
       success: function (model, response) {
         this.collection.remove(this.model);
 
-        if (this.collection.length < 6) {
+        if (this.collection.length === 0) {
+          Backbone.history.navigate("cuties/" + CURRENT_USER_ID, { trigger: true });
+        } else if (this.collection.length < 6) {
           Backbone.history.navigate("", { trigger: true });
         } else {
           Backbone.history.navigate("petreel", { trigger: true });
@@ -68,7 +69,9 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
       success: function () {
         this.collection.remove(this.model);
 
-        if (this.collection.length < 6) {
+        if (this.collection.length === 0) {
+          Backbone.history.navigate("cuties/" + CURRENT_USER_ID, { trigger: true });
+        } else if (this.collection.length < 6) {
           Backbone.history.navigate("", { trigger: true });
         } else {
           Backbone.history.navigate("petreel", { trigger: true });

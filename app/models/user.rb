@@ -124,6 +124,7 @@ class User < ActiveRecord::Base
     if ids.empty?
       return User
         .includes(:hobbies, :pictures, :given_votes)
+        .where.not(id: user.id)
         .limit(50)
     else
       query_fragment = "(" + ids.join(", ") + ")"
@@ -131,6 +132,7 @@ class User < ActiveRecord::Base
       return User
         .includes(:hobbies, :pictures, :given_votes)
         .where("id NOT IN #{query_fragment}")
+        .where.not(id: user.id)
         .limit(50)
     end
   end

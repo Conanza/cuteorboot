@@ -18,6 +18,10 @@ CuteOrBoot.Views.UserLanding = Backbone.CompositeView.extend({
   },
 
   addLandingSubviews: function () {
+    if (!this.model) {
+      return;
+    }
+    
     var largeCarousel = new CuteOrBoot.Views.LargeCarousel({
       model: this.model,
       collection: this.model.pictures()
