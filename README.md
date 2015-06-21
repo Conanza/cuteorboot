@@ -59,7 +59,7 @@ Both these views are composite, each containing `IndexItem` Views for each fan o
 - [ ] Heat map for fans: Sort list of fans by city
 - [x] Interactive search (by username)
 - [x] Thumbnail view for search results
-- [ ] "Up next" thumbnails: interactive preview of users coming up next in feed
+- [x] "Up next" thumbnails: interactive preview of users coming up next in feed
 - [ ] Notifications for new likes and messages
 - [ ] Chatting, enabled by mutual likes
 - [ ] Ability to block someone mutually liked
