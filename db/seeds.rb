@@ -410,6 +410,24 @@ save_pictures("brutus", "v1434918887/dzr8jc0ugli8laxt1acw.png")
 save_pictures("brutus", "v1434918896/ev8nrsbsczf2o1cqjil8.png")
 save_pictures("brutus", "v1434918901/hrfhqzppnbyzqq1qjwjt.png")
 
+User.create(
+  username: "twinkie",
+  password: "password",
+  gender: "F",
+  birthdate: Time.new(2008, 4, 4),
+  city: "South San Francisco",
+  state: "California",
+  animal_type: "dog",
+  about_me: "Best dog evar.",
+  hobby_ids: ["3", "4", "6", "8", "10"]
+)
+
+save_pictures("twinkie", "v1434928344/p7zrkok5z9zufihlha42.jpg")
+save_pictures("twinkie", "v1434928343/rruyin5yhhmd8ncldo4b.jpg")
+save_pictures("twinkie", "v1434928343/iwbntqkkmpmkummkh4ik.jpg")
+save_pictures("twinkie", "v1434928344/lnvaqxrhgc2w0izp3cny.jpg")
+save_pictures("twinkie", "v1434928344/djvi3rivrmevnkkxhsju.jpg")
+
 
 #frenchie: cutest little nuggest!
 #scruffy: they call me scruffy mcscrufferson
