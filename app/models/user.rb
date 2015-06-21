@@ -74,6 +74,8 @@ class User < ActiveRecord::Base
     "other"
   ]
 
+  include Awardable
+
   validates :username,
             :password_digest,
             :session_token,

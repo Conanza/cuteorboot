@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 HOBBIES = [
   "Running",           #1
   "Swimming",          #2
@@ -223,7 +216,48 @@ save_pictures("charliesheen", "v1434708390/zqxjb57hnmm3j6jcbyoe.jpg")
 save_pictures("charliesheen", "v1434708390/kldsohriu7p2dskijbor.jpg")
 save_pictures("charliesheen", "v1434708390/opxcvz6otztbmg7pmcpv.jpg")
 
+User.create(
+  username: "pocky",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(2014, 3, 1),
+  city: "Oakland",
+  state: "California",
+  animal_type: "dog",
+  breed: "Miniature Poodle",
+  instagram: "https://instagram.com/pocky_nguyen",
+  about_me: "He loves to run marathons, but most of all, he's such an obedient boy! Check out his instagram for more pics of stuff on his head.",
+  hobby_ids: ["1", "4", "6", "8", "9", "11", "14"]
+)
 
+save_pictures("pocky", "v1434874672/moap8cqkxitly7ynr4b2.png")
+save_pictures("pocky", "v1434874676/xbmxhn8rvxyoy0fz26p0.png")
+save_pictures("pocky", "v1434874715/kpxwhxfm84lb8p9wzhle.png")
+save_pictures("pocky", "v1434874680/on2xfkkr9xao2njk0boo.png")
+save_pictures("pocky", "v1434874679/dbvvchrsueknzy0btsm9.png")
+save_pictures("pocky", "v1434874676/lbx4jwkag1j16shuqwfn.png")
+save_pictures("pocky", "v1434874676/mebiicq5j1oywdifzvgw.png")
+save_pictures("pocky", "v1434874674/hpvqranaqa0ufzmotkhk.png")
+
+User.create(
+  username: "akuma",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(2010, 6, 5),
+  city: "San Jose",
+  state: "California",
+  animal_type: "dog",
+  breed: "Shiba Inu",
+  instagram: "https://instagram.com/akumatime",
+  about_me: "Such a handsome boy. Also, you'd think he's a cat by how solemn he is all the time. Plus side is, he's not too needy!",
+  hobby_ids: ["1", "3", "6", "8", "9", "11", "12"]
+)
+
+save_pictures("akuma", "v1434875667/uawom9qoblbltv9eqfep.png")
+save_pictures("akuma", "v1434875661/y7xjnju2yows62ke2yso.png")
+save_pictures("akuma", "v1434875666/c7e05n1bhs9myegqg9kn.png")
+save_pictures("akuma", "v1434875666/n69y22sjttlu1zldg39p.png")
+save_pictures("akuma", "v1434875661/v4r3jp5rvgy1hr6urjzb.png")
 
 #frenchie: cutest little nuggest!
 #scruffy: they call me scruffy mcscrufferson
