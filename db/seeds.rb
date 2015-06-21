@@ -325,6 +325,23 @@ save_pictures("boo", "v1434912495/c8z6ry53lteiiaayo2u1.png")
 save_pictures("boo", "v1434912472/ggaeprt6psa3gtb2u2t7.png")
 save_pictures("boo", "v1434912472/kpeockan5x59oqtipwth.png")
 
+User.create(
+  username: "zuri",
+  password: "password",
+  gender: "F",
+  birthdate: Time.new(2013, 2, 16),
+  city: "Pleasanton",
+  state: "California",
+  animal_type: "hedgehog",
+  about_me: "Prickly but sweet. Just don't use her as a seat.",
+  hobby_ids: ["3", "4", "10"]
+)
+
+save_pictures("zuri", "v1434914355/cd5k1whtodjmyrllj1x4.png")
+save_pictures("zuri", "v1434914356/hrj3auqjjf5me5ez9my3.png")
+save_pictures("zuri", "v1434914354/arlzqibfjbpuf8w8o88b.png")
+save_pictures("zuri", "v1434914354/lzglngc5aphky1ry61c4.png")
+save_pictures("zuri", "v1434914360/ckkpojwbkfrugwkp3sy8.png")
 
 
 
