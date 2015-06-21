@@ -278,6 +278,28 @@ save_pictures("shadowfax", "v1434877581/zsh56t6yakazarsx3ylr.jpg")
 save_pictures("shadowfax", "v1434877578/hxk2wfrqvet6dunjm9w5.jpg")
 save_pictures("shadowfax", "v1434877586/wyzweqltrs3zk5qt2knr.gif")
 
+User.create(
+  username: "bobby",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(2007, 3, 21),
+  city: "Campbell",
+  state: "California",
+  animal_type: "dog",
+  breed: "beagle",
+  instagram: "https://instagram.com/bobbythebeagle/",
+  about_me: "Saw this boy when he was about a week old, and it was love at first sight. He's the handsomest beagle ever! Look at his colors! He used to be a ball of energy when he was a puppy, but now he enjoys napping anywhere warm and soft and watching me do chores.",
+  hobby_ids: ["3", "4", "5", "6", "9", "12"]
+)
+
+save_pictures("bobby", "v1434909495/rsijhhnpswzmst3anpji.png")
+save_pictures("bobby", "v1434909475/oyl2l2ddskcnjbhp9azl.jpg")
+save_pictures("bobby", "v1434909494/zf6uczpoh5mxd3w3lagh.png")
+save_pictures("bobby", "v1434909492/w8gq4z89zw2y4qe9grpp.png")
+save_pictures("bobby", "v1434909494/cmdasylhveucw6tjpkja.png")
+save_pictures("bobby", "v1434909491/l5w5jmfurx0z21racnnp.png")
+save_pictures("bobby", "v1434909486/wlndhzo1sqx9zvhu4ceu.png")
+
 
 
 
