@@ -15,7 +15,16 @@ CuteOrBoot.Views.Navbar = Backbone.CompositeView.extend({
     var searchForm = new CuteOrBoot.Views.UserSearch();
     this.addSubview(".users-search", searchForm);
 
+    this.listenTo(this.router, "route:handleGameOver", this.handleGameOver);
     this.listenTo(this.router, "route", this.markActive);
+  },
+
+  handleGameOver: function () {
+    $("#gameover").modal('show');
+    
+    setTimeout(function () {
+      Backbone.history.navigate("cuties/" + CURRENT_USER_ID, { trigger: true });
+    });
   },
 
   returnToReel: function (event) {

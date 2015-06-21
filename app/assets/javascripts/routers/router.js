@@ -9,8 +9,12 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
     "petreel": "game",
     "fans": "showFans",
     "search": "searchUsers",
+    "gameover": "handleGameOver",
     "top-cuties-list": "topCutiesList",
     "cuties/:id": "showUser"
+  },
+
+  handleGameOver: function () {
   },
 
   redirectToGame: function () {
@@ -21,10 +25,8 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
     if (this.users.length < 6) {
       this.users.fetch({
         success: function (collection, response) {
-          if (collection.length === 1) {
-            collection.first().trigger("gameOver");
-          } else if (collection.length === 0) {
-            Backbone.history.navigate("cuties/" + CURRENT_USER_ID, { trigger: true });
+          if (collection.length === 0) {
+            Backbone.history.navigate("gameover", { trigger: true });
           }
         }.bind(this)
       });
