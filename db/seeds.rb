@@ -259,6 +259,28 @@ save_pictures("akuma", "v1434875666/c7e05n1bhs9myegqg9kn.png")
 save_pictures("akuma", "v1434875666/n69y22sjttlu1zldg39p.png")
 save_pictures("akuma", "v1434875661/v4r3jp5rvgy1hr6urjzb.png")
 
+User.create(
+  username: "shadowfax",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(1989, 4, 10),
+  city: "Louisville",
+  state: "Kentucky",
+  animal_type: "other",
+  breed: "horse, of the race of the Mearas",
+  website: "http://lotr.wikia.com/wiki/Shadowfax",
+  about_me: "He is the lord of all horses and has been my friend through many dangers.",
+  hobby_ids: ["1", "11"]
+)
+
+save_pictures("shadowfax", "v1434877578/mkh0k0qdsioe18olmj3f.jpg")
+save_pictures("shadowfax", "v1434877581/zsh56t6yakazarsx3ylr.jpg")
+save_pictures("shadowfax", "v1434877578/hxk2wfrqvet6dunjm9w5.jpg")
+save_pictures("shadowfax", "v1434877586/wyzweqltrs3zk5qt2knr.gif")
+
+
+
+
 #frenchie: cutest little nuggest!
 #scruffy: they call me scruffy mcscrufferson
 
