@@ -300,6 +300,28 @@ save_pictures("bobby", "v1434909494/cmdasylhveucw6tjpkja.png")
 save_pictures("bobby", "v1434909491/l5w5jmfurx0z21racnnp.png")
 save_pictures("bobby", "v1434909486/wlndhzo1sqx9zvhu4ceu.png")
 
+User.create(
+  username: "boo",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(2006, 3, 16),
+  city: "San Francisco",
+  state: "California",
+  animal_type: "dog",
+  breed: "Pomeranian",
+  website: "https://www.facebook.com/Boo",
+  instagram: "https://instagram.com/buddyboowaggytails/",
+  about_me: "Life is good when you're the cutest dog in the world. Now partnered with Buddy and Blue to take over the world. See them on instagram!",
+  hobby_ids: ["3", "4", "5", "6", "10", "14"]
+)
+
+save_pictures("boo", "v1434911918/wmgoonfipoydopujvj6o.png")
+save_pictures("boo", "v1434911917/wqpstulalsnazzkgsv8n.png")
+save_pictures("boo", "v1434911917/bgke0xqq4zvskkfvnsyx.png")
+save_pictures("boo", "v1434911913/w1agjztjoqslzv71q1bt.png")
+save_pictures("boo", "v1434911918/wn5b7goz6kebitbqriq8.png")
+save_pictures("boo", "v1434911916/dnqofdpeyjfl188erk3m.png")
+
 
 
 
