@@ -388,6 +388,28 @@ save_pictures("nala", "v1434916991/g1ra9c0oxhlscjymhtzf.png")
 save_pictures("nala", "v1434916978/saeypl8z73ia5jd2zka5.png")
 save_pictures("nala", "v1434916990/mqvitoblmwvaaeflvehg.png")
 
+User.create(
+  username: "brutus",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(2002, 1, 14),
+  city: "Bozeman",
+  state: "Montana",
+  animal_type: "bear",
+  breed: "grizzly",
+  about_me: "The Man/Bear bromance is real. Love him so much that I made him my best man at my wedding!",
+  hobby_ids: ["2", "4", "5", "8"]
+)
+
+save_pictures("brutus", "v1434918897/wnbryyaimllionval02h.png")
+save_pictures("brutus", "v1434918899/dk7bo8y2ttpxjv8nowk8.png")
+save_pictures("brutus", "v1434918895/jhtvurwmezxyxlxdecwk.png")
+save_pictures("brutus", "v1434918891/xw9ywyup4hiilqacvsyp.png")
+save_pictures("brutus", "v1434918899/qv8gswmsszxcb4lodokx.png")
+save_pictures("brutus", "v1434918887/dzr8jc0ugli8laxt1acw.png")
+save_pictures("brutus", "v1434918896/ev8nrsbsczf2o1cqjil8.png")
+save_pictures("brutus", "v1434918901/hrfhqzppnbyzqq1qjwjt.png")
+
 
 #frenchie: cutest little nuggest!
 #scruffy: they call me scruffy mcscrufferson
