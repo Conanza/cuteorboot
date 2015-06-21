@@ -27,6 +27,8 @@ CuteOrBoot.Routers.Router = Backbone.Router.extend({
         success: function (collection, response) {
           if (collection.length === 0) {
             Backbone.history.navigate("gameover", { trigger: true });
+          } else {
+            Backbone.history.navigate("petreel", { trigger: true });
           }
         }.bind(this)
       });

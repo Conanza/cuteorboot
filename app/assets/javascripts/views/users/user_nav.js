@@ -38,7 +38,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
         this.collection.remove(this.model);
 
         if (this.collection.length === 0) {
-          Backbone.history.navigate("cuties/" + CURRENT_USER_ID, { trigger: true });
+          Backbone.history.navigate("gameover", { trigger: true });
         } else if (this.collection.length < 6) {
           Backbone.history.navigate("", { trigger: true });
         } else {
@@ -65,7 +65,7 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
         this.collection.remove(this.model);
 
         if (this.collection.length === 0) {
-          Backbone.history.navigate("cuties/" + CURRENT_USER_ID, { trigger: true });
+          Backbone.history.navigate("gameover", { trigger: true });
         } else if (this.collection.length < 6) {
           Backbone.history.navigate("", { trigger: true });
         } else {
