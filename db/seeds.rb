@@ -343,6 +343,27 @@ save_pictures("zuri", "v1434914354/arlzqibfjbpuf8w8o88b.png")
 save_pictures("zuri", "v1434914354/lzglngc5aphky1ry61c4.png")
 save_pictures("zuri", "v1434914360/ckkpojwbkfrugwkp3sy8.png")
 
+User.create(
+  username: "grumpycat",
+  password: "password",
+  gender: "F",
+  birthdate: Time.new(2012, 4, 4),
+  city: "Morristown",
+  state: "Arizona",
+  animal_type: "cat",
+  breed: "mixed",
+  website: "https://www.facebook.com/TheOfficialGrumpyCat",
+  instagram: "https://instagram.com/RealGrumpyCat",
+  about_me: "Her real name is Tardar Sauce. Dwarfs Grumpy of the Seven Dwarves' grumpiness. Don't laugh in her presence. It makes her grumpier."
+)
+
+save_pictures("grumpycat", "v1434915328/gra1s4opqfsyluuxclsc.png")
+save_pictures("grumpycat", "v1434915327/utdjuq3uh3jzhwvdjjob.png")
+save_pictures("grumpycat", "v1434915327/uaphgc9ajejfvcqeioi0.png")
+save_pictures("grumpycat", "v1434915335/p0anumi3rog7n8znch34.png")
+save_pictures("grumpycat", "v1434915340/j598kfsyrtqay4p2dh3k.png")
+save_pictures("grumpycat", "v1434915334/pwg8quak3spbydol1f0w.png")
+save_pictures("grumpycat", "v1434915333/bfrtx2ao44ixih9q1bys.png")
 
 
 #frenchie: cutest little nuggest!
