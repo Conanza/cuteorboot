@@ -365,6 +365,29 @@ save_pictures("grumpycat", "v1434915340/j598kfsyrtqay4p2dh3k.png")
 save_pictures("grumpycat", "v1434915334/pwg8quak3spbydol1f0w.png")
 save_pictures("grumpycat", "v1434915333/bfrtx2ao44ixih9q1bys.png")
 
+User.create(
+  username: "nala",
+  password: "password",
+  gender: "F",
+  birthdate: Time.new(2010, 6, 24),
+  city: "Los Angeles",
+  state: "California",
+  animal_type: "cat",
+  breed: "Siamese and Tabby mix",
+  website: "https://www.facebook.com/pages/Nala_cat/303371839754315",
+  instagram: "https://instagram.com/nala_cat",
+  about_me: "She came from a house with too many cats and was sheltered. The day I met her I knew it was meant to be. Cherish your pets and provide them with happy homes for the rest of their lives!"
+)
+
+save_pictures("nala", "v1434916977/tiuc0eundb5bo4dlhobe.png")
+save_pictures("nala", "v1434916968/ndx24uz4xdixdttya19f.png")
+save_pictures("nala", "v1434916988/updqktu1myqlkckrom9p.png")
+save_pictures("nala", "v1434916989/hrm0fjqlevlsxe5sj1i8.png")
+save_pictures("nala", "v1434916978/je2jskaa4opowuxg1ken.png")
+save_pictures("nala", "v1434916991/g1ra9c0oxhlscjymhtzf.png")
+save_pictures("nala", "v1434916978/saeypl8z73ia5jd2zka5.png")
+save_pictures("nala", "v1434916990/mqvitoblmwvaaeflvehg.png")
+
 
 #frenchie: cutest little nuggest!
 #scruffy: they call me scruffy mcscrufferson
