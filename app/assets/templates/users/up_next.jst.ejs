@@ -4,11 +4,18 @@
   <% users.forEach(function (user) { %>
     <div class="next-user col-xs-3">
       <% if (user.pictures().length === 0) { %>
-
+        <img
+          class="img-circle"
+          width="50"
+          height="50"
+          src="https://res.cloudinary.com/dfvpir1ro/image/upload/v1434867819/ffsmdwhag67x84bj8ueb.png">
       <% } else {%>
-
+        <img
+          class="img-circle"
+          width="50"
+          height="50"
+          src="<%= user.pictures().first().escape("thumb_url") %>">
       <% } %>
-      <%= user.escape("username") %>
     </div>
   <% }) %>
 </div>
