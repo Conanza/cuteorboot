@@ -55,8 +55,6 @@ class User < ActiveRecord::Base
   ANIMAL_TYPES = [
     "dog",
     "cat",
-    "panda",
-    "dragon",
     "hamster",
     "fish",
     "pig",
@@ -70,7 +68,8 @@ class User < ActiveRecord::Base
     "iguana",
     "hippo",
     "deer",
-    "koala",
+    "panda",
+    "dragon",
     "other"
   ]
 
