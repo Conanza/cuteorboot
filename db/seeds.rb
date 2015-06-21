@@ -321,6 +321,9 @@ save_pictures("boo", "v1434911917/bgke0xqq4zvskkfvnsyx.png")
 save_pictures("boo", "v1434911913/w1agjztjoqslzv71q1bt.png")
 save_pictures("boo", "v1434911918/wn5b7goz6kebitbqriq8.png")
 save_pictures("boo", "v1434911916/dnqofdpeyjfl188erk3m.png")
+save_pictures("boo", "v1434912495/c8z6ry53lteiiaayo2u1.png")
+save_pictures("boo", "v1434912472/ggaeprt6psa3gtb2u2t7.png")
+save_pictures("boo", "v1434912472/kpeockan5x59oqtipwth.png")
 
 
 
