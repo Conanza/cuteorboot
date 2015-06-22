@@ -10,7 +10,7 @@ window.CuteOrBootTour = {
         placement: "top",
         backdrop: true,
         title: "Welcome to Cute or Boot!",
-        content: "Glad you decided to join us!<br><br>I won't keep you away from the super cute pets for long. Just going to give you a quick guide through the app's features!",
+        content: "Glad you decided to join us! You're in for a treat.<br><br>If you've ever used HotOrNot, this should be very familiar. If not, I won't keep you away from the super cute pets for long. Just going to give you a quick guide through the app's features!",
         template: function () {
           var popover = "<div class='popover tour'><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn btn-default' data-role='prev'>« Prev</button><button class='btn btn-default' data-role='next'>Next »</button><button class='btn btn-default' data-role='end'>End tour</button></div></div>";
           return popover;
@@ -46,15 +46,13 @@ window.CuteOrBootTour = {
         element: ".up-next-users",
         placement: "left",
         title: "Who's next??",
-        content: "See who's up next!"
+        content: "See who's up next!",
+        onNext: function () {
+          document.location.href = '/#cuties/' + CURRENT_USER_ID;
+          CuteOrBootTourDeux.initialize();
+        }
       },
-      {
-        path: "#cuties/" + CURRENT_USER_ID,
-        element: ".showuser",
-        placement: "right",
-        title: "View Your Own Profile"
-      }
-
+      {}
     ]);
 
     tour.init();
