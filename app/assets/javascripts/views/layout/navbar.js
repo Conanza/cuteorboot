@@ -6,6 +6,7 @@ CuteOrBoot.Views.Navbar = Backbone.CompositeView.extend({
   className: "column col-xs-2 sidebar-offcanvas",
 
   events: {
+    "click .tour": "showTour",
     "click .logout": "logout",
     "click div.backbone-sidebar.navbar-header": "returnToReel"
   },
@@ -19,19 +20,28 @@ CuteOrBoot.Views.Navbar = Backbone.CompositeView.extend({
     this.listenTo(this.router, "route", this.markActive);
   },
 
+  showTour: function (event) {
+    event.preventDefault();
+
+  },
+
   handleGameOver: function () {
     $("#gameover").modal('show');
-    
+
     setTimeout(function () {
       Backbone.history.navigate("cuties/" + CURRENT_USER_ID, { trigger: true });
     });
   },
 
   returnToReel: function (event) {
+    event.preventDefault();
+
     Backbone.history.navigate("#petreel", { trigger: true });
   },
 
   logout: function (event) {
+    event.preventDefault();
+
     $.ajax({
       url: "/session",
       type: "DELETE",

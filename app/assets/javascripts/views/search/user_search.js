@@ -15,15 +15,18 @@ CuteOrBoot.Views.UserSearch = Backbone.CompositeView.extend({
   initialize: function () {
   },
 
-  usernameSearch: function () {
+  usernameSearch: function (event) {
+    event.preventDefault();
     this.render({ form: "username" });
   },
 
-  stateSearch: function () {
+  stateSearch: function (event) {
+    event.preventDefault();
     this.render({ form: "state" });
   },
 
-  hobbySearch: function () {
+  hobbySearch: function (event) {
+    event.preventDefault();
     this.render({ form: "hobby" });
   },
 

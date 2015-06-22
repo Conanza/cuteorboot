@@ -27,7 +27,6 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
   cuteVote: function (event) {
     event.preventDefault();
-
     var vote = new CuteOrBoot.Models.Vote({
       votee_id: this.model.id,
       value: 1
@@ -54,7 +53,6 @@ CuteOrBoot.Views.UserNav = Backbone.CompositeView.extend({
 
   bootVote: function (event) {
     event.preventDefault();
-
     var vote = new CuteOrBoot.Models.Vote({
       votee_id: this.model.id,
       value: 0,
