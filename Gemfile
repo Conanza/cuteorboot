@@ -16,6 +16,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'figaro'
 gem "jquery-slick-rails"
+gem 'heroku-deflater', group: :production
 
 group :development do
   gem 'better_errors'
