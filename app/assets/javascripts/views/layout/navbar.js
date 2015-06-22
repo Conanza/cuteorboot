@@ -23,6 +23,7 @@ CuteOrBoot.Views.Navbar = Backbone.CompositeView.extend({
   showTour: function (event) {
     event.preventDefault();
 
+    CuteOrBootTour.initialize();
   },
 
   handleGameOver: function () {

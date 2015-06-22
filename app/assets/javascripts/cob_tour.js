@@ -23,6 +23,12 @@ window.CuteOrBootTour = {
         content: "Upon login, you get to meet all the pets right away!"
       },
       {
+        element: ".landing-carousel",
+        placement: "top",
+        title: "Pictures!",
+        content: "Click the arrows or swipe to see more pictures."
+      },
+      {
         element: "li.tour-profile-step",
         placement: "bottom",
         title: "Pet Profile",
@@ -33,12 +39,22 @@ window.CuteOrBootTour = {
         element: "ul.tour-voting-step",
         placement: "bottom",
         title: "Voting",
-        content: "You know what to do next!<br><br>Click this to give a cute vote or the X to boot it.<br>(Don't worry, no pets are harmed in the process).",
+        content: "You know what to do next!<br><br>Click the buttons to give a cute vote or boot it.<br>(Don't worry, no pets are harmed in the process).",
         reflex: true
       },
       {
-        element: 
+        element: ".up-next-users",
+        placement: "left",
+        title: "Who's next??",
+        content: "See who's up next!"
+      },
+      {
+        path: "#cuties/" + CURRENT_USER_ID,
+        element: ".showuser",
+        placement: "right",
+        title: "View Your Own Profile"
       }
+
     ]);
 
     tour.init();
