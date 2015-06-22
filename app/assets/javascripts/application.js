@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.serializejson
 //= require bootstrap
+//= require bootstrap-tour
 //= require underscore
 //= require backbone
 //= require users_search

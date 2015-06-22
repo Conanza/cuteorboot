@@ -24,5 +24,7 @@ window.CuteOrBoot = {
     }, 3000);
 
     Backbone.history.start();
+
+    CuteOrBootTour.initialize();
   }
 };
