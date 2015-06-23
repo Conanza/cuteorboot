@@ -150,6 +150,7 @@ User.create(
   about_me: "He's brought such joy to our lives...when he's not sleeping. Or farting in his sleep.",
   hobby_ids: ["3", "5", "9", "12"]
 )
+save_pictures("pumbaa", "v1435044417/jmmj5fowcjqllyngeua0.png")
 save_pictures("pumbaa", "v1434624281/hfqrao2gl6h8xybnqefk.jpg")
 save_pictures("pumbaa", "v1434623871/uwwef5onghreigrp3x3b.jpg")
 save_pictures("pumbaa", "v1434624281/obgzoqvcye6dazo67i5i.jpg")
@@ -229,7 +230,6 @@ User.create(
   about_me: "He loves to run marathons, but most of all, he's such an obedient boy! Check out his instagram for more pics of stuff on his head.",
   hobby_ids: ["1", "4", "6", "8", "9", "11", "14"]
 )
-
 save_pictures("pocky", "v1434874672/moap8cqkxitly7ynr4b2.png")
 save_pictures("pocky", "v1434874676/xbmxhn8rvxyoy0fz26p0.png")
 save_pictures("pocky", "v1434874715/kpxwhxfm84lb8p9wzhle.png")
@@ -252,7 +252,6 @@ User.create(
   instagram: "https://instagram.com/RealGrumpyCat",
   about_me: "Her real name is Tardar Sauce. Dwarfs Grumpy of the Seven Dwarves' grumpiness. Don't laugh in her presence. It makes her grumpier."
 )
-
 save_pictures("grumpycat", "v1434915328/gra1s4opqfsyluuxclsc.png")
 save_pictures("grumpycat", "v1434915327/utdjuq3uh3jzhwvdjjob.png")
 save_pictures("grumpycat", "v1434915327/uaphgc9ajejfvcqeioi0.png")
@@ -274,7 +273,6 @@ User.create(
   about_me: "Such a handsome boy. Also, you'd think he's a cat by how solemn he is all the time. Plus side is, he's not too needy!",
   hobby_ids: ["1", "3", "6", "8", "9", "11", "12"]
 )
-
 save_pictures("akuma", "v1434875667/uawom9qoblbltv9eqfep.png")
 save_pictures("akuma", "v1434875661/y7xjnju2yows62ke2yso.png")
 save_pictures("akuma", "v1434875666/c7e05n1bhs9myegqg9kn.png")
@@ -294,7 +292,6 @@ User.create(
   about_me: "He is the lord of all horses and has been my friend through many dangers.",
   hobby_ids: ["1", "11"]
 )
-
 save_pictures("shadowfax", "v1434877578/mkh0k0qdsioe18olmj3f.jpg")
 save_pictures("shadowfax", "v1434877581/zsh56t6yakazarsx3ylr.jpg")
 save_pictures("shadowfax", "v1434877578/hxk2wfrqvet6dunjm9w5.jpg")
@@ -313,7 +310,6 @@ User.create(
   about_me: "Saw this boy when he was about a week old, and it was love at first sight. He's the handsomest beagle ever! Look at his colors! He used to be a ball of energy when he was a puppy, but now he enjoys napping anywhere warm and soft and watching me do chores.",
   hobby_ids: ["3", "4", "5", "6", "9", "12"]
 )
-
 save_pictures("bobby", "v1434909495/rsijhhnpswzmst3anpji.png")
 save_pictures("bobby", "v1434909475/oyl2l2ddskcnjbhp9azl.jpg")
 save_pictures("bobby", "v1434909494/zf6uczpoh5mxd3w3lagh.png")
@@ -336,7 +332,6 @@ User.create(
   about_me: "Life is good when you're the cutest dog in the world. Now partnered with Buddy and Blue to take over the world. See them on instagram!",
   hobby_ids: ["3", "4", "5", "6", "10", "14"]
 )
-
 save_pictures("boo", "v1434911918/wmgoonfipoydopujvj6o.png")
 save_pictures("boo", "v1434911917/wqpstulalsnazzkgsv8n.png")
 save_pictures("boo", "v1434911917/bgke0xqq4zvskkfvnsyx.png")
@@ -358,7 +353,6 @@ User.create(
   about_me: "Prickly but sweet. Just don't use her as a seat.",
   hobby_ids: ["3", "4", "10"]
 )
-
 save_pictures("zuri", "v1434914355/cd5k1whtodjmyrllj1x4.png")
 save_pictures("zuri", "v1434914356/hrj3auqjjf5me5ez9my3.png")
 save_pictures("zuri", "v1434914354/arlzqibfjbpuf8w8o88b.png")
@@ -378,7 +372,6 @@ User.create(
   instagram: "https://instagram.com/nala_cat",
   about_me: "She came from a house with too many cats and was sheltered. The day I met her I knew it was meant to be. Cherish your pets and provide them with happy homes for the rest of their lives!"
 )
-
 save_pictures("nala", "v1434916977/tiuc0eundb5bo4dlhobe.png")
 save_pictures("nala", "v1434916968/ndx24uz4xdixdttya19f.png")
 save_pictures("nala", "v1434916988/updqktu1myqlkckrom9p.png")
@@ -400,7 +393,6 @@ User.create(
   about_me: "The Man/Bear bromance is real. Love him so much that I made him my best man at my wedding!",
   hobby_ids: ["2", "4", "5", "8"]
 )
-
 save_pictures("brutus", "v1434918897/wnbryyaimllionval02h.png")
 save_pictures("brutus", "v1434918899/dk7bo8y2ttpxjv8nowk8.png")
 save_pictures("brutus", "v1434918895/jhtvurwmezxyxlxdecwk.png")
@@ -421,7 +413,6 @@ User.create(
   about_me: "Best dog evar.",
   hobby_ids: ["3", "4", "6", "8", "10"]
 )
-
 save_pictures("twinkie", "v1434928344/p7zrkok5z9zufihlha42.jpg")
 save_pictures("twinkie", "v1434928343/rruyin5yhhmd8ncldo4b.jpg")
 save_pictures("twinkie", "v1434928343/iwbntqkkmpmkummkh4ik.jpg")
@@ -440,7 +431,6 @@ User.create(
   website: "https://www.sfspca.org/adoptions/pet-details/28016107",
   hobby_ids: ["4"]
 )
-
 save_pictures("pumpernickel", "v1435042715/euxzui5wr9wj4uusxaji.jpg")
 save_pictures("pumpernickel", "v1435042715/rg2rzvcgkul2zveoazre.jpg")
 
@@ -455,12 +445,54 @@ User.create(
   instagram: "https://instagram.com/hamster_lover25",
   hobby_ids: ["1", "5"]
 )
-
 save_pictures("hammy", "v1435043764/rmvde4oodlp4hccfbk55.png")
 save_pictures("hammy", "v1435043764/fexyj36r0j5ohm0whxuw.png")
 save_pictures("hammy", "v1435043764/ekgb11vku4rlfskzb1fk.png")
 save_pictures("hammy", "v1435043764/lncypquwhnm6lnikmtih.png")
 save_pictures("hammy", "v1435043765/heuo3abpclarycy62xub.png")
+
+User.create(
+  username: "luna",
+  password: "password",
+  gender: "F",
+  birthdate: Time.new(2011, 7, 14),
+  city: "Milpitas",
+  state: "California",
+  animal_type: "dog",
+  breed: "Siberian Husky",
+  about_me: "Her beautiful blue eyes are entrancing!",
+  hobby_ids: ["1", "4", "5", "9", "12"]
+)
+save_pictures("luna", "v1435045310/wrwslmuovekdgznfrqtf.png")
+save_pictures("luna", "v1435045311/v288zj6qudxfrq3nckhb.png")
+save_pictures("luna", "v1435045310/bqqz4sqvegi8qsifblcn.png")
+save_pictures("luna", "v1435045310/wkgedqmwzxdj88zwkkeq.png")
+save_pictures("luna", "v1435045310/qadr5adpuaxo15sqgwah.png")
+save_pictures("luna", "v1435045310/zvztqawrmt4qy3k4z6h0.png")
+save_pictures("luna", "v1435045309/zx9tojiys6bpwni4jbxr.png")
+save_pictures("luna", "v1435045311/c8keoefzkoughocyavyz.png")
+
+User.create(
+  username: "rush",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(2013, 5, 12),
+  city: "San Jose",
+  state: "California",
+  animal_type: "dog",
+  breed: "German Shepherd",
+  about_me: "The drool is a little excessive, but he's becoming a great guard dog! Training is so important at a young age.",
+  instagram: "https://instagram.com/explore/tags/rushthegsd/",
+  hobby_ids: ["1", "5", "9", "11", "12"]
+)
+save_pictures("rush", "v1435046158/vxbh2t8li6bf4qoxnn1k.png")
+save_pictures("rush", "v1435046158/abmlz4fyvg4l1mestxdr.png")
+save_pictures("rush", "v1435046158/lwityogmztopscwrxmus.png")
+save_pictures("rush", "v1435046159/o1wemup59jsptsgrjhah.png")
+save_pictures("rush", "v1435046160/aypv1u27ah7fw11sliov.png")
+save_pictures("rush", "v1435046159/jcsjhvnq13mudxlyvmru.png")
+save_pictures("rush", "v1435046160/clm8onwl9xakp6hlppui.png")
+save_pictures("rush", "v1435046161/itueea318ybykvyu6rzu.png")
 
 
 #frenchie: cutest little nuggest!
