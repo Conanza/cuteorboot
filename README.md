@@ -2,21 +2,34 @@
 
 [Live Demo][cuteorboot]
 
+![COBLOGO]
+
 [cuteorboot]: http://www.cuteorboot.us
+[COBLOGO]: ./app/assets/images/cuteorboot-banner.jpg
+
+## Description
+Cute or Boot, built with Backbone on Rails, is a spinoff of the popular hotornot.com made especially for pets. Users can register their pets, upload images for their pet, and, most importantly, browse through and vote on a feed of other users' pets. The site tracks all votes and features lists that display the top 20 cutest pets and all the users who've liked your pet. In addition, users can also search for pets under different criteria.
+
+## Technologies Used
+- Ruby on Rails Framework
+- Backbone Framework
+- JavaScript
+- jQuery
+- HTML
+- CSS
+
 
 ## Minimum Viable Product
-Cute or Boot is built on Rails and Backbone, and it's a spinoff of hotornot.com for pets. Users (pets) can:
 
 - [x] Create accounts
 - [x] Create sessions (log in/log out)
 - [x] Create user profiles
 - [x] Upload profile pictures
-- [ ] Delete profile pictures
 - [x] View a feed of users and their pictures
 - [x] Like/Dislike users
-- [x] Users get a rating (hot votes/total votes)
+- [x] Users get a rating (cute votes/total votes)
 - [x] View a user's profile
-- [x] View a list of app's hottest users
+- [x] View a list of app's cutest users
 - [x] View a list of your likers (fans)
 
 ## Design Docs
@@ -53,7 +66,8 @@ Both these views are composite, each containing `IndexItem` Views for each fan o
 
 [Details][phase-four]
 
-### Bonus Features (TBD)
+### Bonus Features
+
 - [ ] Sort users shown in feed by distance from
 - [ ] Game filter: edit settings to search by animal type, age
 - [ ] Heat map for fans: Sort list of fans by city
@@ -72,6 +86,7 @@ Both these views are composite, each containing `IndexItem` Views for each fan o
 - [ ] Stylish buttons
 - [ ] Bind shortcut keys for liking/disliking (e.g. 1 and 2)
 
+## Future To-Do List
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
