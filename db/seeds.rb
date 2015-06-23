@@ -494,6 +494,44 @@ save_pictures("rush", "v1435046159/jcsjhvnq13mudxlyvmru.png")
 save_pictures("rush", "v1435046160/clm8onwl9xakp6hlppui.png")
 save_pictures("rush", "v1435046161/itueea318ybykvyu6rzu.png")
 
+User.create(
+  username: "chowder",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(2014, 4, 29),
+  city: "Los Angeles",
+  state: "California",
+  animal_type: "dog",
+  breed: "French Bulldog",
+  about_me: "IS HE NOT ADORABLE???",
+  instagram: "https://instagram.com/callmechowder/"
+)
+save_pictures("chowder", "v1435049974/an2slugk7cj3o4k3cenm.png")
+save_pictures("chowder", "v1435049974/hxkxhimryjnw1ttlhvfa.png")
+save_pictures("chowder", "v1435049974/tgttvf9zb82mehfmlgeh.png")
+save_pictures("chowder", "v1435049973/fraeb8obyuxehrwfurxp.png")
+save_pictures("chowder", "v1435049974/o3ibrwp7vv5nyzseawjp.png")
+save_pictures("chowder", "v1435049978/w4ae6yc6sp6v6oyo23ih.png")
+save_pictures("chowder", "v1435049977/agalx9jnk8mmp5ds7jop.png")
+save_pictures("chowder", "v1435049976/y2uzfswuokfo6brzij6b.png")
+save_pictures("chowder", "v1435049976/b5fffwal6hnvmuahxwul.png")
+
+User.create(
+  username: "sputnikandspock",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(2014, 12, 29),
+  city: "San Francisco",
+  state: "California",
+  animal_type: "rabbit",
+  about_me: "An inseparable duo. Adopt today!",
+  website: "http://saveabunny.org/rabbit/sputnik-and-spock-0"
+)
+save_pictures("sputnikandspock", "v1435050696/ofli9doa5bkux7l28ydu.jpg")
+save_pictures("sputnikandspock", "v1435050696/pljwya4akn3p4kijmc5j.jpg")
+save_pictures("sputnikandspock", "v1435050696/prw3mtslcpmopitkqjrt.jpg")
+save_pictures("sputnikandspock", "v1435050696/pp1npajt3pav5tucazj4.jpg")
+
 
 #frenchie: cutest little nuggest!
 #scruffy: they call me scruffy mcscrufferson
