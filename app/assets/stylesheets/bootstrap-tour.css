@@ -84,4 +84,5 @@
 
 .popover.tour-tour h3 {
   background-color: $cob-teal;
+  color: white;
 }

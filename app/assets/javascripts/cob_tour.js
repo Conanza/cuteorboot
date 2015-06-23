@@ -1,7 +1,7 @@
 window.CuteOrBootTour = {
   initialize: function () {
     var tour = new Tour({
-        storage: false
+        storage: window.sessionStorage
     });
 
     tour.addSteps([
@@ -12,7 +12,7 @@ window.CuteOrBootTour = {
         title: "Welcome to Cute Or Boot!",
         content: "Glad you decided to join us! You're in for a treat.<br><br>If you've ever used HotOrNot, this should be very familiar. If not, I won't keep you away from the super cute pets for long. Just going to give you a quick guide through the app's features!",
         template: function () {
-          var popover = "<div class='popover tour'><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'><div class='btn-group'><button class='btn btn-default' data-role='next'>Next »</button></div><button class='btn btn-default' data-role='end'>End tour</button></div></div>";
+          var popover = "<div class='popover tour'><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'><div class='btn-group'><button class='btn btn-default' data-role='next'>Next »</button></div></div></div>";
           return popover;
         },
       },
@@ -106,7 +106,7 @@ window.CuteOrBootTour = {
         title: "Have fun!",
         content: "Thanks again for joining Cute Or Boot. I'll let you get to voting. Don't forget to add pictures of your pet!",
         template: function () {
-          var popover = "<div class='popover tour'><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'><button class='btn btn-default' data-role='end'>Yay!</button></div></div>";
+          var popover = "<div class='popover tour'><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'><div class='btn-group'><button class='btn btn-default' data-role='end'>Yay!</button></div></div></div>";
           return popover;
         }
       }
