@@ -8,9 +8,9 @@
 [COBLOGO]: ./app/assets/images/cuteorboot-banner.jpg
 
 ## Description
-Cute or Boot, built with Backbone on Rails, is a spinoff of the popular hotornot.com made especially for pets. Users can register their pets, upload images for their pet, and, most importantly, browse through and vote on a feed of other users' pets. The site tracks all votes and features lists that display the top 20 cutest pets and all the users who've liked your pet. In addition, users can also search for pets under different criteria.
+Cute or Boot, built with Backbone on Rails, is a spinoff of the popular [Hot or Not](https://www.hotornot.com) made especially for pets. Users can register their pets, upload images for their pet, and, most importantly, browse through and vote on a feed of other users' pets. The site tracks all votes and features lists that display the top 20 cutest pets and all the users who've liked your pet. In addition, users can also search for pets under different criteria.
 
-## Technologies Used
+## Technologies
 - Ruby on Rails Framework
 - Backbone Framework
 - JavaScript
@@ -18,7 +18,17 @@ Cute or Boot, built with Backbone on Rails, is a spinoff of the popular hotornot
 - HTML
 - CSS
 
+## Future To-do List
+- Setup Redis: use key-value cache and storing to increase site performance.
+- Refactor location records to be stored as geospatial data in order to use a map API. Then, be able to filter feed by distance or track users on a map based on location.
+- Introduce more social media functionality, including push notifications, messaging, common hobbies, etc.
+- Enhance user experience by: 
+	* expanding HobbiesController to allow for new hobby creation
+	* allowing users to delete pictures, edit username and password
+- Implement more gamification features, including awards and challenges
 
+# Implementation
+----------------
 ## Minimum Viable Product
 
 - [x] Create accounts
@@ -42,7 +52,7 @@ Cute or Boot, built with Backbone on Rails, is a spinoff of the popular hotornot
 ## Implementation Timeline
 
 ### Phase 1: User Authentication, User Profile Creation (~1 day)
-To start, I'll implement a basic auth system as practiced at A/a. At the end of this phase, users should be able to log in and out or create a new profile. A lot of data will be stored for a user's profile, so I need to implement the right validations and be sure that models are being saved correctly before moving on. I should have the appropriate associations in place as well.
+To start, I'll implement a basic auth system as practiced at a/A. At the end of this phase, users should be able to log in and out or create a new profile. A lot of data will be stored for a user's profile, so I need to implement the right validations and be sure that models are being saved correctly before moving on. I should have the appropriate associations in place as well.
 
 [Details][phase-one]
 
@@ -83,10 +93,10 @@ Both these views are composite, each containing `IndexItem` Views for each fan o
 - [ ] Counters: # of photos, fans, notifications, shared hobbies, hot streak
 - [x] Carousel pictures
 - [ ] Pagination or 'load more on scroll' for hotties and fans index
-- [ ] Stylish buttons
+- [x] Stylish buttons
 - [ ] Bind shortcut keys for liking/disliking (e.g. 1 and 2)
+- [x] Gzip assets to reduce page weight and accelerate UX
 
-## Future To-Do List
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
