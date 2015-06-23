@@ -19,6 +19,11 @@
  * ========================================================================
  */
 
+ $cob-purple: rgb(53, 32, 99);
+ $cob-teal: rgb(69, 194, 197);
+ $questrial: 'Questrial', sans-serif;
+
+
 .tour-backdrop {
   position: fixed;
   top: 0;
@@ -70,4 +75,13 @@
 }
 .popover[class*="tour-"].orphan .arrow {
   display: none;
+}
+
+.popover.tour-tour {
+  font-family: $questrial;
+  color: $cob-purple;
+}
+
+.popover.tour-tour h3 {
+  background-color: $cob-teal;
 }
