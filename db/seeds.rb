@@ -67,6 +67,23 @@ def save_pictures(username, image_path)
 end
 
 User.create(
+  username: "conan",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(1986, 1, 2),
+  city: "San Francisco",
+  state: "California",
+  animal_type: "other",
+  breed: "human",
+  website: "https://conantzou.tumblr.com",
+  instagram: "https://instagram.com/conanza",
+  about_me: "I'm the owner!",
+  hobby_ids: ["1", "2", "3", "4"]
+)
+save_pictures("conan", "v1434560509/tpaorjsumovlefzywncj.jpg")
+save_pictures("conan", "v1434587074/e0v8ffuuw7aau11iqltd.jpg")
+
+User.create(
   username: "drogon",
   password: "password",
   gender: "M",
@@ -532,30 +549,29 @@ save_pictures("sputnikandspock", "v1435050696/pljwya4akn3p4kijmc5j.jpg")
 save_pictures("sputnikandspock", "v1435050696/prw3mtslcpmopitkqjrt.jpg")
 save_pictures("sputnikandspock", "v1435050696/pp1npajt3pav5tucazj4.jpg")
 
+User.create(
+  username: "booboo",
+  password: "password",
+  gender: "F",
+  birthdate: Time.new(2014, 2, 23),
+  city: "Seattle",
+  state: "Washington",
+  animal_type: "pig",
+  breed: "guinea (I know I know, it's not a pig)",
+  about_me: "She's hilariously amusing to photograph.",
+  instagram: "https://instagram.com/boobooandfriends/"
+)
+save_pictures("booboo", "v1435051671/mjrmkr6quupdhoezvwhu.png")
+save_pictures("booboo", "v1435051668/j0jiftiao3vt1atrl1rc.png")
+save_pictures("booboo", "v1435051668/ct5ul0s8hmd9sswsfpv8.png")
+save_pictures("booboo", "v1435051671/gdcjans8irdltnbfkws0.png")
+save_pictures("booboo", "v1435051669/f9wxbxia0lk3bdz1hnq8.png")
+save_pictures("booboo", "v1435051668/wrcorhpey557eww5wvc7.png")
+save_pictures("booboo", "v1435051671/we1qvxy5y4vwoknpu0rm.png")
+
 
 #frenchie: cutest little nuggest!
 #scruffy: they call me scruffy mcscrufferson
-
-
-
-
-User.create(
-  username: "conan",
-  password: "password",
-  gender: "M",
-  birthdate: Time.new(1986, 1, 2),
-  city: "San Francisco",
-  state: "California",
-  animal_type: "other",
-  breed: "human",
-  website: "https://conantzou.tumblr.com",
-  instagram: "https://instagram.com/conanza",
-  about_me: "I'm the owner!",
-  hobby_ids: ["1", "2", "3", "4"]
-)
-
-save_pictures("conan", "v1434560509/tpaorjsumovlefzywncj.jpg")
-save_pictures("conan", "v1434587074/e0v8ffuuw7aau11iqltd.jpg")
 
 
 50.times do |i|
