@@ -2,8 +2,9 @@
 <h1><%= username %>'s fans</h1>
 <% if (total === 0) { %>
   <h4><%= CURRENT_USER_USERNAME %> has no fans yet!</h4>
+<% } else if (total === 1) { %>
+  <h4>See the 1 pet who voted yours cute.</h4>
 <% } else { %>
   <h4>See the <%= total %> pets who voted yours cute.</h4>
 <% } %>
-
 <div class="fan-list"></div>
