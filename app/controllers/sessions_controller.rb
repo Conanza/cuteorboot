@@ -12,7 +12,6 @@ class SessionsController < ApplicationController
     )
 
     if @user
-      # flash[:success] = ["Welcome to Cute or Boot!"]
       login(@user)
       redirect_to root_url
     else

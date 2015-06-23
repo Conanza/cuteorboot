@@ -187,10 +187,6 @@ class User < ActiveRecord::Base
     !!self.received_votes.where(value: 0).find_by(voter_id: user.id)
   end
 
-  # liked_by_current_user && fan
-  def connected?
-  end
-
   def downcase_username
     username.downcase!
   end

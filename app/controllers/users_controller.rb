@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   before_action :require_logout, only: [:new, :create]
   before_action :require_current_user, only: [:edit, :update, :destroy]
 
-  # may need to optimize User#rating
   def index
     if params[:form_type].present?
       @users = search_by(params[:form_type])
@@ -31,7 +30,6 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      # flash[:success] = ["Welcome to Cute or Boot!"]
       login(@user)
       redirect_to root_url
     else

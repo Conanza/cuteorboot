@@ -8,8 +8,6 @@ module Api
       if @vote.save
         render json: @vote
       else
-        # flash[:errors] = @vote.errors.full_messages
-        # redirect_to root_url
         render json: @vote.errors.full_messages, status: 422
       end
     end
