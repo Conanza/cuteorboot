@@ -67,21 +67,17 @@ def save_pictures(username, image_path)
 end
 
 User.create(
-  username: "conan",
+  username: "spot",
   password: "password",
   gender: "M",
-  birthdate: Time.new(1986, 1, 2),
+  birthdate: Time.new(2014, 6, 23),
   city: "San Francisco",
   state: "California",
-  animal_type: "other",
-  breed: "human",
-  website: "https://conantzou.tumblr.com",
-  instagram: "https://instagram.com/conanza",
-  about_me: "I'm the owner!",
-  hobby_ids: ["1", "2", "3", "4"]
+  animal_type: "dog",
+  about_me: "Help, we can't find his spot.",
+  hobby_ids: ["1", "3", "4", "12"]
 )
-save_pictures("conan", "v1434560509/tpaorjsumovlefzywncj.jpg")
-save_pictures("conan", "v1434587074/e0v8ffuuw7aau11iqltd.jpg")
+save_pictures("spot", "v1434560509/tpaorjsumovlefzywncj.jpg")
 
 User.create(
   username: "drogon",

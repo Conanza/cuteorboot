@@ -17,7 +17,7 @@ CuteOrBoot.Views.TopCutie = Backbone.CompositeView.extend({
     this.$("img").attr("cutie-id", this.model.id);
 
     if (this.model.pictures().length <= 0) {
-      this.$("img").attr("src", "<%= asset_path('spotinahole.png') %>");
+      this.$("img").attr("src", "<%= asset_path('cuteorboot-icon.jpg') %>");
     }
 
     return this;
