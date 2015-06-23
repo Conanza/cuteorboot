@@ -28,8 +28,6 @@ CuteOrBoot.Views.UserEdit = Backbone.CompositeView.extend({
   },
 
   removeEdit: function (event) {
-    event.preventDefault();
-
     this.$(".edit-backdrop").addClass("toggled-off");
     this.$(".edit-content").addClass("toggled-off");
 
@@ -51,8 +49,6 @@ CuteOrBoot.Views.UserEdit = Backbone.CompositeView.extend({
   },
 
   keydownHandler: function (event) {
-    event.preventDefault();
-    
     if (event.keyCode === 27) {
       this.removeEdit();
     }
