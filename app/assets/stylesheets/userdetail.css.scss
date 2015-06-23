@@ -2,3 +2,17 @@ section.user-profile {
   border-right: solid 1px #dedede;
   border-bottom: solid 1px #dedede;
 }
+
+section.user-profile {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+sidebar.stats-sidebar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+ul.user-links {
+  padding: 0;
+}
