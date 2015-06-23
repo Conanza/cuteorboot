@@ -67,17 +67,18 @@ def save_pictures(username, image_path)
 end
 
 User.create(
-  username: "spot",
+  username: "boots",
   password: "password",
   gender: "M",
   birthdate: Time.new(2014, 6, 23),
   city: "San Francisco",
   state: "California",
   animal_type: "dog",
-  about_me: "Help, we can't find his spot.",
+  about_me: "Cutie in boots.",
+  website: "http://cuteorboot.us",
   hobby_ids: ["1", "3", "4", "12"]
 )
-save_pictures("spot", "v1434560509/tpaorjsumovlefzywncj.jpg")
+save_pictures("boots", "v1434587074/e0v8ffuuw7aau11iqltd.jpg")
 
 User.create(
   username: "drogon",
