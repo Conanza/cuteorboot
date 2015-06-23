@@ -1,8 +1,8 @@
 # Cute or Boot
 
-[Heroku link][heroku]
+[Live Demo][cuteorboot]
 
-[heroku]: https://cuteorboot.herokuapp.com/
+[cuteorboot]: http://www.cuteorboot.us
 
 ## Minimum Viable Product
 Cute or Boot is built on Rails and Backbone, and it's a spinoff of hotornot.com for pets. Users (pets) can:

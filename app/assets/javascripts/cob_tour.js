@@ -9,7 +9,7 @@ window.CuteOrBootTour = {
         element: ".cuteorboot",
         placement: "top",
         backdrop: true,
-        title: "Welcome to Cute Or Boot!",
+        title: "Welcome to Cute or Boot!",
         content: "Glad you decided to join us! You're in for a treat.<br><br>If you've ever used HotOrNot, this should be very familiar. If not, I won't keep you away from the super cute pets for long. Just going to give you a quick guide through the app's features!",
         template: function () {
           var popover = "<div class='popover tour'><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'><div class='btn-group'><button class='btn btn-default' data-role='next'>Next »</button></div></div></div>";
@@ -77,7 +77,7 @@ window.CuteOrBootTour = {
         element: ".topCutiesList.col-xs-12",
         placement: "right",
         title: "The Cutest Cuties",
-        content: "Almost done!<br><br>Make sure to check out Cute Or Boot's highest rated pets.",
+        content: "Almost done!<br><br>Make sure to check out Cute or Boot's highest rated pets.",
         onNext: function (tour) {
           document.location.href = "/#fans";
         }
@@ -104,7 +104,7 @@ window.CuteOrBootTour = {
         orphan: true,
         placement: "top",
         title: "Have fun!",
-        content: "Thanks again for joining Cute Or Boot. I'll let you get to voting. Don't forget to add pictures of your pet!",
+        content: "Thanks again for joining Cute or Boot. I'll let you get to voting. Don't forget to add pictures of your pet!",
         template: function () {
           var popover = "<div class='popover tour'><h3 class='popover-title'></h3><div class='popover-content'></div><div class='popover-navigation'><div class='btn-group'><button class='btn btn-default' data-role='end'>Yay!</button></div></div></div>";
           return popover;
