@@ -1,18 +1,18 @@
 HOBBIES = [
-  "Running",           #1
-  "Swimming",          #2
-  "Napping",           #3
-  "Cuddling",          #4
-  "Eating",            #5
-  "Sunbathing",        #6
-  "Flying",            #7
-  "Long Walks",        #8
-  "Fetch",             #9
-  "Kissing",           #10
-  "Chasing",           #11
-  "People Watching",   #12
-  "Stalking",          #13
-  "Grooming"           #14
+  "Running",
+  "Swimming",
+  "Napping",
+  "Cuddling",
+  "Eating",
+  "Sunbathing",
+  "Flying",
+  "Long Walks",
+  "Fetch",
+  "Kissing",
+  "Chasing",
+  "People Watching",
+  "Stalking",
+  "Grooming"
 ]
 
 HOBBY_IDS = HOBBIES.map.with_index{ |hobby, i| (i + 1).to_s }
@@ -566,39 +566,52 @@ save_pictures("booboo", "v1435051669/f9wxbxia0lk3bdz1hnq8.png")
 save_pictures("booboo", "v1435051668/wrcorhpey557eww5wvc7.png")
 save_pictures("booboo", "v1435051671/we1qvxy5y4vwoknpu0rm.png")
 
-
-#frenchie: cutest little nuggest!
-#scruffy: they call me scruffy mcscrufferson
-
-
-50.times do |i|
-  name = Faker::Internet.user_name
-  url = Faker::Internet.url("www.facebook.com", "/#{name}")
-
-  User.create(
-    username: name,
-    password: "password",
-    gender: random_gender,
-    birthdate: Time.new(random_year, random_month, random_day),
-    city: Faker::Address.city,
-    state: random_state,
-    animal_type: random_type,
-    breed: "breed",
-    website: url,
-    instagram: "https://instagram.com/#{name}",
-    about_me: "I'm #{name}",
-    hobby_ids: random_hobbies
-  )
+def random_vote
+  rand(3).zero? ? 0 : 1
 end
 
-(1..50).each do |votee_id|
-  (1..50).each do |voter_id|
+(1..26).each do |votee_id|
+  (2..26).each do |voter_id|
     next if votee_id == voter_id
     next if rand(3) == 1
 
     User
       .find(votee_id)
       .received_votes
-      .create(voter_id: voter_id, value: rand(2))
+      .create(voter_id: voter_id, value: random_vote)
+  end
+end
+
+if Rails.env == "development"
+  50.times do |i|
+    name = Faker::Internet.user_name
+    url = Faker::Internet.url("www.facebook.com", "/#{name}")
+
+    User.create(
+      username: name,
+      password: "password",
+      gender: random_gender,
+      birthdate: Time.new(random_year, random_month, random_day),
+      city: Faker::Address.city,
+      state: random_state,
+      animal_type: random_type,
+      breed: "breed",
+      website: url,
+      instagram: "https://instagram.com/#{name}",
+      about_me: "I'm #{name}",
+      hobby_ids: random_hobbies
+    )
+  end
+
+  (27..50).each do |votee_id|
+    (27..50).each do |voter_id|
+      next if votee_id == voter_id
+      next if rand(3) == 1
+
+      User
+        .find(votee_id)
+        .received_votes
+        .create(voter_id: voter_id, value: rand(2))
+    end
   end
 end
