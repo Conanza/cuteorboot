@@ -428,6 +428,40 @@ save_pictures("twinkie", "v1434928343/iwbntqkkmpmkummkh4ik.jpg")
 save_pictures("twinkie", "v1434928344/lnvaqxrhgc2w0izp3cny.jpg")
 save_pictures("twinkie", "v1434928344/djvi3rivrmevnkkxhsju.jpg")
 
+User.create(
+  username: "pumpernickel",
+  password: "password",
+  gender: "F",
+  birthdate: Time.new(2015, 4, 20),
+  city: "San Francisco",
+  state: "California",
+  animal_type: "cat",
+  about_me: "New kittens at the SF SPCA! She's a curious kitten looking for adopters. She's ready for a home with snuggles, playtime, and lots of kitten-love!",
+  website: "https://www.sfspca.org/adoptions/pet-details/28016107",
+  hobby_ids: ["4"]
+)
+
+save_pictures("pumpernickel", "v1435042715/euxzui5wr9wj4uusxaji.jpg")
+save_pictures("pumpernickel", "v1435042715/rg2rzvcgkul2zveoazre.jpg")
+
+User.create(
+  username: "hammy",
+  password: "password",
+  gender: "F",
+  birthdate: Time.new(2014, 10, 18),
+  city: "New York City",
+  state: "New York",
+  animal_type: "hamster",
+  instagram: "https://instagram.com/hamster_lover25",
+  hobby_ids: ["1", "5"]
+)
+
+save_pictures("hammy", "v1435043764/rmvde4oodlp4hccfbk55.png")
+save_pictures("hammy", "v1435043764/fexyj36r0j5ohm0whxuw.png")
+save_pictures("hammy", "v1435043764/ekgb11vku4rlfskzb1fk.png")
+save_pictures("hammy", "v1435043764/lncypquwhnm6lnikmtih.png")
+save_pictures("hammy", "v1435043765/heuo3abpclarycy62xub.png")
+
 
 #frenchie: cutest little nuggest!
 #scruffy: they call me scruffy mcscrufferson
@@ -452,10 +486,7 @@ User.create(
 
 save_pictures("conan", "v1434560509/tpaorjsumovlefzywncj.jpg")
 save_pictures("conan", "v1434587074/e0v8ffuuw7aau11iqltd.jpg")
-User.find_by_username("conan").pictures.create(image_url: "http://img1.wikia.nocookie.net/__cb20080918055501/marveldatabase/images/c/c4/Conan_02.jpg",
-                                               thumb_url: "http://img1.wikia.nocookie.net/__cb20080918055501/marveldatabase/images/c/c4/Conan_02.jpg")
-User.find_by_username("conan").pictures.create(image_url: "https://static.crowdvoice.com/uploads/237M8sU_1389417789100_r11v9Wi7J2KnyWFe4RR68Q",
-                                              thumb_url: "https://static.crowdvoice.com/uploads/237M8sU_1389417789100_r11v9Wi7J2KnyWFe4RR68Q")
+
 
 50.times do |i|
   name = Faker::Internet.user_name
