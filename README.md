@@ -8,7 +8,7 @@
 [COBLOGO]: ./app/assets/images/cuteorboot-banner.jpg
 
 ## Description
-Cute or Boot, built with Backbone on Rails, is a spinoff of the popular [Hot or Not](https://www.hotornot.com) made especially for pets. Users can register their pets, upload images for their pet, and, most importantly, browse through and vote on a feed of other users' pets. The site tracks all votes and features lists that display the top 20 cutest pets and all the users who've liked your pet. In addition, users can also search for pets under different criteria.
+Cute or Boot, built with Backbone on Rails, is a spinoff of the popular [Hot or Not](https://www.hotornot.com) made especially for pets. Users can register their pets, upload images for their pet, and, most importantly, browse through and vote on a feed of other users' pets. 
 
 ## Technologies
 - Ruby on Rails Framework
@@ -17,6 +17,54 @@ Cute or Boot, built with Backbone on Rails, is a spinoff of the popular [Hot or 
 - jQuery
 - HTML
 - CSS
+
+## The Code
+#### The SQL
+Users' votes are all tracked and, from them, custom ActiveRecord SQL queries are built to generate ratings, a feed of pets to vote on, a dynamic list of the app's cutest pets, and a fanbase per user. The work is all done in the database, and these helper methods can be found in the `User` model.
+
+The latter 3 all produce a group of users, thus, I organized this logic into `UsersController#index`. Doing this allowed me to setup the Rails api endpoints for a single user and for a group of users using the same JSON partial. On the Backbone end, when fetching a collection of users, I specified which 'group' of users to fetch by making a custom AJAX request, specifying fetch's data option. The added params tell `UsersController#index` which group of users to send back. My custom real-time UsersSearch plugin benefited from this as well, retrieving different sets of users based on the search parameter.
+
+#### The Backbone Views
+The trickiest part of developing the app was conceptualizing how to create the single-page feel. The sidebar was a simple yet crucial anchor to the single-page and thus I install it on the initialization of the app. 
+
+	window.CuteOrBoot = {
+	  ...
+	  initialize: function() {
+    	var $rootEl = $("#main");
+	    var users = new CuteOrBoot.Collections.Users();
+
+    	var router = new CuteOrBoot.Routers.Router({
+      	$rootEl: $rootEl,
+          users: users
+        });
+
+	    var navbar = new CuteOrBoot.Views.Navbar({
+          router: router
+        });
+
+        $("div.cuteorboot").prepend(navbar.$el);
+        navbar.render();
+        
+      ...
+The sidebar navbar is static and doesn't rely on any models as of now, but if it ever did, this would be a good opportunity to have the data bootstrapped in to place.
+
+Next, the fan list, top 20, and search lists are just entire composite views being swapped in and out; they're not that interesting. The question was, "How do I deal with the page for showing a single specific user and the page for displaying a single user, but from a feed of votable users?" The views are essentially the same, but the former requires just a model, while the latter requires a model from a collection of users. 
+
+I ended up successfully using just one view, `UserDashboard`, to handle both these cases. From `router.js`, both the `game` and `showUser` functions pass in a model and collection to `UserDashboard`. However, only in `showUser` is the single model fetched. When we get to `UserDashboard`'s initialization code, we check to see if the model exists. Coming from `showUser`, it's likely that it does, and we go ahead and render subviews. 
+
+    initialize: function () {
+      if (this.model) {
+        this.renderViews();
+      } else {
+        this.listenTo(this.collection, "sync", this.setNextUser);
+      }
+      
+      this.listenTo(this.model, "sync", this.render);
+      this.listenTo(this.collection, "remove", this.setNextUser);
+      
+      ...
+Otherwise, coming from `game`, we wait for the collection to sync and trigger a callback that sets the first model in the collection as the view's model before rendering subviews. It works!
+
 
 ## Future To-do List
 - Setup Redis: use key-value cache and storing to increase site performance.
@@ -96,6 +144,7 @@ Both these views are composite, each containing `IndexItem` Views for each fan o
 - [x] Stylish buttons
 - [ ] Bind shortcut keys for liking/disliking (e.g. 1 and 2)
 - [x] Gzip assets to reduce page weight and accelerate UX
+- [x] Create a guided tour
 
 
 [phase-one]: ./docs/phases/phase1.md
