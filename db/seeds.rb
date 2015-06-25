@@ -67,20 +67,6 @@ def save_pictures(username, image_path)
 end
 
 User.create(
-  username: "boots",
-  password: "password",
-  gender: "M",
-  birthdate: Time.new(2014, 6, 23),
-  city: "San Francisco",
-  state: "California",
-  animal_type: "dog",
-  about_me: "Cutie in boots.",
-  website: "http://cuteorboot.us",
-  hobby_ids: ["1", "3", "4", "12"]
-)
-save_pictures("boots", "v1434587074/e0v8ffuuw7aau11iqltd.jpg")
-
-User.create(
   username: "drogon",
   password: "password",
   gender: "M",
@@ -566,12 +552,68 @@ save_pictures("booboo", "v1435051669/f9wxbxia0lk3bdz1hnq8.png")
 save_pictures("booboo", "v1435051668/wrcorhpey557eww5wvc7.png")
 save_pictures("booboo", "v1435051671/we1qvxy5y4vwoknpu0rm.png")
 
+User.create(
+  username: "boots",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(2014, 6, 23),
+  city: "San Francisco",
+  state: "California",
+  animal_type: "dog",
+  about_me: "Cutie in boots.",
+  website: "http://cuteorboot.us",
+  hobby_ids: ["1", "3", "4", "12"]
+)
+save_pictures("boots", "v1434587074/e0v8ffuuw7aau11iqltd.jpg")
+
+User.create(
+  username: "scruffy",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(2014, 12, 31),
+  city: "Denver",
+  state: "Colorado",
+  animal_type: "dog",
+  about_me: "Scruffy McScrufferson, so scruffy he is.",
+  website: "http://cuteorboot.us",
+  hobby_ids: ["5", "11"]
+)
+save_pictures("scruffy", "v1435214393/u96pn46klabgsajqyj7u.jpg")
+
+User.create(
+  username: "fry",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(2014, 12, 31),
+  city: "New Orleans",
+  state: "Louisiana",
+  animal_type: "dog",
+  about_me: "Small with a big attitude",
+  website: "http://cuteorboot.us",
+  hobby_ids: ["5", "11"]
+)
+save_pictures("fry", "v1434143919/znqyu6ude0rdekxuliyr.jpg")
+
+User.create(
+  username: "whiskers",
+  password: "password",
+  gender: "F",
+  birthdate: Time.new(2014, 12, 31),
+  city: "Sacramento",
+  state: "California",
+  animal_type: "cat",
+  about_me: "She's a sneaky one.",
+  website: "http://cuteorboot.us",
+  hobby_ids: ["5", "11"]
+)
+save_pictures("whiskers", "v1435214988/plr8xjzpf8bcgbk48uy1.jpg")
+
 def random_vote
   rand(3).zero? ? 0 : 1
 end
 
-(1..26).each do |votee_id|
-  (2..26).each do |voter_id|
+(1..29).each do |votee_id|
+  (1..25).each do |voter_id|
     next if votee_id == voter_id
     next if rand(3) == 1
 
@@ -582,36 +624,36 @@ end
   end
 end
 
-if Rails.env == "development"
-  50.times do |i|
-    name = Faker::Internet.user_name
-    url = Faker::Internet.url("www.facebook.com", "/#{name}")
-
-    User.create(
-      username: name,
-      password: "password",
-      gender: random_gender,
-      birthdate: Time.new(random_year, random_month, random_day),
-      city: Faker::Address.city,
-      state: random_state,
-      animal_type: random_type,
-      breed: "breed",
-      website: url,
-      instagram: "https://instagram.com/#{name}",
-      about_me: "I'm #{name}",
-      hobby_ids: random_hobbies
-    )
-  end
-
-  (27..50).each do |votee_id|
-    (27..50).each do |voter_id|
-      next if votee_id == voter_id
-      next if rand(3) == 1
-
-      User
-        .find(votee_id)
-        .received_votes
-        .create(voter_id: voter_id, value: rand(2))
-    end
-  end
-end
+# if Rails.env == "development"
+#   50.times do |i|
+#     name = Faker::Internet.user_name
+#     url = Faker::Internet.url("www.facebook.com", "/#{name}")
+#
+#     User.create(
+#       username: name,
+#       password: "password",
+#       gender: random_gender,
+#       birthdate: Time.new(random_year, random_month, random_day),
+#       city: Faker::Address.city,
+#       state: random_state,
+#       animal_type: random_type,
+#       breed: "breed",
+#       website: url,
+#       instagram: "https://instagram.com/#{name}",
+#       about_me: "I'm #{name}",
+#       hobby_ids: random_hobbies
+#     )
+#   end
+#
+#   (27..50).each do |votee_id|
+#     (27..50).each do |voter_id|
+#       next if votee_id == voter_id
+#       next if rand(3) == 1
+#
+#       User
+#         .find(votee_id)
+#         .received_votes
+#         .create(voter_id: voter_id, value: rand(2))
+#     end
+#   end
+# end
