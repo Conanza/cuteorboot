@@ -624,36 +624,36 @@ end
   end
 end
 
-# if Rails.env == "development"
-#   50.times do |i|
-#     name = Faker::Internet.user_name
-#     url = Faker::Internet.url("www.facebook.com", "/#{name}")
-#
-#     User.create(
-#       username: name,
-#       password: "password",
-#       gender: random_gender,
-#       birthdate: Time.new(random_year, random_month, random_day),
-#       city: Faker::Address.city,
-#       state: random_state,
-#       animal_type: random_type,
-#       breed: "breed",
-#       website: url,
-#       instagram: "https://instagram.com/#{name}",
-#       about_me: "I'm #{name}",
-#       hobby_ids: random_hobbies
-#     )
-#   end
-#
-#   (27..50).each do |votee_id|
-#     (27..50).each do |voter_id|
-#       next if votee_id == voter_id
-#       next if rand(3) == 1
-#
-#       User
-#         .find(votee_id)
-#         .received_votes
-#         .create(voter_id: voter_id, value: rand(2))
-#     end
-#   end
-# end
+if Rails.env == "development"
+  50.times do |i|
+    name = Faker::Internet.user_name
+    url = Faker::Internet.url("www.facebook.com", "/#{name}")
+
+    User.create(
+      username: name,
+      password: "password",
+      gender: random_gender,
+      birthdate: Time.new(random_year, random_month, random_day),
+      city: Faker::Address.city,
+      state: random_state,
+      animal_type: random_type,
+      breed: "breed",
+      website: url,
+      instagram: "https://instagram.com/#{name}",
+      about_me: "I'm #{name}",
+      hobby_ids: random_hobbies
+    )
+  end
+
+  (27..50).each do |votee_id|
+    (27..50).each do |voter_id|
+      next if votee_id == voter_id
+      next if rand(3) == 1
+
+      User
+        .find(votee_id)
+        .received_votes
+        .create(voter_id: voter_id, value: rand(2))
+    end
+  end
+end
