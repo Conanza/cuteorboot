@@ -59,6 +59,12 @@ sidebar.stats-sidebar {
 }
 
 main.landing-carousel {
+  /*background-color: #333333;
+  height: 440px;*/
   padding-right: 0px;
   padding-left: 0px;
 }
+/*
+section.user-preview {
+  margin-top: 30px;
+}*/
