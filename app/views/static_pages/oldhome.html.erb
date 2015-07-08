@@ -1,0 +1,61 @@
+<%= render "layouts/navbar" %>
+<%= render "layouts/errors" %>
+
+<body id="home" class="home">
+  <div class="site-logo-lg">
+    <%= image_tag("cuteorboot-banner-noborder.jpg") %>
+    <h5>How cute is your pet?</h5>
+
+    <form action="<%= session_url %>" method="POST">
+      <input class="btn" value="Take the tour!" type="submit">
+    </form>
+  </div>
+
+  <script type="text/javascript">
+    var loginGuest = function (event) {
+      event.preventDefault();
+      var currentTime = new Date();
+      var minuteMark = currentTime.getMinutes();
+
+      if (minuteMark < 15) {
+        $.ajax({
+          url: "/session",
+          type: "POST",
+          data: { session: { username: "boots", password: "password" } },
+          success: function () {
+            window.location.href = "/";
+          }
+        });
+      } else if (minuteMark < 30) {
+        $.ajax({
+          url: "/session",
+          type: "POST",
+          data: { session: { username: "scruffy", password: "password" } },
+          success: function () {
+            window.location.href = "/";
+          }
+        });
+      } else if (minuteMark < 45) {
+        $.ajax({
+          url: "/session",
+          type: "POST",
+          data: { session: { username: "fry", password: "password" } },
+          success: function () {
+            window.location.href = "/";
+          }
+        });
+      } else {
+        $.ajax({
+          url: "/session",
+          type: "POST",
+          data: { session: { username: "whiskers", password: "password" } },
+          success: function () {
+            window.location.href = "/";
+          }
+        });
+      }
+    };
+
+    $("form").on("submit", loginGuest);
+  </script>
+</body>
