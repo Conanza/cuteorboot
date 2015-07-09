@@ -67,6 +67,30 @@ def save_pictures(username, image_path)
 end
 
 User.create(
+  username: "pumbaa",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(2012, 9, 4),
+  city: "San Francisco",
+  state: "California",
+  animal_type: "dog",
+  breed: "Bulldog",
+  about_me: "He's brought such joy to our lives...when he's not sleeping. Or farting in his sleep.",
+  hobby_ids: ["3", "5", "9", "12"]
+)
+save_pictures("pumbaa", "v1435044417/jmmj5fowcjqllyngeua0.png")
+save_pictures("pumbaa", "v1434624281/hfqrao2gl6h8xybnqefk.jpg")
+save_pictures("pumbaa", "v1434623871/uwwef5onghreigrp3x3b.jpg")
+save_pictures("pumbaa", "v1434624281/obgzoqvcye6dazo67i5i.jpg")
+save_pictures("pumbaa", "v1434624281/mpdnnx0lumeavcrqpmmp.jpg")
+save_pictures("pumbaa", "v1434623871/vqjpnoo1mcx6xulcx9l9.jpg")
+save_pictures("pumbaa", "v1434623871/gphyeg7tygifzsleivaz.jpg")
+save_pictures("pumbaa", "v1434623872/onhhjbxb1bpw66jzllob.jpg")
+save_pictures("pumbaa", "v1434624281/tibt1lmkypfeixy0qxdk.jpg")
+save_pictures("pumbaa", "v1434623871/vgp6sxvbebrx0czdeokj.jpg")
+save_pictures("pumbaa", "v1434623871/n6yjnw1a7ope4umvanjy.jpg")
+
+User.create(
   username: "drogon",
   password: "password",
   gender: "M",
@@ -86,21 +110,48 @@ save_pictures("drogon", "v1434620348/hmlwkdonpi4egzvmc3hm.jpg")
 save_pictures("drogon", 'v1434620348/sl4n1sfgoeomspq70zgv.jpg')
 
 User.create(
-  username: "charley",
+  username: "nala",
+  password: "password",
+  gender: "F",
+  birthdate: Time.new(2010, 6, 24),
+  city: "Los Angeles",
+  state: "California",
+  animal_type: "cat",
+  breed: "Siamese and Tabby mix",
+  website: "https://www.facebook.com/pages/Nala_cat/303371839754315",
+  instagram: "https://instagram.com/nala_cat",
+  about_me: "She came from a house with too many cats and was sheltered. The day I met her I knew it was meant to be. Cherish your pets and provide them with happy homes for the rest of their lives!"
+)
+save_pictures("nala", "v1434916977/tiuc0eundb5bo4dlhobe.png")
+save_pictures("nala", "v1434916968/ndx24uz4xdixdttya19f.png")
+save_pictures("nala", "v1434916988/updqktu1myqlkckrom9p.png")
+save_pictures("nala", "v1434916989/hrm0fjqlevlsxe5sj1i8.png")
+save_pictures("nala", "v1434916978/je2jskaa4opowuxg1ken.png")
+save_pictures("nala", "v1434916991/g1ra9c0oxhlscjymhtzf.png")
+save_pictures("nala", "v1434916978/saeypl8z73ia5jd2zka5.png")
+save_pictures("nala", "v1434916990/mqvitoblmwvaaeflvehg.png")
+
+User.create(
+  username: "chowder",
   password: "password",
   gender: "M",
-  birthdate: Time.new(2013, 3, 18),
-  city: "San Francisco",
+  birthdate: Time.new(2014, 4, 29),
+  city: "Los Angeles",
   state: "California",
   animal_type: "dog",
-  breed: "Retriever, Labrador Mix",
-  website: "https://www.sfspca.org/adoptions/pet-details/20818764",
-  about_me: "Charley needs a family! He's a big boy with a goofy smile and would love a human to play with to his heart's content.",
-  hobby_ids: ["1", "4", "9", "11"]
+  breed: "French Bulldog",
+  about_me: "IS HE NOT ADORABLE???",
+  instagram: "https://instagram.com/callmechowder/"
 )
-save_pictures("charley", "v1434621458/jsbmrnimgnzwjxptx8kh.jpg")
-save_pictures("charley", "v1434621457/xi9atb5drn4906jg5sxi.jpg")
-save_pictures("charley", "v1434621458/jeptv5duokogt9q7hugt.jpg")
+save_pictures("chowder", "v1435049974/an2slugk7cj3o4k3cenm.png")
+save_pictures("chowder", "v1435049974/hxkxhimryjnw1ttlhvfa.png")
+save_pictures("chowder", "v1435049974/tgttvf9zb82mehfmlgeh.png")
+save_pictures("chowder", "v1435049973/fraeb8obyuxehrwfurxp.png")
+save_pictures("chowder", "v1435049974/o3ibrwp7vv5nyzseawjp.png")
+save_pictures("chowder", "v1435049978/w4ae6yc6sp6v6oyo23ih.png")
+save_pictures("chowder", "v1435049977/agalx9jnk8mmp5ds7jop.png")
+save_pictures("chowder", "v1435049976/y2uzfswuokfo6brzij6b.png")
+save_pictures("chowder", "v1435049976/b5fffwal6hnvmuahxwul.png")
 
 User.create(
   username: "hugo",
@@ -139,30 +190,6 @@ save_pictures("teddy", "v1434622919/ukh2fs6q8yrme20x11he.jpg")
 save_pictures("teddy", "v1434622919/rt4x0ykqxk0drapyogbv.jpg")
 
 User.create(
-  username: "pumbaa",
-  password: "password",
-  gender: "M",
-  birthdate: Time.new(2012, 9, 4),
-  city: "San Francisco",
-  state: "California",
-  animal_type: "dog",
-  breed: "Bulldog",
-  about_me: "He's brought such joy to our lives...when he's not sleeping. Or farting in his sleep.",
-  hobby_ids: ["3", "5", "9", "12"]
-)
-save_pictures("pumbaa", "v1435044417/jmmj5fowcjqllyngeua0.png")
-save_pictures("pumbaa", "v1434624281/hfqrao2gl6h8xybnqefk.jpg")
-save_pictures("pumbaa", "v1434623871/uwwef5onghreigrp3x3b.jpg")
-save_pictures("pumbaa", "v1434624281/obgzoqvcye6dazo67i5i.jpg")
-save_pictures("pumbaa", "v1434624281/mpdnnx0lumeavcrqpmmp.jpg")
-save_pictures("pumbaa", "v1434623871/vqjpnoo1mcx6xulcx9l9.jpg")
-save_pictures("pumbaa", "v1434623871/gphyeg7tygifzsleivaz.jpg")
-save_pictures("pumbaa", "v1434623872/onhhjbxb1bpw66jzllob.jpg")
-save_pictures("pumbaa", "v1434624281/tibt1lmkypfeixy0qxdk.jpg")
-save_pictures("pumbaa", "v1434623871/vgp6sxvbebrx0czdeokj.jpg")
-save_pictures("pumbaa", "v1434623871/n6yjnw1a7ope4umvanjy.jpg")
-
-User.create(
   username: "piopi",
   password: "password",
   gender: "F",
@@ -182,6 +209,23 @@ save_pictures("piopi", "v1434705097/xje2jlozkzovhbjm6ot1.jpg")
 save_pictures("piopi", "v1434705097/gw6c2gymp9rqqijosdqc.jpg")
 
 User.create(
+  username: "charliesheen",
+  password: "password",
+  gender: "M",
+  birthdate: Time.new(1965, 9, 3),
+  city: "Beverly Hills",
+  state: "California",
+  animal_type: "other",
+  breed: "winner",
+  website: "http://www.charliesheen.com/",
+  instagram: "https://instagram.com/charliesheen/",
+  about_me: "What am I doing here? I've decided to expand my winning to the animal kingdom as well. Duh!"
+)
+save_pictures("charliesheen", "v1434708390/zqxjb57hnmm3j6jcbyoe.jpg")
+save_pictures("charliesheen", "v1434708390/kldsohriu7p2dskijbor.jpg")
+save_pictures("charliesheen", "v1434708390/opxcvz6otztbmg7pmcpv.jpg")
+
+User.create(
   username: "baiyun",
   password: "password",
   gender: "F",
@@ -199,23 +243,6 @@ save_pictures("baiyun", "v1434706393/t70lzxcntk4i5vvcb3qa.jpg")
 save_pictures("baiyun", "v1434706393/iqlwipnrbgt6kmlmrmye.jpg")
 save_pictures("baiyun", "v1434706393/e8g3e3bnnaik5kburera.jpg")
 save_pictures("baiyun", "v1434706393/yimzbfdp7uypusbhlvxb.jpg")
-
-User.create(
-  username: "charliesheen",
-  password: "password",
-  gender: "M",
-  birthdate: Time.new(1965, 9, 3),
-  city: "Beverly Hills",
-  state: "California",
-  animal_type: "other",
-  breed: "winner",
-  website: "http://www.charliesheen.com/",
-  instagram: "https://instagram.com/charliesheen/",
-  about_me: "What am I doing here? I've decided to expand my winning to the animal kingdom as well. Duh!"
-)
-save_pictures("charliesheen", "v1434708390/zqxjb57hnmm3j6jcbyoe.jpg")
-save_pictures("charliesheen", "v1434708390/kldsohriu7p2dskijbor.jpg")
-save_pictures("charliesheen", "v1434708390/opxcvz6otztbmg7pmcpv.jpg")
 
 User.create(
   username: "pocky",
@@ -360,26 +387,21 @@ save_pictures("zuri", "v1434914354/lzglngc5aphky1ry61c4.png")
 save_pictures("zuri", "v1434914360/ckkpojwbkfrugwkp3sy8.png")
 
 User.create(
-  username: "nala",
+  username: "charley",
   password: "password",
-  gender: "F",
-  birthdate: Time.new(2010, 6, 24),
-  city: "Los Angeles",
+  gender: "M",
+  birthdate: Time.new(2013, 3, 18),
+  city: "San Francisco",
   state: "California",
-  animal_type: "cat",
-  breed: "Siamese and Tabby mix",
-  website: "https://www.facebook.com/pages/Nala_cat/303371839754315",
-  instagram: "https://instagram.com/nala_cat",
-  about_me: "She came from a house with too many cats and was sheltered. The day I met her I knew it was meant to be. Cherish your pets and provide them with happy homes for the rest of their lives!"
+  animal_type: "dog",
+  breed: "Retriever, Labrador Mix",
+  website: "https://www.sfspca.org/adoptions/pet-details/20818764",
+  about_me: "Charley needs a family! He's a big boy with a goofy smile and would love a human to play with to his heart's content.",
+  hobby_ids: ["1", "4", "9", "11"]
 )
-save_pictures("nala", "v1434916977/tiuc0eundb5bo4dlhobe.png")
-save_pictures("nala", "v1434916968/ndx24uz4xdixdttya19f.png")
-save_pictures("nala", "v1434916988/updqktu1myqlkckrom9p.png")
-save_pictures("nala", "v1434916989/hrm0fjqlevlsxe5sj1i8.png")
-save_pictures("nala", "v1434916978/je2jskaa4opowuxg1ken.png")
-save_pictures("nala", "v1434916991/g1ra9c0oxhlscjymhtzf.png")
-save_pictures("nala", "v1434916978/saeypl8z73ia5jd2zka5.png")
-save_pictures("nala", "v1434916990/mqvitoblmwvaaeflvehg.png")
+save_pictures("charley", "v1434621458/jsbmrnimgnzwjxptx8kh.jpg")
+save_pictures("charley", "v1434621457/xi9atb5drn4906jg5sxi.jpg")
+save_pictures("charley", "v1434621458/jeptv5duokogt9q7hugt.jpg")
 
 User.create(
   username: "brutus",
@@ -493,28 +515,6 @@ save_pictures("rush", "v1435046160/aypv1u27ah7fw11sliov.png")
 save_pictures("rush", "v1435046159/jcsjhvnq13mudxlyvmru.png")
 save_pictures("rush", "v1435046160/clm8onwl9xakp6hlppui.png")
 save_pictures("rush", "v1435046161/itueea318ybykvyu6rzu.png")
-
-User.create(
-  username: "chowder",
-  password: "password",
-  gender: "M",
-  birthdate: Time.new(2014, 4, 29),
-  city: "Los Angeles",
-  state: "California",
-  animal_type: "dog",
-  breed: "French Bulldog",
-  about_me: "IS HE NOT ADORABLE???",
-  instagram: "https://instagram.com/callmechowder/"
-)
-save_pictures("chowder", "v1435049974/an2slugk7cj3o4k3cenm.png")
-save_pictures("chowder", "v1435049974/hxkxhimryjnw1ttlhvfa.png")
-save_pictures("chowder", "v1435049974/tgttvf9zb82mehfmlgeh.png")
-save_pictures("chowder", "v1435049973/fraeb8obyuxehrwfurxp.png")
-save_pictures("chowder", "v1435049974/o3ibrwp7vv5nyzseawjp.png")
-save_pictures("chowder", "v1435049978/w4ae6yc6sp6v6oyo23ih.png")
-save_pictures("chowder", "v1435049977/agalx9jnk8mmp5ds7jop.png")
-save_pictures("chowder", "v1435049976/y2uzfswuokfo6brzij6b.png")
-save_pictures("chowder", "v1435049976/b5fffwal6hnvmuahxwul.png")
 
 User.create(
   username: "sputnikandspock",
