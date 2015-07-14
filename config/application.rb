@@ -26,3 +26,17 @@ module SampleProjectProposalMaster
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   end
 end
+
+if ENV['REDISTOGO_URL']
+  config = SampleProjectProposalMaster::Application.config
+  uri = URI.parse(ENV["REDISTOGO_URL"])
+
+  config.cache_store = [
+    :redis_store, {
+      host: uri.host,
+      port: uri.port,
+      password: uri.password,
+      namespace: "cache"
+    }
+  ]
+end

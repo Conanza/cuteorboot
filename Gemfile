@@ -17,6 +17,7 @@ gem 'font-awesome-rails'
 gem 'figaro'
 gem "jquery-slick-rails"
 gem 'heroku-deflater', group: :production
+gem 'redis-rails'
 
 group :development do
   gem 'better_errors'

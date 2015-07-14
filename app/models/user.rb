@@ -139,12 +139,14 @@ class User < ActiveRecord::Base
   end
 
   def self.top_cuties
-    User
-      .includes(:hobbies, :pictures, :given_votes)
-      .joins(:received_votes)
-      .group("users.id")
-      .order("AVG(votes.value) DESC")
-      .limit(20)
+    Rails.cache.fetch("top-cuties", expires_in: 1.hour) do
+      User
+        .includes(:hobbies, :pictures, :given_votes)
+        .joins(:received_votes)
+        .group("users.id")
+        .order("AVG(votes.value) DESC")
+        .limit(20)
+    end
   end
 
   attr_reader :password
