@@ -18,6 +18,7 @@ gem 'figaro'
 gem "jquery-slick-rails"
 gem 'heroku-deflater', group: :production
 gem 'redis-rails'
+gem 'seed_dump'
 
 group :development do
   gem 'better_errors'
